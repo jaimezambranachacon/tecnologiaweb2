@@ -229,89 +229,156 @@
     `
 },
 
-'planificacion': { 
-    cat: 'Estrategia', 
-    title: 'Planificación Socioformativa', 
-    icon: 'fas fa-map-signs', 
+'cronograma_proyecto': { 
+    cat: 'Planificación', 
+    title: 'Proyecto Formativo: Sincronía Aérea', 
+    icon: 'fas fa-calendar-check', 
     body: `
         <div class="space-y-10">
-            <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
-                <div class="flex items-center justify-between mb-6">
-                    <div>
-                        <h4 class="text-[#003366] font-black uppercase text-xs tracking-widest mb-1">Proyecto Formativo</h4>
-                        <h3 class="text-2xl font-bold text-gray-800">"Sincronía Aérea: Backend de Alta Disponibilidad"</h3>
-                    </div>
-                    <div class="bg-[#00aaff] text-white px-4 py-1 rounded-full text-[10px] font-black uppercase">20 Sesiones</div>
+            <div class="bg-gradient-to-br from-[#003366] to-[#004a8c] p-8 rounded-3xl text-white shadow-xl relative overflow-hidden">
+                <div class="relative z-10">
+                    <h4 class="text-[#00aaff] font-black uppercase text-xs tracking-widest mb-2">Enfoque Socioformativo</h4>
+                    <h3 class="text-3xl font-bold mb-4">Ingeniería de Software con Impacto Social</h3>
+                    <p class="text-blue-100 text-sm max-w-2xl leading-relaxed">
+                        No solo programamos código; resolvemos la latencia informativa que afecta la movilidad de miles de usuarios. Este proyecto busca la <strong>excelencia técnica</strong> y la <strong>ética profesional</strong>.
+                    </p>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                    <div class="space-y-2">
-                        <p><strong><i class="fas fa-bullseye text-[#00aaff] mr-2"></i> Problema de Contexto:</strong> La latencia en la actualización de reservas de vuelos genera duplicidad de ventas y pérdida de confianza del usuario en la aerolínea BOA.</p>
-                    </div>
-                    <div class="space-y-2">
-                        <p><strong><i class="fas fa-trophy text-[#00aaff] mr-2"></i> Evidencia Final:</strong> Aplicación Web Full-Stack (PHP-POO + MySQL + AJAX) que gestione vuelos en tiempo real.</p>
-                    </div>
-                </div>
+                <i class="fas fa-project-diagram absolute -right-10 -bottom-10 text-white/5 text-[12rem]"></i>
             </div>
 
             <div class="space-y-6">
-                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2">Fases de Ejecución</h4>
-                
-                <div class="flex gap-6 items-start">
-                    <div class="flex-none w-12 h-12 bg-blue-100 text-[#003366] rounded-full flex items-center justify-center font-black">01</div>
-                    <div class="flex-1">
-                        <h5 class="font-bold text-gray-800 uppercase text-sm">Direccionamiento y Organización</h5>
-                        <p class="text-xs text-gray-500 mt-1">Acuerdo del plan de trabajo y análisis del reto. Diagnóstico de conocimientos previos en PHP y lógica de programación.</p>
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex justify-between">
+                    <span>Cronograma de Sesiones</span>
+                    <span class="text-gray-400 italic">Marzo - Abril 2026</span>
+                </h4>
+
+                <div class="border border-gray-100 rounded-2xl overflow-hidden">
+                    <div class="bg-gray-50 px-6 py-3 border-b border-gray-100 flex justify-between items-center">
+                        <span class="font-bold text-[#003366] text-sm italic">Fase 1: Direccionamiento y Planeación</span>
+                        <span class="text-[10px] bg-blue-100 text-[#003366] px-2 py-1 rounded-md font-bold">SEM 1</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-16 text-[10px] font-bold text-gray-400 uppercase text-center">11 - 13 Mar</div>
+                            <div class="text-sm text-gray-600">
+                                <strong>Lanzamiento del Reto:</strong> Análisis del caso BOA. Instalación del ecosistema (XAMPP/PHP 8). <br>
+                                <span class="text-[#00aaff] font-bold">Actividad:</span> Mapa mental del problema de contexto y propuesta de arquitectura inicial.
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex gap-6 items-start">
-                    <div class="flex-none w-12 h-12 bg-blue-100 text-[#003366] rounded-full flex items-center justify-center font-black">02</div>
-                    <div class="flex-1">
-                        <h5 class="font-bold text-gray-800 uppercase text-sm">Planeación (Saber Conocer)</h5>
-                        <p class="text-xs text-gray-500 mt-1">Diseño de la arquitectura del sistema. Modelado de base de datos MySQL y definición de clases bajo el paradigma POO.</p>
+                <div class="border border-gray-100 rounded-2xl overflow-hidden">
+                    <div class="bg-gray-50 px-6 py-3 border-b border-gray-100 flex justify-between items-center">
+                        <span class="font-bold text-[#003366] text-sm italic">Fase 2: Actuación - Lógica y Objetos</span>
+                        <span class="text-[10px] bg-blue-100 text-[#003366] px-2 py-1 rounded-md font-bold">SEM 2</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-16 text-[10px] font-bold text-gray-400 uppercase text-center">16 - 20 Mar</div>
+                            <div class="text-sm text-gray-600">
+                                <strong>Construcción del Core:</strong> Implementación de Clases y Métodos en PHP. Gestión de herencia para tipos de vuelos.<br>
+                                <span class="text-[#00aaff] font-bold">Laboratorio:</span> Creación de la lógica de negocio sin base de datos (Entidades puras).
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex gap-6 items-start">
-                    <div class="flex-none w-12 h-12 bg-[#003366] text-[#00aaff] rounded-full flex items-center justify-center font-black shadow-lg">03</div>
-                    <div class="flex-1">
-                        <h5 class="font-bold text-gray-800 uppercase text-sm">Actuación (Saber Hacer)</h5>
-                        <p class="text-xs text-gray-500 mt-1">Desarrollo iterativo: Implementación del CRUD, seguridad de usuarios y la integración asíncrona mediante AJAX y JSON.</p>
+                <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm border-l-4 border-l-[#00aaff]">
+                    <div class="bg-blue-50/50 px-6 py-3 border-b border-gray-100 flex justify-between items-center">
+                        <span class="font-bold text-[#003366] text-sm italic">Fase 3: Actuación - Persistencia Crítica</span>
+                        <span class="text-[10px] bg-[#003366] text-white px-2 py-1 rounded-md font-bold">SEM 3</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-16 text-[10px] font-bold text-gray-400 uppercase text-center">23 - 27 Mar</div>
+                            <div class="text-sm text-gray-600">
+                                <strong>Integración de Datos:</strong> Diseño de base de datos MySQL. Conexión PDO segura. Consultas optimizadas.<br>
+                                <span class="text-[#00aaff] font-bold">Hito:</span> Primer CRUD funcional con persistencia real.
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex gap-6 items-start">
-                    <div class="flex-none w-12 h-12 bg-blue-100 text-[#003366] rounded-full flex items-center justify-center font-black">04</div>
-                    <div class="flex-1">
-                        <h5 class="font-bold text-gray-800 uppercase text-sm">Comunicación y Mejora</h5>
-                        <p class="text-xs text-gray-500 mt-1">Socialización del proyecto. Evaluación entre pares y co-evaluación basada en niveles de desempeño (Estratégico).</p>
+                <div class="border border-gray-100 rounded-2xl overflow-hidden shadow-sm border-l-4 border-l-[#00aaff]">
+                    <div class="bg-blue-50/50 px-6 py-3 border-b border-gray-100 flex justify-between items-center">
+                        <span class="font-bold text-[#003366] text-sm italic">Fase 4: Actuación - Asincronía y Servicios</span>
+                        <span class="text-[10px] bg-[#003366] text-white px-2 py-1 rounded-md font-bold">SEM 4</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-16 text-[10px] font-bold text-gray-400 uppercase text-center">30 Mar - 03 Abr</div>
+                            <div class="text-sm text-gray-600">
+                                <strong>Optimización UX:</strong> Implementación de AJAX y JSON para actualizaciones en tiempo real.<br>
+                                <span class="text-[#00aaff] font-bold">Hito:</span> Eliminación total de recargas de página en el módulo de búsqueda.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="border border-gray-100 rounded-2xl overflow-hidden">
+                    <div class="bg-green-50 px-6 py-3 border-b border-gray-100 flex justify-between items-center">
+                        <span class="font-bold text-green-800 text-sm italic">Fase 5: Comunicación y Mejora continua</span>
+                        <span class="text-[10px] bg-green-600 text-white px-2 py-1 rounded-md font-bold">FINAL</span>
+                    </div>
+                    <div class="p-6 space-y-4">
+                        <div class="flex gap-4 items-center">
+                            <div class="w-16 text-[10px] font-bold text-gray-400 uppercase text-center">06 - 08 Abr</div>
+                            <div class="text-sm text-gray-600">
+                                <strong>Socialización:</strong> Demostración del proyecto. Co-evaluación grupal y reflexión metacognitiva sobre el proceso.<br>
+                                <span class="text-green-600 font-bold">Cierre:</span> Entrega de portafolio de evidencias final.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="overflow-hidden border border-gray-200 rounded-3xl">
-                <table class="w-full text-left text-xs">
-                    <thead class="bg-gray-50 text-[#003366] font-black uppercase">
-                        <tr>
-                            <th class="p-4">Criterio</th>
-                            <th class="p-4">Nivel Resolutivo</th>
-                            <th class="p-4">Nivel Estratégico</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100">
-                        <tr>
-                            <td class="p-4 font-bold">Lógica PHP-POO</td>
-                            <td class="p-4">Crea clases y métodos básicos para la gestión de datos.</td>
-                            <td class="p-4 bg-blue-50/30">Optimiza algoritmos y aplica herencia para una arquitectura escalable.</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-bold">Integración AJAX</td>
-                            <td class="p-4">Realiza consultas asíncronas simples.</td>
-                            <td class="p-4 bg-blue-50/30">Gestiona estados de carga y errores de red mediante JSON.</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="mt-12 bg-gray-50 p-8 rounded-3xl border border-gray-200">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest mb-6">Matriz de Evaluación Socioformativa</h4>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center mr-4 text-gray-400"><i class="fas fa-info"></i></div>
+                        <div>
+                            <h5 class="text-xs font-bold uppercase text-gray-400">Nivel Receptivo</h5>
+                            <p class="text-sm text-gray-600">Identifica los conceptos de PHP y Bases de datos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center p-4 bg-white rounded-xl shadow-sm border border-gray-100">
+                        <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4 text-[#00aaff]"><i class="fas fa-check"></i></div>
+                        <div>
+                            <h5 class="text-xs font-bold uppercase text-[#00aaff]">Nivel Resolutivo</h5>
+                            <p class="text-sm text-gray-600">Desarrolla el CRUD funcional que resuelve el problema de persistencia.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-4 bg-[#003366] rounded-xl shadow-lg border border-[#003366]">
+                        <div class="w-10 h-10 rounded-full bg-[#00aaff] flex items-center justify-center mr-4 text-white"><i class="fas fa-trophy"></i></div>
+                        <div>
+                            <h5 class="text-xs font-bold uppercase text-[#00aaff]">Nivel Estratégico (Élite)</h5>
+                            <p class="text-sm text-white">Aplica patrones de diseño, optimiza la carga asíncrona y documenta éticamente su código.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="text-center p-4 border border-dashed border-gray-300 rounded-xl">
+                        <i class="fas fa-users text-gray-400 mb-2"></i>
+                        <h6 class="text-[10px] font-bold uppercase">Co-evaluación</h6>
+                        <p class="text-[10px] text-gray-500">Feedback entre pares para mejora del código.</p>
+                    </div>
+                    <div class="text-center p-4 border border-dashed border-gray-300 rounded-xl">
+                        <i class="fas fa-lightbulb text-gray-400 mb-2"></i>
+                        <h6 class="text-[10px] font-bold uppercase">Metacognición</h6>
+                        <p class="text-[10px] text-gray-500">Reflexión sobre el error como fuente de aprendizaje.</p>
+                    </div>
+                    <div class="text-center p-4 border border-dashed border-gray-300 rounded-xl">
+                        <i class="fas fa-search text-gray-400 mb-2"></i>
+                        <h6 class="text-[10px] font-bold uppercase">Investigación</h6>
+                        <p class="text-[10px] text-gray-500">Aporte de nuevas librerías al grupo Zotero.</p>
+                    </div>
+                </div>
             </div>
         </div>
     ` 
