@@ -524,18 +524,32 @@
 
             };
 
-            const menu = [
-                { name: 'Introducción', links: [
-                    { slug: 'inicio', label: 'Inicio', icon: 'fas fa-home' },
-                    { slug: 'docente', label: 'Docente', icon: 'fas fa-user-tie' }
-                ]},
-                { name: 'La Maleta', links: [
-                    { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel' },
-                    { slug: 'programa', label: 'Programa', icon: 'fas fa-book' },
-                    { slug: 'planificacion', label: 'Proyecto Formativo', icon: 'fas fa-book' }
-                    
-                ]}
-            ];
+ const menu = [
+    { 
+        name: 'Introducción', 
+        links: [
+            { slug: 'inicio', label: 'Inicio', icon: 'fas fa-home' },
+            { slug: 'docente', label: 'Docente', icon: 'fas fa-user-tie' }
+        ]
+    },
+    { 
+        name: 'La Maleta', 
+        links: [
+            { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel' },
+            { slug: 'programa', label: 'Programa', icon: 'fas fa-book' },
+            { slug: 'planificacion', label: 'Proyecto Formativo', icon: 'fas fa-calendar-alt' } 
+        ]
+    },
+    { 
+        name: 'Recursos de Aprendizaje', 
+        links: [
+            { slug: 'texto_guia', label: 'Texto Guía', icon: 'fas fa-book-open' },
+            { slug: 'presentaciones', label: 'Presentaciones', icon: 'fas fa-desktop' },
+            { slug: 'bibliografia', label: 'Bibliografía', icon: 'fas fa-quote-right' },
+            { slug: 'videos', label: 'Videos de Apoyo', icon: 'fas fa-play-circle' }
+        ]
+    }
+];
 
             const navigate = (slug) => {
                 const data = db[slug];
