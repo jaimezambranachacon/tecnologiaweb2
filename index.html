@@ -1,1 +1,189 @@
-hola mundo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDS | Plataforma de Contenidos</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        [v-cloak] { display: none; }
+        .active-link { background: #00aaff !important; color: white !important; font-weight: bold; }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+<div id="app" v-cloak class="flex min-h-screen relative">
+
+    <button @click="isMobileMenu = !isMobileMenu" class="lg:hidden fixed bottom-6 right-6 z-[60] bg-[#003366] text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center">
+        <i class="fas" :class="isMobileMenu ? 'fa-times' : 'fa-bars'"></i>
+    </button>
+
+    <aside :class="isMobileMenu ? 'translate-x-0' : '-translate-x-full'" 
+           class="fixed inset-y-0 left-0 z-50 w-72 bg-[#003366] text-blue-100 transition-transform duration-300 lg:translate-x-0 lg:static shadow-2xl">
+        
+        <div class="p-8 border-b border-blue-900 mb-4">
+            <h1 class="text-xl font-black text-[#00aaff]">TECNOLOGÍA WEB II</h1>
+            <p class="text-[10px] opacity-50 tracking-widest uppercase">Ecosistema Digital</p>
+        </div>
+
+        <nav class="px-4 pb-10">
+            <div v-for="cat in menu" :key="cat.name">
+                <p class="text-[10px] text-blue-400 font-bold uppercase mt-6 mb-2 px-3 tracking-tighter">{{ cat.name }}</p>
+                <div v-for="item in cat.links" :key="item.slug">
+                    <button @click="navigate(item.slug)" 
+                            :class="currentSlug === item.slug ? 'active-link' : 'hover:bg-blue-800'"
+                            class="w-full flex items-center px-4 py-2.5 my-1 rounded-lg text-sm transition-all duration-200">
+                        <i :class="item.icon" class="w-6 opacity-70"></i>
+                        {{ item.label }}
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="flex-1 bg-white h-screen overflow-y-auto">
+        
+        <div class="max-w-4xl mx-auto px-6 py-12 lg:py-20">
+            <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">
+                Maleta Didáctica / {{ currentCategory }}
+            </div>
+            
+            <h2 class="text-4xl lg:text-5xl font-black text-[#003366] mb-6 border-b-4 border-[#00aaff] inline-block">
+                {{ currentTitle }}
+            </h2>
+
+            <div class="mt-10 prose prose-lg prose-blue text-gray-600 leading-relaxed" v-html="currentBody">
+            </div>
+
+            <footer class="mt-20 pt-8 border-t text-xs text-gray-400">
+                Dr. Jaime Zambrana (Jimmy) • UPDS 2026
+            </footer>
+        </div>
+    </main>
+</div>
+
+<script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            const isMobileMenu = ref(false);
+            const currentSlug = ref('inicio');
+            const currentTitle = ref('');
+            const currentBody = ref('');
+            const currentCategory = ref('');
+
+            // AQUÍ AGREGAS TODA LA MATERIA. ES MUY FÁCIL CRECER DESDE AQUÍ.
+            const db = {
+                'inicio': { cat: 'General', title: 'Bienvenida', icon: 'fas fa-home', body: '<h3>Bienvenidos</h3><p>Contenido de inicio...</p>' },
+                'docente': { cat: 'General', title: 'Perfil Docente', icon: 'fas fa-user-tie', body: '<p>Soy el Dr. Jaime Zambrana...</p>' },
+                // ... dentro de tu const db = { ...
+
+'normas': {
+    cat: 'Reglamento',
+    title: 'Normas de la Asignatura',
+    icon: 'fas fa-gavel',
+    body: `
+<div class="space-y-8">
+    <p class="text-lg text-gray-600">Para garantizar un entorno de aprendizaje profesional y de alto nivel, nos regiremos bajo los siguientes lineamientos:</p>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-clock text-[#00aaff] text-xl mr-3"></i>
+                <h4 class="font-bold text-[#003366] uppercase tracking-tight">Puntualidad</h4>
+            </div>
+            <p class="text-sm text-gray-600">El ingreso es a las <strong>12:30</strong>. La puntualidad refleja respeto por el tiempo del grupo y compromiso con tu formación profesional.</p>
+        </div>
+
+        <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-comments text-[#00aaff] text-xl mr-3"></i>
+                <h4 class="font-bold text-[#003366] uppercase tracking-tight">Saludo y Cordialidad</h4>
+            </div>
+            <p class="text-sm text-gray-600">Un saludo al ingresar (presencial o virtual) fortalece el clima del aula. La cordialidad es la base del trabajo colaborativo.</p>
+        </div>
+
+        <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-bolt text-[#00aaff] text-xl mr-3"></i>
+                <h4 class="font-bold text-[#003366] uppercase tracking-tight">Proactividad</h4>
+            </div>
+            <p class="text-sm text-gray-600">No esperes a que se te asigne una tarea. Toma la iniciativa en los laboratorios y busca optimizar tus soluciones técnicas.</p>
+        </div>
+
+        <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-search text-[#00aaff] text-xl mr-3"></i>
+                <h4 class="font-bold text-[#003366] uppercase tracking-tight">Investigación Activa</h4>
+            </div>
+            <p class="text-sm text-gray-600">Investiga nuevas tecnologías y compártelas. El aporte al grupo mediante <strong>Zotero</strong> o WhatsApp es parte de la evaluación.</p>
+        </div>
+
+        <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-handshake text-[#00aaff] text-xl mr-3"></i>
+                <h4 class="font-bold text-[#003366] uppercase tracking-tight">Respeto Mutuo</h4>
+            </div>
+            <p class="text-sm text-gray-600">Valoramos la diversidad de ideas. Escuchar y debatir con fundamentos técnicos es clave en nuestra metodología.</p>
+        </div>
+
+        <div class="p-6 border border-gray-100 rounded-2xl bg-gray-50 hover:shadow-md transition-shadow">
+            <div class="flex items-center mb-3">
+                <i class="fas fa-code text-[#00aaff] text-xl mr-3"></i>
+                <h4 class="font-bold text-[#003366] uppercase tracking-tight">Ética de Código</h4>
+            </div>
+            <p class="text-sm text-gray-600">El "Copy-Paste" sin comprensión no está permitido. Todo código externo debe ser referenciado y explicado por el autor.</p>
+        </div>
+
+    </div>
+
+    <div class="mt-10 p-6 bg-[#003366] text-white rounded-2xl text-center shadow-lg">
+        <p class="font-medium italic">"El éxito en la ingeniería web no es solo escribir código, es resolver problemas con integridad y proactividad."</p>
+    </div>
+</div>
+`
+},
+
+                'programa': { cat: 'Contenidos', title: 'Programa Analítico', icon: 'fas fa-book', body: '<p>Unidad 1: PHP Avanzado...</p>' },
+            };
+
+            const menu = [
+                { name: 'Introducción', links: [
+                    { slug: 'inicio', label: 'Inicio', icon: 'fas fa-home' },
+                    { slug: 'docente', label: 'Docente', icon: 'fas fa-user-tie' }
+                ]},
+                { name: 'La Maleta', links: [
+                    { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel' },
+                    { slug: 'programa', label: 'Programa', icon: 'fas fa-book' }
+                ]}
+            ];
+
+            const navigate = (slug) => {
+                const data = db[slug];
+                if(data) {
+                    currentSlug.value = slug;
+                    currentTitle.value = data.title;
+                    currentBody.value = data.body;
+                    currentCategory.value = data.cat;
+                    window.location.hash = slug; // Esto permite el link directo desde Moodle
+                }
+                isMobileMenu.value = false;
+            };
+
+            onMounted(() => {
+                // Leer el Hash al cargar (Para redirección desde Moodle)
+                const hash = window.location.hash.replace('#', '');
+                navigate(hash || 'inicio');
+            });
+
+            return { isMobileMenu, menu, currentSlug, currentTitle, currentBody, currentCategory, navigate };
+        }
+    }).mount('#app');
+</script>
+
+</body>
+</html>
