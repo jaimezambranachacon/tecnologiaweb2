@@ -229,6 +229,94 @@
     `
 },
 
+'planificacion': { 
+    cat: 'Estrategia', 
+    title: 'Planificación Socioformativa', 
+    icon: 'fas fa-map-signs', 
+    body: `
+        <div class="space-y-10">
+            <div class="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <h4 class="text-[#003366] font-black uppercase text-xs tracking-widest mb-1">Proyecto Formativo</h4>
+                        <h3 class="text-2xl font-bold text-gray-800">"Sincronía Aérea: Backend de Alta Disponibilidad"</h3>
+                    </div>
+                    <div class="bg-[#00aaff] text-white px-4 py-1 rounded-full text-[10px] font-black uppercase">20 Sesiones</div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="space-y-2">
+                        <p><strong><i class="fas fa-bullseye text-[#00aaff] mr-2"></i> Problema de Contexto:</strong> La latencia en la actualización de reservas de vuelos genera duplicidad de ventas y pérdida de confianza del usuario en la aerolínea BOA.</p>
+                    </div>
+                    <div class="space-y-2">
+                        <p><strong><i class="fas fa-trophy text-[#00aaff] mr-2"></i> Evidencia Final:</strong> Aplicación Web Full-Stack (PHP-POO + MySQL + AJAX) que gestione vuelos en tiempo real.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2">Fases de Ejecución</h4>
+                
+                <div class="flex gap-6 items-start">
+                    <div class="flex-none w-12 h-12 bg-blue-100 text-[#003366] rounded-full flex items-center justify-center font-black">01</div>
+                    <div class="flex-1">
+                        <h5 class="font-bold text-gray-800 uppercase text-sm">Direccionamiento y Organización</h5>
+                        <p class="text-xs text-gray-500 mt-1">Acuerdo del plan de trabajo y análisis del reto. Diagnóstico de conocimientos previos en PHP y lógica de programación.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 items-start">
+                    <div class="flex-none w-12 h-12 bg-blue-100 text-[#003366] rounded-full flex items-center justify-center font-black">02</div>
+                    <div class="flex-1">
+                        <h5 class="font-bold text-gray-800 uppercase text-sm">Planeación (Saber Conocer)</h5>
+                        <p class="text-xs text-gray-500 mt-1">Diseño de la arquitectura del sistema. Modelado de base de datos MySQL y definición de clases bajo el paradigma POO.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 items-start">
+                    <div class="flex-none w-12 h-12 bg-[#003366] text-[#00aaff] rounded-full flex items-center justify-center font-black shadow-lg">03</div>
+                    <div class="flex-1">
+                        <h5 class="font-bold text-gray-800 uppercase text-sm">Actuación (Saber Hacer)</h5>
+                        <p class="text-xs text-gray-500 mt-1">Desarrollo iterativo: Implementación del CRUD, seguridad de usuarios y la integración asíncrona mediante AJAX y JSON.</p>
+                    </div>
+                </div>
+
+                <div class="flex gap-6 items-start">
+                    <div class="flex-none w-12 h-12 bg-blue-100 text-[#003366] rounded-full flex items-center justify-center font-black">04</div>
+                    <div class="flex-1">
+                        <h5 class="font-bold text-gray-800 uppercase text-sm">Comunicación y Mejora</h5>
+                        <p class="text-xs text-gray-500 mt-1">Socialización del proyecto. Evaluación entre pares y co-evaluación basada en niveles de desempeño (Estratégico).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-hidden border border-gray-200 rounded-3xl">
+                <table class="w-full text-left text-xs">
+                    <thead class="bg-gray-50 text-[#003366] font-black uppercase">
+                        <tr>
+                            <th class="p-4">Criterio</th>
+                            <th class="p-4">Nivel Resolutivo</th>
+                            <th class="p-4">Nivel Estratégico</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-100">
+                        <tr>
+                            <td class="p-4 font-bold">Lógica PHP-POO</td>
+                            <td class="p-4">Crea clases y métodos básicos para la gestión de datos.</td>
+                            <td class="p-4 bg-blue-50/30">Optimiza algoritmos y aplica herencia para una arquitectura escalable.</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold">Integración AJAX</td>
+                            <td class="p-4">Realiza consultas asíncronas simples.</td>
+                            <td class="p-4 bg-blue-50/30">Gestiona estados de carga y errores de red mediante JSON.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    ` 
+},
+
             };
 
             const menu = [
@@ -239,6 +327,8 @@
                 { name: 'La Maleta', links: [
                     { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel' },
                     { slug: 'programa', label: 'Programa', icon: 'fas fa-book' }
+                    { slug: 'planificacion', label: 'Proeyecto Formativo', icon: 'fas fa-book' }
+                    
                 ]}
             ];
 
