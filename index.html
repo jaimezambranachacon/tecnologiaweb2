@@ -384,6 +384,144 @@
     ` 
 },
 
+
+// ==========================================
+// 1. TEXTO GUÍA (Estructura Incremental)
+// ==========================================
+'texto_guia': {
+    cat: 'Recursos Propios',
+    title: 'Texto Guía de la Asignatura',
+    icon: 'fas fa-book-open',
+    html: `
+        <div class="space-y-12">
+            <p class="text-gray-600 leading-relaxed">Este es un compendio dinámico desarrollado específicamente para <strong>Tecnología Web II</strong>. Se recomienda seguir el orden de niveles para garantizar la comprensión del paradigma POO.</p>
+            
+            <section class="border-l-4 border-gray-200 pl-6 space-y-4">
+                <h4 class="text-[#003366] font-black uppercase text-sm tracking-widest">Nivel 1: El Servidor y PHP Puro</h4>
+                <div class="bg-gray-50 p-6 rounded-2xl">
+                    <p class="text-sm text-gray-700">Fundamentos de arquitectura cliente/servidor. Instalación de entornos y sintaxis básica. Manejo de variables, tipos de datos y estructuras de control.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="bg-white px-3 py-1 rounded-md text-[10px] font-bold border border-gray-200 uppercase">Sintaxis</span>
+                        <span class="bg-white px-3 py-1 rounded-md text-[10px] font-bold border border-gray-200 uppercase">Variables</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="border-l-4 border-[#00aaff] pl-6 space-y-4">
+                <h4 class="text-[#003366] font-black uppercase text-sm tracking-widest">Nivel 2: Paradigma de Objetos</h4>
+                <div class="bg-blue-50/30 p-6 rounded-2xl">
+                    <p class="text-sm text-gray-700">El salto a la programación profesional. Clases, objetos, métodos, propiedades, herencia y encapsulamiento aplicado al backend.</p>
+                </div>
+            </section>
+
+            <section class="border-l-4 border-[#003366] pl-6 space-y-4">
+                <h4 class="text-[#003366] font-black uppercase text-sm tracking-widest">Nivel 3: Persistencia y AJAX</h4>
+                <div class="bg-[#003366]/5 p-6 rounded-2xl">
+                    <p class="text-sm text-gray-700">Conectividad con MySQL, seguridad de datos, generación de JSON y consumo asíncrono mediante AJAX para interfaces fluidas.</p>
+                </div>
+            </section>
+
+            <div class="flex justify-center pt-6">
+                <div class="border-2 border-dashed border-gray-200 p-4 rounded-2xl text-gray-300 text-xs uppercase font-bold">
+                    [ Aquí puedes agregar el Nivel 4 conforme crezca la materia ]
+                </div>
+            </div>
+        </div>
+    `
+},
+
+// ==========================================
+// 2. PRESENTACIONES (Didáctica y Slides)
+// ==========================================
+'presentaciones': {
+    cat: 'Material Visual',
+    title: 'Presentaciones y Slides',
+    icon: 'fas fa-chalkboard-teacher',
+    html: `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-6 border border-gray-100 rounded-3xl bg-white shadow-sm">
+                <i class="fas fa-desktop text-2xl text-[#00aaff] mb-4"></i>
+                <h5 class="font-bold text-[#003366] text-sm uppercase mb-2">Introducción a PHP POO</h5>
+                <p class="text-xs text-gray-500 mb-4">Presentación clásica sobre los pilares de la programación orientada a objetos.</p>
+                <a href="https://www.slideshare.net/" target="_blank" class="text-[10px] font-black text-[#00aaff] uppercase tracking-widest hover:underline">Ver en SlideShare →</a>
+            </div>
+
+            <div class="p-6 border border-gray-100 rounded-3xl bg-white shadow-sm">
+                <i class="fas fa-database text-2xl text-[#00aaff] mb-4"></i>
+                <h5 class="font-bold text-[#003366] text-sm uppercase mb-2">MySQL y Seguridad</h5>
+                <p class="text-xs text-gray-500 mb-4">Diapositivas sobre la optimización de consultas y protección contra SQL Injection.</p>
+                <a href="https://es.scribd.com/" target="_blank" class="text-[10px] font-black text-[#00aaff] uppercase tracking-widest hover:underline">Ver en Scribd →</a>
+            </div>
+        </div>
+    `
+},
+
+// ==========================================
+// 3. BIBLIOGRAFÍA (Norma APA 7ma Edición)
+// ==========================================
+'bibliografia': {
+    cat: 'Académico',
+    title: 'Fuentes de Información',
+    icon: 'fas fa-bookmark',
+    html: `
+        <div class="space-y-6">
+            <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest mb-4">Bibliografía Oficial (APA)</h4>
+            
+            <div class="space-y-4">
+                <div class="p-4 bg-gray-50 rounded-xl flex gap-4 items-start">
+                    <i class="fas fa-book text-gray-400 mt-1"></i>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong>Beati, H. (2016).</strong> <em>PHP: Creación de páginas Web dinámicas</em> (2a ed.). Alfaomega. 
+                        <a href="https://www.alfaomega.com.mx/" class="text-[#00aaff] ml-1">[Link Editorial]</a>
+                    </p>
+                </div>
+
+                <div class="p-4 bg-gray-50 rounded-xl flex gap-4 items-start">
+                    <i class="fas fa-book text-gray-400 mt-1"></i>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong>Rodríguez de la Fuente, S., & Pérez, F. (2009).</strong> <em>Programación de Aplicaciones Web.</em> Paraninfo.
+                    </p>
+                </div>
+
+                <div class="p-4 bg-gray-50 rounded-xl flex gap-4 items-start">
+                    <i class="fas fa-globe text-gray-400 mt-1"></i>
+                    <p class="text-xs text-gray-600 leading-relaxed">
+                        <strong>PHP Group. (2026).</strong> <em>Documentación oficial de PHP.</em> Recuperado de <a href="https://www.php.net/manual/es/" class="text-[#00aaff]">https://www.php.net/manual/es/</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    `
+},
+
+// ==========================================
+// 4. VIDEOS (Compilación Dinámica)
+// ==========================================
+'videos': {
+    cat: 'Multimedia',
+    title: 'Galería de Videos de Apoyo',
+    icon: 'fas fa-play-circle',
+    html: `
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-3">
+                <div class="aspect-video bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200">
+                    <i class="fab fa-youtube text-4xl text-gray-300"></i>
+                </div>
+                <h5 class="font-bold text-sm text-[#003366] uppercase">Masterclass: PHP Orientado a Objetos</h5>
+                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Duración: 15 min</p>
+            </div>
+
+            <div class="space-y-3">
+                <div class="aspect-video bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200">
+                    <i class="fab fa-youtube text-4xl text-gray-300"></i>
+                </div>
+                <h5 class="font-bold text-sm text-[#003366] uppercase">AJAX y JSON en 10 minutos</h5>
+                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Duración: 10 min</p>
+            </div>
+        </div>
+    `
+}
+
             };
 
             const menu = [
@@ -394,7 +532,7 @@
                 { name: 'La Maleta', links: [
                     { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel' },
                     { slug: 'programa', label: 'Programa', icon: 'fas fa-book' },
-                    { slug: 'planificacion', label: 'Proeyecto Formativo', icon: 'fas fa-book' }
+                    { slug: 'planificacion', label: 'Proyecto Formativo', icon: 'fas fa-book' }
                     
                 ]}
             ];
