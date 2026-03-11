@@ -57,6 +57,7 @@
             <div class="mt-10 prose prose-lg prose-blue text-gray-600 leading-relaxed" v-html="currentBody">
             </div>
 
+
             <footer class="mt-20 pt-8 border-t text-xs text-gray-400">
                 Bolivia - 2026
             </footer>
@@ -510,87 +511,62 @@
 // 2. PRESENTACIONES (Didáctica y Slides)
 // ==========================================
 'presentaciones': {
-    cat: 'Recursos Técnicos',
-    title: 'Documentación y Presentaciones',
+    cat: 'Recursos Visuales',
+    title: 'Presentaciones y Guías Técnicas',
     icon: 'fas fa-desktop',
-    html: `
+    body: `
         <div class="space-y-12">
-            <p class="text-gray-600">Acceso directo a las fuentes oficiales de consulta y material visual de apoyo para el dominio de las tecnologías del módulo.</p>
+            <p class="text-gray-600">Acceso centralizado a la documentación oficial y material visual para el dominio de las tecnologías del lado del servidor.</p>
 
-            <section class="space-y-4">
+            <section class="space-y-6">
                 <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fab fa-html5 mr-2 text-[#e34f26]"></i> Maquetación y Estilos
+                    <i class="fas fa-bookmark mr-2 text-[#00aaff]"></i> Documentación de Referencia
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-orange-50 transition-all flex items-center group">
-                        <i class="fas fa-file-code text-gray-300 group-hover:text-[#e34f26] mr-4 text-xl"></i>
+                        <i class="fab fa-html5 text-gray-300 group-hover:text-[#e34f26] mr-4 text-xl"></i>
                         <div>
-                            <span class="block text-xs font-bold text-[#003366]">MDN Web Docs: HTML5</span>
-                            <span class="text-[10px] text-gray-400">Documentación oficial y estándares.</span>
+                            <span class="block text-xs font-bold text-[#003366]">Estandar HTML5 & CSS3</span>
+                            <span class="text-[10px] text-gray-400 font-medium">Guías oficiales de MDN.</span>
                         </div>
                     </a>
-                    <a href="https://web.dev/learn/css/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-blue-50 transition-all flex items-center group">
-                        <i class="fab fa-css3-alt text-gray-300 group-hover:text-[#1572b6] mr-4 text-xl"></i>
-                        <div>
-                            <span class="block text-xs font-bold text-[#003366]">Learn CSS (web.dev)</span>
-                            <span class="text-[10px] text-gray-400">Guías modernas de Google.</span>
-                        </div>
-                    </a>
-                </div>
-            </section>
-
-            <section class="space-y-4">
-                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fas fa-server mr-2 text-[#00aaff]"></i> Programación y Datos
-                </h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <a href="https://www.php.net/manual/es/langref.php" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-indigo-50 transition-all flex items-center group">
+                    <a href="https://www.php.net/manual/es/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-indigo-50 transition-all flex items-center group">
                         <i class="fab fa-php text-gray-300 group-hover:text-[#777bb4] mr-4 text-2xl"></i>
                         <div>
-                            <span class="block text-xs font-bold text-[#003366]">Manual de Referencia PHP</span>
-                            <span class="text-[10px] text-gray-400">Sintaxis y funciones oficiales.</span>
-                        </div>
-                    </a>
-                    <a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-blue-50 transition-all flex items-center group">
-                        <i class="fas fa-database text-gray-300 group-hover:text-[#00758f] mr-4 text-xl"></i>
-                        <div>
-                            <span class="block text-xs font-bold text-[#003366]">MySQL 8.0 Reference</span>
-                            <span class="text-[10px] text-gray-400">Optimización y consultas SQL.</span>
+                            <span class="block text-xs font-bold text-[#003366]">Manual Oficial de PHP</span>
+                            <span class="text-[10px] text-gray-400 font-medium">Referencia de funciones y POO.</span>
                         </div>
                     </a>
                 </div>
             </section>
 
-            <section class="space-y-4">
+            
+
+            <section class="space-y-6">
                 <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fas fa-images mr-2 text-[#00aaff]"></i> Diapositivas y Guías Visuales
+                    <i class="fas fa-images mr-2 text-[#00aaff]"></i> Plataformas de Diapositivas
                 </h4>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow">
-                        <i class="fas fa-clone text-gray-400 mb-3 block"></i>
-                        <h5 class="text-[11px] font-black uppercase text-[#003366] mb-2">SlideShare</h5>
-                        <p class="text-[10px] text-gray-500 mb-4">Presentaciones clásicas de PHP y MySQL.</p>
-                        <a href="https://www.slideshare.net/search?q=php+mysql+poo" target="_blank" class="bg-white px-4 py-2 rounded-lg text-[9px] font-bold text-[#00aaff] border border-blue-100 uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">Explorar</a>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow">
-                        <i class="fas fa-layer-group text-gray-400 mb-3 block"></i>
-                        <h5 class="text-[11px] font-black uppercase text-[#003366] mb-2">Speaker Deck</h5>
-                        <p class="text-[10px] text-gray-500 mb-4">Slides modernas de arquitectura web.</p>
-                        <a href="https://speakerdeck.com/search?q=web+development+php" target="_blank" class="bg-white px-4 py-2 rounded-lg text-[9px] font-bold text-[#00aaff] border border-blue-100 uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">Explorar</a>
-                    </div>
-                    <div class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow">
-                        <i class="fas fa-graduation-cap text-gray-400 mb-3 block"></i>
-                        <h5 class="text-[11px] font-black uppercase text-[#003366] mb-2">Tutoriales Rápidos</h5>
-                        <p class="text-[10px] text-gray-500 mb-4">Referencias rápidas de consulta diaria.</p>
-                        <a href="https://www.w3schools.com/" target="_blank" class="bg-white px-4 py-2 rounded-lg text-[9px] font-bold text-[#00aaff] border border-blue-100 uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">Explorar</a>
-                    </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <a href="https://www.slideshare.net/search?q=php+mysql+poo" target="_blank" class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow group">
+                        <i class="fas fa-clone text-gray-300 group-hover:text-[#00aaff] mb-3 block text-2xl"></i>
+                        <h5 class="text-[10px] font-black uppercase text-[#003366]">SlideShare</h5>
+                        <p class="text-[9px] text-gray-500 mt-2 italic">Presentaciones Clásicas</p>
+                    </a>
+                    <a href="https://speakerdeck.com/search?q=web+development" target="_blank" class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow group">
+                        <i class="fas fa-layer-group text-gray-300 group-hover:text-[#00aaff] mb-3 block text-2xl"></i>
+                        <h5 class="text-[10px] font-black uppercase text-[#003366]">Speaker Deck</h5>
+                        <p class="text-[9px] text-gray-500 mt-2 italic">Slides de Ingeniería</p>
+                    </a>
+                    <a href="https://www.w3schools.com/" target="_blank" class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow group">
+                        <i class="fas fa-graduation-cap text-gray-300 group-hover:text-[#00aaff] mb-3 block text-2xl"></i>
+                        <h5 class="text-[10px] font-black uppercase text-[#003366]">Tutoriales</h5>
+                        <p class="text-[9px] text-gray-500 mt-2 italic">Consulta Rápida</p>
+                    </a>
                 </div>
             </section>
 
-            <div class="p-6 bg-[#003366] rounded-3xl text-center border-b-4 border-b-[#00aaff]">
-                <p class="text-white text-xs font-medium italic">
-                    "Un ingeniero no lo sabe todo, pero sabe exactamente dónde encontrar la documentación oficial."
-                </p>
+            <div class="p-6 bg-[#003366] rounded-3xl text-center shadow-lg">
+                <p class="text-white text-xs font-medium italic">"Un ingeniero de élite domina la búsqueda en las fuentes oficiales de la industria."</p>
             </div>
         </div>
     `
@@ -603,88 +579,85 @@
     cat: 'Académico',
     title: 'Bibliografía y Referencias',
     icon: 'fas fa-bookmark',
-    html: `
-        <div class="space-y-10">
-            <p class="text-gray-600 text-lg">Fuentes de información oficiales y complementarias para el dominio del desarrollo Backend y la arquitectura web.</p>
+    body: `
+        <div class="space-y-12">
+            <p class="text-gray-600 text-lg">Fuentes de información fundamentales para el respaldo científico y técnico de tus proyectos de desarrollo.</p>
 
             <section class="space-y-6">
                 <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fas fa-book mr-2 text-[#00aaff]"></i> Textos Guía Sugeridos
+                    <i class="fas fa-book mr-2 text-[#00aaff]"></i> Libros Base y Consultas
                 </h4>
                 
                 <div class="space-y-4">
-                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 flex gap-5 items-start">
-                        <div class="hidden sm:flex w-12 h-12 bg-white rounded-lg shadow-sm items-center justify-center text-[#003366] flex-none">
-                            <i class="fas fa-atlas text-xl"></i>
+                    <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex gap-6 items-start hover:bg-white hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-[#003366] text-white rounded-xl flex items-center justify-center flex-none shadow-lg">
+                            <i class="fas fa-atlas"></i>
                         </div>
                         <div class="text-xs text-gray-600 leading-relaxed">
-                            <span class="block font-bold text-[#003366] mb-1">BIBLIOGRAFÍA OFICIAL UPDS</span>
-                            <strong>Beati, H. (2016).</strong> <em>PHP: Creación de páginas Web dinámicas</em> (2a ed.). Alfaomega Grupo Editor. 
-                            <div class="mt-2 flex gap-3">
-                                <a href="https://www.alfaomega.com.mx/" target="_blank" class="text-[#00aaff] font-bold hover:underline italic">Consultar Editorial</a>
+                            <span class="block font-bold text-[#003366] mb-1 uppercase tracking-tighter">Texto Oficial UPDS</span>
+                            <strong>Beati, H. (2016).</strong> <em>PHP: Creación de páginas Web dinámicas</em> (2a ed.). Alfaomega Grupo Editor.
+                            <div class="mt-2">
+                                <a href="https://www.alfaomega.com.mx/" target="_blank" class="text-[#00aaff] font-bold hover:underline italic">Sitio de la Editorial</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 flex gap-5 items-start">
-                        <div class="hidden sm:flex w-12 h-12 bg-white rounded-lg shadow-sm items-center justify-center text-[#003366] flex-none">
-                            <i class="fas fa-laptop-code text-xl"></i>
+                    <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex gap-6 items-start hover:bg-white hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-[#003366] text-white rounded-xl flex items-center justify-center flex-none shadow-lg">
+                            <i class="fas fa-code-branch"></i>
                         </div>
                         <div class="text-xs text-gray-600 leading-relaxed">
-                            <strong>Rodríguez de la Fuente, S., & Pérez, F. (2009).</strong> <em>Programación de Aplicaciones Web.</em> Ed. Paraninfo.
-                            <div class="mt-2 text-[10px] text-gray-400 font-bold uppercase tracking-widest">Enfoque: Arquitectura Cliente/Servidor</div>
+                            <strong>Rodríguez de la Fuente, S., & Pérez, F. (2009).</strong> <em>Programación de Aplicaciones Web.</em> Thompson - Ed. Paraninfo.
+                            <p class="mt-2 text-[10px] text-gray-400 font-bold uppercase">Enfoque: Arquitectura Cliente/Servidor</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 bg-gray-50 rounded-2xl border border-gray-100 flex gap-6 items-start hover:bg-white hover:shadow-md transition-all">
+                        <div class="w-12 h-12 bg-[#003366] text-white rounded-xl flex items-center justify-center flex-none shadow-lg">
+                            <i class="fas fa-sync-alt"></i>
+                        </div>
+                        <div class="text-xs text-gray-600 leading-relaxed">
+                            <strong>Patel, S. K. (2014).</strong> <em>Developing Responsive Web Applications with AJAX and jQuery.</em> Packt Publishing.
                         </div>
                     </div>
                 </div>
             </section>
 
-            
+            [Image of a professional library of computer science books with a focus on web architecture]
 
             <section class="space-y-6">
                 <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fas fa-globe mr-2 text-[#00aaff]"></i> Documentación de Referencia
+                    <i class="fas fa-globe mr-2 text-[#00aaff]"></i> Documentación y Estándares
                 </h4>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <a href="https://www.php.net/manual/es/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:border-[#00aaff] hover:bg-blue-50 transition-all flex items-center justify-between group">
-                        <div class="flex items-center">
-                            <i class="fab fa-php text-2xl text-gray-300 group-hover:text-[#003366] mr-4"></i>
-                            <span class="text-xs font-bold text-gray-500 group-hover:text-[#003366]">Manual Oficial de PHP</span>
-                        </div>
-                        <i class="fas fa-external-link-alt text-[10px] text-gray-300"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bold">
+                    <a href="https://www.php.net/manual/es/" target="_blank" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-indigo-50 hover:text-[#003366] transition-colors border border-gray-100">
+                        <i class="fab fa-php text-xl mr-3 opacity-30"></i> Manual Oficial de PHP (Español)
                     </a>
-
-                    <a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:border-[#00aaff] hover:bg-blue-50 transition-all flex items-center justify-between group">
-                        <div class="flex items-center">
-                            <i class="fas fa-database text-xl text-gray-300 group-hover:text-[#003366] mr-4"></i>
-                            <span class="text-xs font-bold text-gray-500 group-hover:text-[#003366]">MySQL Documentation</span>
-                        </div>
-                        <i class="fas fa-external-link-alt text-[10px] text-gray-300"></i>
+                    <a href="https://dev.mysql.com/doc/" target="_blank" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-blue-50 hover:text-[#003366] transition-colors border border-gray-100">
+                        <i class="fas fa-database text-xl mr-3 opacity-30"></i> MySQL Reference Manual
                     </a>
-
-                    <a href="https://developer.mozilla.org/es/docs/Web/Guide/AJAX" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:border-[#00aaff] hover:bg-blue-50 transition-all flex items-center justify-between group">
-                        <div class="flex items-center">
-                            <i class="fab fa-firefox-browser text-xl text-gray-300 group-hover:text-[#003366] mr-4"></i>
-                            <span class="text-xs font-bold text-gray-500 group-hover:text-[#003366]">Guía AJAX (MDN)</span>
-                        </div>
-                        <i class="fas fa-external-link-alt text-[10px] text-gray-300"></i>
+                    <a href="https://developer.mozilla.org/es/docs/Web/Guide/AJAX" target="_blank" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-orange-50 hover:text-[#003366] transition-colors border border-gray-100">
+                        <i class="fas fa-bolt text-xl mr-3 opacity-30"></i> Guía de AJAX (MDN Web Docs)
+                    </a>
+                    <a href="https://www.w3schools.com/php/" target="_blank" class="flex items-center p-4 bg-gray-50 rounded-xl hover:bg-green-50 hover:text-[#003366] transition-colors border border-gray-100">
+                        <i class="fas fa-graduation-cap text-xl mr-3 opacity-30"></i> Tutoriales PHP/SQL (W3Schools)
                     </a>
                 </div>
             </section>
 
-            <div class="bg-[#003366] p-8 rounded-3xl text-white shadow-lg overflow-hidden relative">
-                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
-                    <div class="bg-white text-[#003366] w-14 h-14 rounded-full flex items-center justify-center font-black text-3xl shadow-lg">Z</div>
+            <div class="p-8 bg-[#003366] rounded-3xl text-white shadow-xl relative overflow-hidden">
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-none bg-white text-[#003366] w-16 h-16 rounded-2xl flex items-center justify-center font-black text-3xl shadow-lg">Z</div>
                     <div class="flex-1 text-center md:text-left">
-                        <h5 class="text-[#00aaff] font-black uppercase text-[10px] tracking-widest mb-1">Repositorio Colaborativo</h5>
-                        <h4 class="text-xl font-bold mb-2">Grupo de Bibliografía en Zotero</h4>
-                        <p class="text-blue-100 text-xs leading-relaxed">Únete a nuestra biblioteca digital para acceder a papers y manuales técnicos específicos del módulo.</p>
+                        <h5 class="text-[#00aaff] font-black uppercase text-[10px] tracking-widest mb-1">Repositorio Bibliográfico</h5>
+                        <h4 class="text-xl font-bold mb-2">Grupo en Zotero: Programación Web</h4>
+                        <p class="text-blue-100 text-xs leading-relaxed">Invitamos a los estudiantes a sincronizar sus investigaciones en nuestro repositorio colaborativo de papers y manuales.</p>
                     </div>
-                    <a href="https://www.zotero.org/groups/6281310/programacionweb" target="_blank" class="bg-white text-[#003366] px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">
+                    <a href="https://www.zotero.org/groups/6281310/programacionweb" target="_blank" class="bg-white text-[#003366] px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-all shadow-md">
                         Abrir Zotero
                     </a>
                 </div>
-                <i class="fas fa-quote-left absolute -left-4 -bottom-4 text-white/5 text-8xl"></i>
             </div>
         </div>
     `
@@ -695,85 +668,59 @@
 // ==========================================
 'videos': {
     cat: 'Multimedia',
-    title: 'Galería de Videos de Apoyo',
+    title: 'Videoteca de Ingeniería Web',
     icon: 'fas fa-play-circle',
-    html: `
+    body: `
         <div class="space-y-12">
-            <p class="text-gray-600">Recopilación de recursos audiovisuales de alta calidad para profundizar en el desarrollo Full-Stack y habilidades complementarias.</p>
+            <p class="text-gray-600">Recopilación de contenido audiovisual estratégico para complementar la formación técnica y profesional.</p>
 
             <section class="space-y-6">
                 <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fas fa-server mr-2 text-[#00aaff]"></i> Lógica y Programación PHP
+                    <i class="fas fa-laptop-code mr-2 text-[#00aaff]"></i> Core Full-Stack & Backend
                 </h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="group">
                         <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
-                            <img src="https://img.youtube.com/vi/nOC7E7Tz96Q/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
+                            <img src="https://img.youtube.com/vi/nOC7E7Tz96Q/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-all duration-500">
                             <a href="https://www.youtube.com/watch?v=nOC7E7Tz96Q" target="_blank" class="absolute inset-0 flex items-center justify-center">
                                 <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
                             </a>
                         </div>
-                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">PHP desde cero: Sintaxis y Lógica</h5>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: HolaMundo</p>
+                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">Dominio de PHP 8.x</h5>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Lógica y Sintaxis Profesional</p>
                     </div>
                     <div class="group">
                         <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
-                            <img src="https://img.youtube.com/vi/mI6V6I0TfV0/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
+                            <img src="https://img.youtube.com/vi/mI6V6I0TfV0/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-all duration-500">
                             <a href="https://www.youtube.com/watch?v=mI6V6I0TfV0" target="_blank" class="absolute inset-0 flex items-center justify-center">
                                 <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
                             </a>
                         </div>
-                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">Introducción Real a la POO</h5>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: Píldoras Informáticas</p>
+                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">Pilares de la POO</h5>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Arquitectura de Clases y Objetos</p>
                     </div>
                 </div>
             </section>
 
-            <section class="space-y-6">
-                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
-                    <i class="fas fa-bolt mr-2 text-[#00aaff]"></i> Asincronía y Persistencia
-                </h4>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="group">
-                        <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
-                            <img src="https://img.youtube.com/vi/M7Zp7X9A3G4/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
-                            <a href="https://www.youtube.com/watch?v=M7Zp7X9A3G4" target="_blank" class="absolute inset-0 flex items-center justify-center">
-                                <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
-                            </a>
-                        </div>
-                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">Dominando AJAX y Fetch API</h5>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: FalconMasters</p>
-                    </div>
-                    <div class="group">
-                        <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
-                            <img src="https://img.youtube.com/vi/qY_3Fv9D6Xk/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
-                            <a href="https://www.youtube.com/watch?v=qY_3Fv9D6Xk" target="_blank" class="absolute inset-0 flex items-center justify-center">
-                                <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
-                            </a>
-                        </div>
-                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">MySQL: Diseño de Bases de Datos</h5>
-                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: FreeCodeCamp Español</p>
-                    </div>
-                </div>
-            </section>
+            
 
-            <section class="p-8 bg-[#003366] rounded-3xl text-white shadow-xl">
-                <div class="flex flex-col md:flex-row items-center gap-8">
+            <section class="p-8 bg-[#003366] rounded-3xl text-white shadow-xl relative overflow-hidden">
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
                     <div class="flex-1">
-                        <h4 class="text-[#00aaff] font-black uppercase text-xs tracking-widest mb-2">Habilidades Blandas e Idiomas</h4>
-                        <h3 class="text-2xl font-bold mb-4">Inglés para Programadores</h3>
+                        <h4 class="text-[#00aaff] font-black uppercase text-xs tracking-widest mb-2">Inglés para Programadores</h4>
+                        <h3 class="text-2xl font-bold mb-4 leading-tight">Accede al Mercado Global</h3>
                         <p class="text-blue-100 text-sm leading-relaxed mb-6">
-                            El código se escribe en inglés. Aprender la terminología técnica te permitirá acceder a la documentación oficial y a mejores oportunidades globales.
+                            El 90% de la documentación de vanguardia está en inglés. Dominar los términos técnicos te abre puertas a mejores sueldos y equipos internacionales.
                         </p>
-                        <a href="https://www.youtube.com/watch?v=mDscFf0X200" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#00aaff] rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-[#003366] transition-all">
+                        <a href="https://www.youtube.com/watch?v=mDscFf0X200" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#00aaff] rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-white hover:text-[#003366] transition-all">
                             <i class="fas fa-play mr-2"></i> Ver Tutorial de Inglés Técnico
                         </a>
                     </div>
-                    <div class="flex-none w-full md:w-64 aspect-video bg-blue-900 rounded-2xl flex items-center justify-center">
-                        <i class="fas fa-language text-5xl opacity-20"></i>
+                    <div class="hidden md:flex w-48 h-48 bg-blue-900/50 rounded-full items-center justify-center">
+                        <i class="fas fa-language text-6xl opacity-20"></i>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     `
 }
@@ -794,6 +741,16 @@
             { slug: 'programa', label: 'Programa', icon: 'fas fa-book' },
             { slug: 'cronograma_proyecto', label: 'Proyecto Formativo', icon: 'fas fa-calendar-alt' } ,
             { slug: 'texto_guia', label: 'Texto Guía', icon: 'fas fa-book-open' },
+            // --- ESTE ES TU NUEVO SUBMENÚ ESCALABLE ---
+            { 
+                name: 'Manual de Ingeniería (Texto Guía)', 
+                links: [
+                    { slug: 'tg_u1', label: 'Unidad 1: Fundamentos', icon: 'fas fa-code' },
+                    { slug: 'tg_u2', label: 'Unidad 2: POO Avanzado', icon: 'fas fa-cube' },
+                    { slug: 'tg_u3', label: 'Unidad 3: Persistencia', icon: 'fas fa-database' },
+                    // Aquí irás agregando: { slug: 'tg_u4', label: 'Unidad 4...', icon: '...' }
+                ]
+            },
             { slug: 'presentaciones', label: 'Presentaciones', icon: 'fas fa-desktop' },
             { slug: 'bibliografia', label: 'Bibliografía', icon: 'fas fa-quote-right' },
             { slug: 'videos', label: 'Videos de Apoyo', icon: 'fas fa-play-circle' }
