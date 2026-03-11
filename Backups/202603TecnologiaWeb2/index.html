@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPDS - Ingeniería Web II</title>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="./content/inicio.js"></script>
+    <script src="./content/normas.js"></script>
+    <script src="./content/programa.js"></script>
+    <script src="./content/cronograma.js"></script>
+    <script src="./content/texto_guia.js"></script>
+    <script src="./content/presentaciones.js"></script>
+    <script src="./content/bibliografia.js"></script>
+    <script src="./content/videos.js"></script>
+    <script src="./content/tg_u1.js"></script>
+    <script src="./content/tg_u2.js"></script>
+    <script src="./content/tg_u3.js"></script>
+    <script src="./content/tg_u4.js"></script>
+    <script src="./content/tg_u5.js"></script>
+    <script src="./content/tg_u6.js"></script>
+    <script src="./content/tg_u7.js"></script>
+    <script src="./content/tg_u8.js"></script>
+    <script src="./content/tg_u9.js"></script>
+    <script src="./content/tg_u10.js"></script>
+    <script src="./content/tg_u11.js"></script>
+    <script src="./content/tg_u12.js"></script>
+    <script src="./content/tg_u13.js"></script>
+    <script src="./content/tg_u14.js"></script>
+    <script src="./content/tg_u15.js"></script>
+
+    <style>
+        [v-cloak] { display: none; }
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #00aaff; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans antialiased text-slate-900">
+
+<div id="app" v-cloak class="flex min-h-screen relative">
+    
+    <aside class="w-72 bg-[#003366] text-white flex flex-col fixed inset-y-0 shadow-2xl z-50 transition-transform lg:translate-x-0 lg:static" :class="isMobile ? 'translate-x-0' : '-translate-x-full'">
+        <div class="p-8 border-b border-white/10">
+            <h1 class="text-xl font-black italic tracking-tighter uppercase text-[#00aaff]">Tecnologia Web II</h1>            
+        </div>
+
+        <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
+            <div v-for="section in menuStructure" :key="section.name">
+                <h3 class="text-[10px] font-black uppercase text-[#00aaff] tracking-widest mb-4 opacity-70">{{ section.name }}</h3>
+                <ul class="space-y-2">
+                    <li v-for="link in section.links" :key="link.slug">
+                        <button @click="navigate(link.slug)" 
+                                :class="['w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition-all', currentSlug === link.slug ? 'bg-[#00aaff] text-white shadow-lg' : 'hover:bg-white/5 text-gray-400']">
+                            <i :class="link.icon" class="w-5 text-center"></i>
+                            {{ link.label }}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-white">
+        <header class="h-16 border-b border-slate-100 flex items-center justify-between px-8 flex-none">
+            <button @click="isMobile = !isMobile" class="lg:hidden text-[#003366]"><i class="fas fa-bars"></i></button>
+            <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">DJ • 2026</div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-8 lg:p-16 custom-scrollbar">
+            <article class="max-w-4xl mx-auto">
+                <div v-if="currentBody" v-html="currentBody" class="animate-in fade-in duration-700"></div>
+                <div v-else class="text-center py-20 text-slate-300">
+                    <i class="fas fa-file-circle-question text-6xl mb-4"></i>
+                    <p class="font-bold">Selecciona un tema del menú</p>
+                </div>
+            </article>
+        </div>
+    </main>
+</div>
+
+[Image of a professional web documentation layout with a sidebar menu and main content area]
+
+<script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            const isMobile = ref(false);
+            const currentSlug = ref('inicio');
+            const currentBody = ref('');
+
+            // ESTRUCTURA DEL MENÚ: Solo editas esto para agregar temas
+            const menuStructure = [
+                { 
+                    name: 'Introducción', 
+                    links: [
+                        { slug: 'inicio', label: 'Bienvenida', icon: 'fas fa-home', content: typeof pag_inicio !== 'undefined' ? pag_inicio : 'No cargo inicio.js' },
+                        { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel', content: typeof pag_normas !== 'undefined' ? pag_normas : 'No cargo normas.js' },
+                        { slug: 'proyecto', label: 'Proyecto Formativo', icon: 'fas fa-project-diagram', content: typeof pag_proyecto !== 'undefined' ? pag_proyecto : 'No cargo proyecto.js' },
+                        { slug: 'programa', label: 'Programa', icon: 'fas fa-list', content: typeof pag_programa !== 'undefined' ? pag_programa : 'No cargo programa.js' },
+                        { slug: 'cronograma', label: 'Cronograma', icon: 'fas fa-calendar', content: typeof pag_cronograma !== 'undefined' ? pag_cronograma : 'No cargo cronograma.js' },                        
+                        { slug: 'presentaciones', label: 'Presentaciones', icon: 'fas fa-chalkboard-user', content: typeof pag_presentaciones !== 'undefined' ? pag_presentaciones : 'No cargo presentaciones.js' },
+                        { slug: 'bibliografia', label: 'Bibliografía', icon: 'fas fa-book-open', content: typeof pag_bibliografia !== 'undefined' ? pag_bibliografia : 'No cargo bibliografia.js' },
+                        { slug: 'videos', label: 'Videos', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargo videos.js' }
+
+                    ]
+                },
+                { 
+                    name: 'Contenido', 
+                    links: [
+                        { slug: 'texto_guia', label: 'Texto de Guía', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargo texto_guia.js' },
+                        { slug: 'tg_u1', label: 'Unidad 1: Fundamentos', icon: 'fas fa-code', content: typeof pag_tg_u1 !== 'undefined' ? pag_tg_u1 : 'No cargo tg_u1.js' },
+                        { slug: 'tg_u2', label: 'Unidad 2: Conceptos', icon: 'fas fa-code', content: typeof pag_tg_u2 !== 'undefined' ? pag_tg_u2 : 'No cargo tg_u2.js' },
+                        { slug: 'tg_u3', label: 'Unidad 3: Aplicaciones', icon: 'fas fa-code', content: typeof pag_tg_u3 !== 'undefined' ? pag_tg_u3 : 'No cargo tg_u3.js' },
+                        { slug: 'tg_u4', label: 'Unidad 4: Proyectos', icon: 'fas fa-code', content: typeof pag_tg_u4 !== 'undefined' ? pag_tg_u4 : 'No cargo tg_u4.js' },
+                        { slug: 'tg_u5', label: 'Unidad 5: Evaluación', icon: 'fas fa-code', content: typeof pag_tg_u5 !== 'undefined' ? pag_tg_u5 : 'No cargo tg_u5.js' },
+                        { slug: 'tg_u6', label: 'Unidad 6: Reflexión', icon: 'fas fa-code', content: typeof pag_tg_u6 !== 'undefined' ? pag_tg_u6 : 'No cargo tg_u6.js' },
+                        
+
+                            
+                     
+                    ]
+                }
+            ];
+
+
+
+
+            const navigate = (slug) => {
+                let found = null;
+                menuStructure.forEach(section => {
+                    const link = section.links.find(l => l.slug === slug);
+                    if(link) found = link;
+                });
+
+                if(found) {
+                    currentSlug.value = slug;
+                    currentBody.value = found.content;
+                    window.location.hash = slug;
+                }
+                isMobile.value = false;
+            };
+
+            onMounted(() => {
+                const hash = window.location.hash.replace('#', '');
+                navigate(hash || 'inicio');
+            });
+
+            return { isMobile, menuStructure, currentSlug, currentBody, navigate };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>
