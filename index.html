@@ -385,207 +385,341 @@
 // ==========================================
 // 1. TEXTO GUÍA (Estructura Incremental)
 // ==========================================
+
+// Actualiza la sección 'texto_guia' en tu const db = { ... }
+
 'texto_guia': {
     cat: 'Contenido Académico',
-    title: 'Manual de Ingeniería Web II',
+    title: 'Manual de Ingeniería Web Avanzada',
     icon: 'fas fa-book-open',
     html: `
-        <div class="space-y-12">
-            <div class="bg-gray-50 p-6 rounded-2xl border-l-4 border-[#003366]">
-                <p class="text-gray-600 text-sm leading-relaxed">
-                    Este texto guía es una construcción dinámica. Los conceptos aquí presentados están alineados al reto <strong>"Sincronía Aérea"</strong>, donde transformaremos la teoría en soluciones de backend escalables.
-                </p>
+<div class="space-y-16">
+    <header class="text-center max-w-2xl mx-auto">
+        <span class="text-[#00aaff] font-black uppercase text-[10px] tracking-[0.2em]">Módulos de Especialización</span>
+        <h3 class="text-3xl font-black text-[#003366] mt-2">Arquitectura y Persistencia</h3>
+        <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+            En esta etapa, dejamos de construir sitios web para desarrollar <strong>Sistemas de Información</strong>. Nos enfocaremos en la seguridad, la escalabilidad y la eficiencia en el intercambio de datos.
+        </p>
+    </header>
+
+    <section class="space-y-6">
+        <div class="flex items-center gap-4">
+            <div class="bg-[#003366] text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg font-black italic">P1</div>
+            <div>
+                <h4 class="text-xl font-black text-[#003366] uppercase">Persistencia Segura con PDO</h4>
+                <p class="text-xs text-gray-400">Unidad 5: Gestión de Datos Críticos</p>
+            </div>
+        </div>
+
+        <div class="pl-0 lg:pl-16 space-y-6">
+            <p class="text-sm text-gray-600 leading-relaxed">
+                El uso de <code class="bg-gray-100 px-2 py-0.5 rounded text-pink-600">mysqli</code> es funcional, pero para proyectos robustos usamos <strong>PDO (PHP Data Objects)</strong>. PDO permite abstracción de base de datos y, lo más importante, <strong>Sentencias Preparadas</strong>.
+            </p>
+
+            [Image of a diagram comparing traditional SQL queries versus SQL Prepared Statements for security]
+
+            <div class="bg-[#1e293b] p-6 rounded-2xl shadow-xl overflow-x-auto">
+                <div class="flex justify-between mb-4 border-b border-slate-700 pb-2">
+                    <span class="text-slate-400 text-[10px] font-mono uppercase">PHP: Conexión Segura</span>
+                    <span class="text-blue-400 text-[10px] font-mono">Database.php</span>
+                </div>
+                <pre class="text-xs font-mono leading-6">
+<span class="text-pink-400">&lt;?php</span>
+<span class="text-blue-300">class</span> <span class="text-yellow-400">Conexion</span> {
+    <span class="text-blue-300">private</span> <span class="text-slate-400">$pdo</span>;
+    
+    <span class="text-blue-300">public function</span> <span class="text-yellow-400">conectar</span>() {
+        <span class="text-blue-300">try</span> {
+            <span class="text-slate-400">$this->pdo</span> = <span class="text-blue-300">new</span> <span class="text-yellow-400">PDO</span>(<span class="text-green-400">"mysql:host=localhost;dbname=boa_db"</span>, <span class="text-green-400">"root"</span>, <span class="text-green-400">""</span>);
+            <span class="text-gray-500">// Forzar excepciones para detectar errores de ingeniería</span>
+            <span class="text-slate-400">$this->pdo-></span><span class="text-yellow-400">setAttribute</span>(PDO::<span class="text-blue-300">ATTR_ERRMODE</span>, PDO::<span class="text-blue-300">ERRMODE_EXCEPTION</span>);
+            <span class="text-blue-300">return</span> <span class="text-slate-400">$this->pdo</span>;
+        } <span class="text-blue-300">catch</span>(PDOException <span class="text-slate-400">$e</span>) {
+            <span class="text-blue-300">die</span>(<span class="text-green-400">"Error de Conexión: "</span> . <span class="text-slate-400">$e-></span><span class="text-yellow-400">getMessage</span>());
+        }
+    }
+}
+<span class="text-pink-400">?&gt;</span></pre>
             </div>
 
-            <section class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <span class="bg-[#003366] text-[#00aaff] w-8 h-8 rounded-full flex items-center justify-center font-black text-xs">01</span>
-                    <h4 class="text-xl font-black text-[#003366] uppercase tracking-tight">Fundamentos y Ecosistema PHP</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-blue-50 p-4 rounded-xl border-l-4 border-[#00aaff]">
+                    <h5 class="font-bold text-[#003366] text-xs uppercase mb-1">Evitando el SQL Injection</h5>
+                    <p class="text-[11px] text-gray-600 leading-relaxed">Al usar <code class="text-pink-600 italic">bindParam()</code>, los datos del usuario se envían por un canal separado de la instrucción SQL, haciendo imposible el secuestro de la base de datos.</p>
                 </div>
-                <div class="pl-11 space-y-4">
-                    <p class="text-sm text-gray-500">Antes de escribir código, debemos entender dónde vive. PHP no corre en el navegador; corre en el motor del servidor (Apache/Nginx).</p>
-                    
-                    <div class="bg-[#1e293b] p-4 rounded-xl font-mono text-xs text-blue-300 shadow-inner">
-                        <span class="text-gray-500">// Estructura básica de una página dinámica</span><br>
-                        <span class="text-pink-400">&lt;?php</span> <br>
-                        &nbsp;&nbsp;<span class="text-yellow-400">$saludo</span> = <span class="text-green-400">"Bienvenido a Web II"</span>;<br>
-                        &nbsp;&nbsp;<span class="text-blue-400">echo</span> <span class="text-yellow-400">$saludo</span>;<br>
-                        <span class="text-pink-400">?&gt;</span>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                        <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
-                            <h5 class="font-bold text-[#003366] text-xs mb-1 uppercase">Saber Conocer</h5>
-                            <p class="text-[11px] text-gray-500">Variables, tipos de datos (Boolean, Integer, String) y operadores lógicos.</p>
-                        </div>
-                        <div class="p-4 border border-gray-100 rounded-xl bg-gray-50">
-                            <h5 class="font-bold text-[#003366] text-xs mb-1 uppercase">Saber Hacer</h5>
-                            <p class="text-[11px] text-gray-500">Configuración de entornos locales (XAMPP/Laragon) y despliegue del primer script.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <span class="bg-[#003366] text-[#00aaff] w-8 h-8 rounded-full flex items-center justify-center font-black text-xs">02</span>
-                    <h4 class="text-xl font-black text-[#003366] uppercase tracking-tight">Arquitectura Basada en Objetos</h4>
-                </div>
-                <div class="pl-11 space-y-4">
-                    <p class="text-sm text-gray-600 font-medium">Dejamos de escribir scripts lineales para construir "Planos de Ingeniería" (Clases).</p>
-                    
-                    <div class="p-6 bg-[#f8fafc] border border-gray-200 rounded-2xl">
-                        <h5 class="text-xs font-black text-[#00aaff] uppercase mb-4 tracking-widest">Conceptos Clave</h5>
-                        <div class="space-y-3">
-                            <div class="flex items-start gap-3">
-                                <i class="fas fa-cube text-[#003366] mt-1"></i>
-                                <div>
-                                    <strong class="text-sm block">Clases y Objetos</strong>
-                                    <p class="text-[11px] text-gray-500">La clase es el molde (Avión) y el objeto es la instancia real (Vuelo BoA-102).</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <i class="fas fa-layer-group text-[#003366] mt-1"></i>
-                                <div>
-                                    <strong class="text-sm block">Herencia y Encapsulamiento</strong>
-                                    <p class="text-[11px] text-gray-500">Protección de datos (private/public) y reutilización de lógica técnica.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            
-
-            <section class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <span class="bg-[#003366] text-[#00aaff] w-8 h-8 rounded-full flex items-center justify-center font-black text-xs">03</span>
-                    <h4 class="text-xl font-black text-[#003366] uppercase tracking-tight">Gestión de Datos con MySQL</h4>
-                </div>
-                <div class="pl-11 space-y-4">
-                    <p class="text-sm text-gray-500">Un sistema sin persistencia es un sistema sin memoria. Aquí conectamos PHP con el motor relacional.</p>
-                    
-                    <div class="bg-blue-50 p-6 rounded-2xl border-dashed border-2 border-blue-200">
-                        <h5 class="text-[#003366] font-bold text-sm mb-2"><i class="fas fa-shield-virus mr-2"></i> Seguridad: SQL Injection</h5>
-                        <p class="text-xs text-gray-600">Aprendemos a usar <strong>Sentencias Preparadas (PDO)</strong> para evitar el secuestro de datos, garantizando la integridad de la información del usuario.</p>
-                    </div>
-
-                    <ul class="grid grid-cols-2 gap-2 text-[10px] font-bold uppercase text-gray-400">
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> CRUD Completo</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Relaciones 1:N</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Normalización</li>
-                        <li class="flex items-center gap-2"><i class="fas fa-check text-green-500"></i> Conexión PDO</li>
-                    </ul>
-                </div>
-            </section>
-
-            <section class="space-y-4">
-                <div class="flex items-center gap-3">
-                    <span class="bg-[#003366] text-[#00aaff] w-8 h-8 rounded-full flex items-center justify-center font-black text-xs">04</span>
-                    <h4 class="text-xl font-black text-[#003366] uppercase tracking-tight">Interacción en Tiempo Real</h4>
-                </div>
-                <div class="pl-11 space-y-4">
-                    <p class="text-sm text-gray-500">El estándar de la web moderna: Consultar al servidor sin recargar la página completa.</p>
-                    
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="flex-1 bg-gray-900 p-5 rounded-2xl shadow-xl">
-                            <span class="text-[#00aaff] font-mono text-[10px]"># Proceso AJAX</span>
-                            <div class="mt-2 space-y-2">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
-                                    <p class="text-white text-[10px] font-mono">1. Evento JS (Click)</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
-                                    <p class="text-white text-[10px] font-mono">2. Petición Fetch a PHP</p>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                                    <p class="text-white text-[10px] font-mono">3. Respuesta JSON</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="flex-1 p-4 flex items-center">
-                            <p class="text-xs text-gray-400 italic font-medium leading-relaxed">
-                                "La asincronía es lo que diferencia a una página estática de una aplicación web profesional de alto rendimiento."
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <div class="flex justify-center pt-10">
-                <div class="text-center group cursor-pointer">
-                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center mx-auto group-hover:bg-[#00aaff] transition-colors">
-                        <i class="fas fa-plus text-gray-300 group-hover:text-white"></i>
-                    </div>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mt-2 tracking-widest">Agregar Nueva Unidad</p>
+                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-gray-300">
+                    <h5 class="font-bold text-[#003366] text-xs uppercase mb-1">Saber Hacer</h5>
+                    <p class="text-[11px] text-gray-600 leading-relaxed">Refactorizar el sistema de login del proyecto "Sincronía Aérea" para usar sentencias preparadas.</p>
                 </div>
             </div>
         </div>
-    ` 
-},
+    </section>
 
+    <section class="space-y-6">
+        <div class="flex items-center gap-4">
+            <div class="bg-[#003366] text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg font-black italic">P2</div>
+            <div>
+                <h4 class="text-xl font-black text-[#003366] uppercase">Servicios JSON y XML</h4>
+                <p class="text-xs text-gray-400">Unidad 6: Backend as a Service (BaaS)</p>
+            </div>
+        </div>
+
+        <div class="pl-0 lg:pl-16 space-y-6">
+            <p class="text-sm text-gray-600 leading-relaxed">
+                En la web moderna, el servidor no siempre envía HTML. Envía <strong>datos estructurados</strong>. Esto permite que el mismo Backend sirva a una página web y a una aplicación móvil simultáneamente.
+            </p>
+
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1 space-y-4">
+                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                        <h5 class="font-bold text-[#003366] text-sm mb-3 uppercase">¿Por qué JSON?</h5>
+                        <ul class="text-xs space-y-3 text-gray-500">
+                            <li class="flex items-start"><i class="fas fa-microchip text-[#00aaff] mt-1 mr-2"></i> <span><strong>Ligero:</strong> Consume menos ancho de banda que XML.</span></li>
+                            <li class="flex items-start"><i class="fas fa-project-diagram text-[#00aaff] mt-1 mr-2"></i> <span><strong>Compatible:</strong> Nativo para JavaScript/Vue/React.</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-double text-[#00aaff] mt-1 mr-2"></i> <span><strong>Estandarizado:</strong> Facilita la creación de APIs REST.</span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="flex-1 bg-slate-100 p-6 rounded-2xl font-mono text-[10px] text-slate-700">
+                    <span class="text-blue-600 italic">// Ejemplo de respuesta API de Vuelos</span><br>
+                    {<br>
+                    &nbsp;&nbsp;"id": <span class="text-orange-600">102</span>,<br>
+                    &nbsp;&nbsp;"aerolinea": <span class="text-green-600">"BoA"</span>,<br>
+                    &nbsp;&nbsp;"origen": <span class="text-green-600">"VVI"</span>,<br>
+                    &nbsp;&nbsp;"destino": <span class="text-green-600">"LPB"</span>,<br>
+                    &nbsp;&nbsp;"estado": <span class="text-green-600">"On Time"</span><br>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="space-y-6">
+        <div class="flex items-center gap-4">
+            <div class="bg-[#003366] text-white w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg font-black italic">P3</div>
+            <div>
+                <h4 class="text-xl font-black text-[#003366] uppercase">Comunicación con AJAX</h4>
+                <p class="text-xs text-gray-400">Unidad 6: Experiencia de Usuario de Élite</p>
+            </div>
+        </div>
+
+        <div class="pl-0 lg:pl-16 space-y-6">
+            <p class="text-sm text-gray-600 leading-relaxed">
+                El paso final es conectar el Front-end con nuestro Backend sin recargar la página. Usamos la <strong>Fetch API</strong> de JavaScript para solicitar datos en segundo plano.
+            </p>
+
+            [Image of a sequence diagram showing the request-response cycle between a browser, AJAX engine, and a PHP server]
+
+            <div class="bg-[#1e293b] p-6 rounded-2xl shadow-xl">
+                <div class="text-blue-400 text-[10px] font-mono mb-4 uppercase tracking-widest border-b border-slate-700 pb-2">JavaScript Moderno (ES6+)</div>
+                <pre class="text-xs font-mono leading-6 text-slate-300">
+<span class="text-blue-300">async function</span> <span class="text-yellow-400">cargarVuelos</span>() {
+    <span class="text-blue-300">const</span> <span class="text-slate-400">respuesta</span> = <span class="text-blue-300">await</span> <span class="text-yellow-400">fetch</span>(<span class="text-green-400">'api/vuelos.php'</span>);
+    <span class="text-blue-300">const</span> <span class="text-slate-400">datos</span> = <span class="text-blue-300">await</span> <span class="text-slate-400">respuesta</span>.<span class="text-yellow-400">json</span>();
+    
+    <span class="text-gray-500">// Renderizar en el DOM</span>
+    <span class="text-slate-400">console</span>.<span class="text-yellow-400">log</span>(<span class="text-slate-400">datos</span>);
+}</pre>
+            </div>
+
+            <div class="bg-orange-50 p-6 rounded-2xl border-l-4 border-orange-400">
+                <h5 class="text-orange-800 font-bold text-sm mb-2 uppercase flex items-center">
+                    <i class="fas fa-exclamation-triangle mr-2"></i> Reto Metacognitivo
+                </h5>
+                <p class="text-xs text-orange-700 leading-relaxed italic">
+                    "Si una petición AJAX falla porque el servidor está caído, ¿cómo deberías informar al usuario sin que la aplicación se congele? Implementa bloques try/catch en tu código."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="pt-10 border-t border-gray-100 flex flex-col items-center">
+        <div class="bg-[#00aaff] text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Certificación de Nivel Avanzado</div>
+        <p class="text-[10px] text-gray-400 mt-4 uppercase font-bold">Próximo Módulo: Optimización y Deploy</p>
+    </div>
+</div>
+`
+},
 // ==========================================
 // 2. PRESENTACIONES (Didáctica y Slides)
 // ==========================================
 'presentaciones': {
-    cat: 'Material Visual',
-    title: 'Presentaciones y Slides',
-    icon: 'fas fa-chalkboard-teacher',
+    cat: 'Recursos Técnicos',
+    title: 'Documentación y Presentaciones',
+    icon: 'fas fa-desktop',
     html: `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-6 border border-gray-100 rounded-3xl bg-white shadow-sm">
-                <i class="fas fa-desktop text-2xl text-[#00aaff] mb-4"></i>
-                <h5 class="font-bold text-[#003366] text-sm uppercase mb-2">Introducción a PHP POO</h5>
-                <p class="text-xs text-gray-500 mb-4">Presentación clásica sobre los pilares de la programación orientada a objetos.</p>
-                <a href="https://www.slideshare.net/" target="_blank" class="text-[10px] font-black text-[#00aaff] uppercase tracking-widest hover:underline">Ver en SlideShare →</a>
-            </div>
+        <div class="space-y-12">
+            <p class="text-gray-600">Acceso directo a las fuentes oficiales de consulta y material visual de apoyo para el dominio de las tecnologías del módulo.</p>
 
-            <div class="p-6 border border-gray-100 rounded-3xl bg-white shadow-sm">
-                <i class="fas fa-database text-2xl text-[#00aaff] mb-4"></i>
-                <h5 class="font-bold text-[#003366] text-sm uppercase mb-2">MySQL y Seguridad</h5>
-                <p class="text-xs text-gray-500 mb-4">Diapositivas sobre la optimización de consultas y protección contra SQL Injection.</p>
-                <a href="https://es.scribd.com/" target="_blank" class="text-[10px] font-black text-[#00aaff] uppercase tracking-widest hover:underline">Ver en Scribd →</a>
+            <section class="space-y-4">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fab fa-html5 mr-2 text-[#e34f26]"></i> Maquetación y Estilos
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-orange-50 transition-all flex items-center group">
+                        <i class="fas fa-file-code text-gray-300 group-hover:text-[#e34f26] mr-4 text-xl"></i>
+                        <div>
+                            <span class="block text-xs font-bold text-[#003366]">MDN Web Docs: HTML5</span>
+                            <span class="text-[10px] text-gray-400">Documentación oficial y estándares.</span>
+                        </div>
+                    </a>
+                    <a href="https://web.dev/learn/css/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-blue-50 transition-all flex items-center group">
+                        <i class="fab fa-css3-alt text-gray-300 group-hover:text-[#1572b6] mr-4 text-xl"></i>
+                        <div>
+                            <span class="block text-xs font-bold text-[#003366]">Learn CSS (web.dev)</span>
+                            <span class="text-[10px] text-gray-400">Guías modernas de Google.</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fas fa-server mr-2 text-[#00aaff]"></i> Programación y Datos
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://www.php.net/manual/es/langref.php" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-indigo-50 transition-all flex items-center group">
+                        <i class="fab fa-php text-gray-300 group-hover:text-[#777bb4] mr-4 text-2xl"></i>
+                        <div>
+                            <span class="block text-xs font-bold text-[#003366]">Manual de Referencia PHP</span>
+                            <span class="text-[10px] text-gray-400">Sintaxis y funciones oficiales.</span>
+                        </div>
+                    </a>
+                    <a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:bg-blue-50 transition-all flex items-center group">
+                        <i class="fas fa-database text-gray-300 group-hover:text-[#00758f] mr-4 text-xl"></i>
+                        <div>
+                            <span class="block text-xs font-bold text-[#003366]">MySQL 8.0 Reference</span>
+                            <span class="text-[10px] text-gray-400">Optimización y consultas SQL.</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <section class="space-y-4">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fas fa-images mr-2 text-[#00aaff]"></i> Diapositivas y Guías Visuales
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow">
+                        <i class="fas fa-clone text-gray-400 mb-3 block"></i>
+                        <h5 class="text-[11px] font-black uppercase text-[#003366] mb-2">SlideShare</h5>
+                        <p class="text-[10px] text-gray-500 mb-4">Presentaciones clásicas de PHP y MySQL.</p>
+                        <a href="https://www.slideshare.net/search?q=php+mysql+poo" target="_blank" class="bg-white px-4 py-2 rounded-lg text-[9px] font-bold text-[#00aaff] border border-blue-100 uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">Explorar</a>
+                    </div>
+                    <div class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow">
+                        <i class="fas fa-layer-group text-gray-400 mb-3 block"></i>
+                        <h5 class="text-[11px] font-black uppercase text-[#003366] mb-2">Speaker Deck</h5>
+                        <p class="text-[10px] text-gray-500 mb-4">Slides modernas de arquitectura web.</p>
+                        <a href="https://speakerdeck.com/search?q=web+development+php" target="_blank" class="bg-white px-4 py-2 rounded-lg text-[9px] font-bold text-[#00aaff] border border-blue-100 uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">Explorar</a>
+                    </div>
+                    <div class="p-5 bg-gray-50 rounded-2xl text-center hover:shadow-md transition-shadow">
+                        <i class="fas fa-graduation-cap text-gray-400 mb-3 block"></i>
+                        <h5 class="text-[11px] font-black uppercase text-[#003366] mb-2">Tutoriales Rápidos</h5>
+                        <p class="text-[10px] text-gray-500 mb-4">Referencias rápidas de consulta diaria.</p>
+                        <a href="https://www.w3schools.com/" target="_blank" class="bg-white px-4 py-2 rounded-lg text-[9px] font-bold text-[#00aaff] border border-blue-100 uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">Explorar</a>
+                    </div>
+                </div>
+            </section>
+
+            <div class="p-6 bg-[#003366] rounded-3xl text-center border-b-4 border-b-[#00aaff]">
+                <p class="text-white text-xs font-medium italic">
+                    "Un ingeniero no lo sabe todo, pero sabe exactamente dónde encontrar la documentación oficial."
+                </p>
             </div>
         </div>
     `
-},
+}
 
 // ==========================================
 // 3. BIBLIOGRAFÍA (Norma APA 7ma Edición)
 // ==========================================
 'bibliografia': {
     cat: 'Académico',
-    title: 'Fuentes de Información',
+    title: 'Bibliografía y Referencias',
     icon: 'fas fa-bookmark',
     html: `
-        <div class="space-y-6">
-            <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest mb-4">Bibliografía Oficial (APA)</h4>
+        <div class="space-y-10">
+            <p class="text-gray-600 text-lg">Fuentes de información oficiales y complementarias para el dominio del desarrollo Backend y la arquitectura web.</p>
+
+            <section class="space-y-6">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fas fa-book mr-2 text-[#00aaff]"></i> Textos Guía Sugeridos
+                </h4>
+                
+                <div class="space-y-4">
+                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 flex gap-5 items-start">
+                        <div class="hidden sm:flex w-12 h-12 bg-white rounded-lg shadow-sm items-center justify-center text-[#003366] flex-none">
+                            <i class="fas fa-atlas text-xl"></i>
+                        </div>
+                        <div class="text-xs text-gray-600 leading-relaxed">
+                            <span class="block font-bold text-[#003366] mb-1">BIBLIOGRAFÍA OFICIAL UPDS</span>
+                            <strong>Beati, H. (2016).</strong> <em>PHP: Creación de páginas Web dinámicas</em> (2a ed.). Alfaomega Grupo Editor. 
+                            <div class="mt-2 flex gap-3">
+                                <a href="https://www.alfaomega.com.mx/" target="_blank" class="text-[#00aaff] font-bold hover:underline italic">Consultar Editorial</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-5 bg-gray-50 rounded-2xl border border-gray-100 flex gap-5 items-start">
+                        <div class="hidden sm:flex w-12 h-12 bg-white rounded-lg shadow-sm items-center justify-center text-[#003366] flex-none">
+                            <i class="fas fa-laptop-code text-xl"></i>
+                        </div>
+                        <div class="text-xs text-gray-600 leading-relaxed">
+                            <strong>Rodríguez de la Fuente, S., & Pérez, F. (2009).</strong> <em>Programación de Aplicaciones Web.</em> Ed. Paraninfo.
+                            <div class="mt-2 text-[10px] text-gray-400 font-bold uppercase tracking-widest">Enfoque: Arquitectura Cliente/Servidor</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             
-            <div class="space-y-4">
-                <div class="p-4 bg-gray-50 rounded-xl flex gap-4 items-start">
-                    <i class="fas fa-book text-gray-400 mt-1"></i>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        <strong>Beati, H. (2016).</strong> <em>PHP: Creación de páginas Web dinámicas</em> (2a ed.). Alfaomega. 
-                        <a href="https://www.alfaomega.com.mx/" class="text-[#00aaff] ml-1">[Link Editorial]</a>
-                    </p>
-                </div>
 
-                <div class="p-4 bg-gray-50 rounded-xl flex gap-4 items-start">
-                    <i class="fas fa-book text-gray-400 mt-1"></i>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        <strong>Rodríguez de la Fuente, S., & Pérez, F. (2009).</strong> <em>Programación de Aplicaciones Web.</em> Paraninfo.
-                    </p>
-                </div>
+            <section class="space-y-6">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fas fa-globe mr-2 text-[#00aaff]"></i> Documentación de Referencia
+                </h4>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <a href="https://www.php.net/manual/es/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:border-[#00aaff] hover:bg-blue-50 transition-all flex items-center justify-between group">
+                        <div class="flex items-center">
+                            <i class="fab fa-php text-2xl text-gray-300 group-hover:text-[#003366] mr-4"></i>
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-[#003366]">Manual Oficial de PHP</span>
+                        </div>
+                        <i class="fas fa-external-link-alt text-[10px] text-gray-300"></i>
+                    </a>
 
-                <div class="p-4 bg-gray-50 rounded-xl flex gap-4 items-start">
-                    <i class="fas fa-globe text-gray-400 mt-1"></i>
-                    <p class="text-xs text-gray-600 leading-relaxed">
-                        <strong>PHP Group. (2026).</strong> <em>Documentación oficial de PHP.</em> Recuperado de <a href="https://www.php.net/manual/es/" class="text-[#00aaff]">https://www.php.net/manual/es/</a>
-                    </p>
+                    <a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:border-[#00aaff] hover:bg-blue-50 transition-all flex items-center justify-between group">
+                        <div class="flex items-center">
+                            <i class="fas fa-database text-xl text-gray-300 group-hover:text-[#003366] mr-4"></i>
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-[#003366]">MySQL Documentation</span>
+                        </div>
+                        <i class="fas fa-external-link-alt text-[10px] text-gray-300"></i>
+                    </a>
+
+                    <a href="https://developer.mozilla.org/es/docs/Web/Guide/AJAX" target="_blank" class="p-4 border border-gray-100 rounded-xl hover:border-[#00aaff] hover:bg-blue-50 transition-all flex items-center justify-between group">
+                        <div class="flex items-center">
+                            <i class="fab fa-firefox-browser text-xl text-gray-300 group-hover:text-[#003366] mr-4"></i>
+                            <span class="text-xs font-bold text-gray-500 group-hover:text-[#003366]">Guía AJAX (MDN)</span>
+                        </div>
+                        <i class="fas fa-external-link-alt text-[10px] text-gray-300"></i>
+                    </a>
                 </div>
+            </section>
+
+            <div class="bg-[#003366] p-8 rounded-3xl text-white shadow-lg overflow-hidden relative">
+                <div class="relative z-10 flex flex-col md:flex-row items-center gap-6">
+                    <div class="bg-white text-[#003366] w-14 h-14 rounded-full flex items-center justify-center font-black text-3xl shadow-lg">Z</div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h5 class="text-[#00aaff] font-black uppercase text-[10px] tracking-widest mb-1">Repositorio Colaborativo</h5>
+                        <h4 class="text-xl font-bold mb-2">Grupo de Bibliografía en Zotero</h4>
+                        <p class="text-blue-100 text-xs leading-relaxed">Únete a nuestra biblioteca digital para acceder a papers y manuales técnicos específicos del módulo.</p>
+                    </div>
+                    <a href="https://www.zotero.org/groups/6281310/programacionweb" target="_blank" class="bg-white text-[#003366] px-6 py-3 rounded-xl font-black text-[10px] uppercase tracking-widest hover:bg-[#00aaff] hover:text-white transition-colors">
+                        Abrir Zotero
+                    </a>
+                </div>
+                <i class="fas fa-quote-left absolute -left-4 -bottom-4 text-white/5 text-8xl"></i>
             </div>
         </div>
     `
@@ -599,22 +733,82 @@
     title: 'Galería de Videos de Apoyo',
     icon: 'fas fa-play-circle',
     html: `
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="space-y-3">
-                <div class="aspect-video bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200">
-                    <i class="fab fa-youtube text-4xl text-gray-300"></i>
-                </div>
-                <h5 class="font-bold text-sm text-[#003366] uppercase">Masterclass: PHP Orientado a Objetos</h5>
-                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Duración: 15 min</p>
-            </div>
+        <div class="space-y-12">
+            <p class="text-gray-600">Recopilación de recursos audiovisuales de alta calidad para profundizar en el desarrollo Full-Stack y habilidades complementarias.</p>
 
-            <div class="space-y-3">
-                <div class="aspect-video bg-gray-100 rounded-2xl flex items-center justify-center border-2 border-dashed border-gray-200">
-                    <i class="fab fa-youtube text-4xl text-gray-300"></i>
+            <section class="space-y-6">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fas fa-server mr-2 text-[#00aaff]"></i> Lógica y Programación PHP
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group">
+                        <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
+                            <img src="https://img.youtube.com/vi/nOC7E7Tz96Q/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
+                            <a href="https://www.youtube.com/watch?v=nOC7E7Tz96Q" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
+                            </a>
+                        </div>
+                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">PHP desde cero: Sintaxis y Lógica</h5>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: HolaMundo</p>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
+                            <img src="https://img.youtube.com/vi/mI6V6I0TfV0/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
+                            <a href="https://www.youtube.com/watch?v=mI6V6I0TfV0" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
+                            </a>
+                        </div>
+                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">Introducción Real a la POO</h5>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: Píldoras Informáticas</p>
+                    </div>
                 </div>
-                <h5 class="font-bold text-sm text-[#003366] uppercase">AJAX y JSON en 10 minutos</h5>
-                <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Duración: 10 min</p>
-            </div>
+            </section>
+
+            <section class="space-y-6">
+                <h4 class="text-[#003366] font-black text-xs uppercase tracking-widest border-b pb-2 flex items-center">
+                    <i class="fas fa-bolt mr-2 text-[#00aaff]"></i> Asincronía y Persistencia
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="group">
+                        <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
+                            <img src="https://img.youtube.com/vi/M7Zp7X9A3G4/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
+                            <a href="https://www.youtube.com/watch?v=M7Zp7X9A3G4" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
+                            </a>
+                        </div>
+                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">Dominando AJAX y Fetch API</h5>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: FalconMasters</p>
+                    </div>
+                    <div class="group">
+                        <div class="aspect-video bg-gray-900 rounded-2xl overflow-hidden relative shadow-lg">
+                            <img src="https://img.youtube.com/vi/qY_3Fv9D6Xk/0.jpg" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500">
+                            <a href="https://www.youtube.com/watch?v=qY_3Fv9D6Xk" target="_blank" class="absolute inset-0 flex items-center justify-center">
+                                <i class="fas fa-play-circle text-white text-5xl group-hover:text-[#00aaff] transition-colors"></i>
+                            </a>
+                        </div>
+                        <h5 class="font-bold text-sm text-[#003366] mt-4 uppercase">MySQL: Diseño de Bases de Datos</h5>
+                        <p class="text-[10px] text-gray-400 font-bold uppercase tracking-tighter">Canal: FreeCodeCamp Español</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="p-8 bg-[#003366] rounded-3xl text-white shadow-xl">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-1">
+                        <h4 class="text-[#00aaff] font-black uppercase text-xs tracking-widest mb-2">Habilidades Blandas e Idiomas</h4>
+                        <h3 class="text-2xl font-bold mb-4">Inglés para Programadores</h3>
+                        <p class="text-blue-100 text-sm leading-relaxed mb-6">
+                            El código se escribe en inglés. Aprender la terminología técnica te permitirá acceder a la documentación oficial y a mejores oportunidades globales.
+                        </p>
+                        <a href="https://www.youtube.com/watch?v=mDscFf0X200" target="_blank" class="inline-flex items-center px-6 py-3 bg-[#00aaff] rounded-xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-[#003366] transition-all">
+                            <i class="fas fa-play mr-2"></i> Ver Tutorial de Inglés Técnico
+                        </a>
+                    </div>
+                    <div class="flex-none w-full md:w-64 aspect-video bg-blue-900 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-language text-5xl opacity-20"></i>
+                    </div>
+                </div>
+            </section>
         </div>
     `
 }
