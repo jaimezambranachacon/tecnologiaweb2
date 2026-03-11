@@ -742,15 +742,17 @@
             { slug: 'cronograma_proyecto', label: 'Proyecto Formativo', icon: 'fas fa-calendar-alt' } ,
             { slug: 'texto_guia', label: 'Texto Guía', icon: 'fas fa-book-open' },
             // --- ESTE ES TU NUEVO SUBMENÚ ESCALABLE ---
-            { 
-                name: 'Manual de Ingeniería (Texto Guía)', 
-                links: [
-                    { slug: 'tg_u1', label: 'Unidad 1: Fundamentos', icon: 'fas fa-code' },
-                    { slug: 'tg_u2', label: 'Unidad 2: POO Avanzado', icon: 'fas fa-cube' },
-                    { slug: 'tg_u3', label: 'Unidad 3: Persistencia', icon: 'fas fa-database' },
-                    // Aquí irás agregando: { slug: 'tg_u4', label: 'Unidad 4...', icon: '...' }
-                ]
-            },
+            ],
+
+        name: 'Manual de Ingeniería', 
+        links: [
+            { slug: 'texto_guia', label: '📖 Portada del Manual', icon: 'fas fa-star' },
+            { slug: 'tg_u1', label: 'Unidad 1: Fundamentos', icon: 'fas fa-code' },
+            { slug: 'tg_u2', label: 'Unidad 2: POO Avanzado', icon: 'fas fa-cube' },
+            { slug: 'tg_u3', label: 'Unidad 3: Persistencia', icon: 'fas fa-database' }
+        ],    
+        name: 'Recursos', 
+        links: [
             { slug: 'presentaciones', label: 'Presentaciones', icon: 'fas fa-desktop' },
             { slug: 'bibliografia', label: 'Bibliografía', icon: 'fas fa-quote-right' },
             { slug: 'videos', label: 'Videos de Apoyo', icon: 'fas fa-play-circle' }
