@@ -386,11 +386,12 @@
 // 1. TEXTO GUÍA (Estructura Incremental)
 // ==========================================
 
+
 'texto_guia': {
     cat: 'Contenido Académico',
     title: 'Manual de Ingeniería Web Avanzada',
     icon: 'fas fa-book-open',
-    html: `
+    body: `
 <div class="space-y-16">
     <header class="text-center max-w-2xl mx-auto">
         <span class="text-[#00aaff] font-black uppercase text-[10px] tracking-[0.2em]">Módulos de Especialización</span>
@@ -411,10 +412,10 @@
 
         <div class="pl-0 lg:pl-16 space-y-6">
             <p class="text-sm text-gray-600 leading-relaxed">
-                El uso de <code class="bg-gray-100 px-2 py-0.5 rounded text-pink-600">mysqli</code> es funcional, pero para proyectos robustos usamos <strong>PDO (PHP Data Objects)</strong>. PDO permite abstracción de base de datos y, lo más importante, <strong>Sentencias Preparadas</strong>.
+                El uso de <code class="bg-gray-100 px-2 py-0.5 rounded text-pink-600">mysqli</code> es funcional, pero para proyectos robustos usamos <strong>PDO (PHP Data Objects)</strong>. PDO permite abstracción de base de datos y <strong>Sentencias Preparadas</strong>.
             </p>
 
-            [Image of a diagram comparing traditional SQL queries versus SQL Prepared Statements for security]
+            
 
             <div class="bg-[#1e293b] p-6 rounded-2xl shadow-xl overflow-x-auto">
                 <div class="flex justify-between mb-4 border-b border-slate-700 pb-2">
@@ -439,17 +440,6 @@
 }
 <span class="text-pink-400">?&gt;</span></pre>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-blue-50 p-4 rounded-xl border-l-4 border-[#00aaff]">
-                    <h5 class="font-bold text-[#003366] text-xs uppercase mb-1">Evitando el SQL Injection</h5>
-                    <p class="text-[11px] text-gray-600 leading-relaxed">Al usar <code class="text-pink-600 italic">bindParam()</code>, los datos del usuario se envían por un canal separado de la instrucción SQL, haciendo imposible el secuestro de la base de datos.</p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-xl border-l-4 border-gray-300">
-                    <h5 class="font-bold text-[#003366] text-xs uppercase mb-1">Saber Hacer</h5>
-                    <p class="text-[11px] text-gray-600 leading-relaxed">Refactorizar el sistema de login del proyecto "Sincronía Aérea" para usar sentencias preparadas.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -464,28 +454,17 @@
 
         <div class="pl-0 lg:pl-16 space-y-6">
             <p class="text-sm text-gray-600 leading-relaxed">
-                En la web moderna, el servidor no siempre envía HTML. Envía <strong>datos estructurados</strong>. Esto permite que el mismo Backend sirva a una página web y a una aplicación móvil simultáneamente.
+                El servidor envía <strong>datos estructurados</strong>. Esto permite que el mismo Backend sirva a una página web y a una aplicación móvil simultáneamente.
             </p>
+            
+            
 
             <div class="flex flex-col md:flex-row gap-6">
-                <div class="flex-1 space-y-4">
-                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100">
-                        <h5 class="font-bold text-[#003366] text-sm mb-3 uppercase">¿Por qué JSON?</h5>
-                        <ul class="text-xs space-y-3 text-gray-500">
-                            <li class="flex items-start"><i class="fas fa-microchip text-[#00aaff] mt-1 mr-2"></i> <span><strong>Ligero:</strong> Consume menos ancho de banda que XML.</span></li>
-                            <li class="flex items-start"><i class="fas fa-project-diagram text-[#00aaff] mt-1 mr-2"></i> <span><strong>Compatible:</strong> Nativo para JavaScript/Vue/React.</span></li>
-                            <li class="flex items-start"><i class="fas fa-check-double text-[#00aaff] mt-1 mr-2"></i> <span><strong>Estandarizado:</strong> Facilita la creación de APIs REST.</span></li>
-                        </ul>
-                    </div>
-                </div>
-                
                 <div class="flex-1 bg-slate-100 p-6 rounded-2xl font-mono text-[10px] text-slate-700">
-                    <span class="text-blue-600 italic">// Ejemplo de respuesta API de Vuelos</span><br>
+                    <span class="text-blue-600 italic">// Respuesta API de Vuelos</span><br>
                     {<br>
                     &nbsp;&nbsp;"id": <span class="text-orange-600">102</span>,<br>
                     &nbsp;&nbsp;"aerolinea": <span class="text-green-600">"BoA"</span>,<br>
-                    &nbsp;&nbsp;"origen": <span class="text-green-600">"VVI"</span>,<br>
-                    &nbsp;&nbsp;"destino": <span class="text-green-600">"LPB"</span>,<br>
                     &nbsp;&nbsp;"estado": <span class="text-green-600">"On Time"</span><br>
                     }
                 </div>
@@ -504,41 +483,29 @@
 
         <div class="pl-0 lg:pl-16 space-y-6">
             <p class="text-sm text-gray-600 leading-relaxed">
-                El paso final es conectar el Front-end con nuestro Backend sin recargar la página. Usamos la <strong>Fetch API</strong> de JavaScript para solicitar datos en segundo plano.
+                Usamos la <strong>Fetch API</strong> de JavaScript para solicitar datos en segundo plano sin recargar la página.
             </p>
 
-            [Image of a sequence diagram showing the request-response cycle between a browser, AJAX engine, and a PHP server]
+            
 
             <div class="bg-[#1e293b] p-6 rounded-2xl shadow-xl">
-                <div class="text-blue-400 text-[10px] font-mono mb-4 uppercase tracking-widest border-b border-slate-700 pb-2">JavaScript Moderno (ES6+)</div>
                 <pre class="text-xs font-mono leading-6 text-slate-300">
 <span class="text-blue-300">async function</span> <span class="text-yellow-400">cargarVuelos</span>() {
     <span class="text-blue-300">const</span> <span class="text-slate-400">respuesta</span> = <span class="text-blue-300">await</span> <span class="text-yellow-400">fetch</span>(<span class="text-green-400">'api/vuelos.php'</span>);
     <span class="text-blue-300">const</span> <span class="text-slate-400">datos</span> = <span class="text-blue-300">await</span> <span class="text-slate-400">respuesta</span>.<span class="text-yellow-400">json</span>();
-    
-    <span class="text-gray-500">// Renderizar en el DOM</span>
     <span class="text-slate-400">console</span>.<span class="text-yellow-400">log</span>(<span class="text-slate-400">datos</span>);
 }</pre>
-            </div>
-
-            <div class="bg-orange-50 p-6 rounded-2xl border-l-4 border-orange-400">
-                <h5 class="text-orange-800 font-bold text-sm mb-2 uppercase flex items-center">
-                    <i class="fas fa-exclamation-triangle mr-2"></i> Reto Metacognitivo
-                </h5>
-                <p class="text-xs text-orange-700 leading-relaxed italic">
-                    "Si una petición AJAX falla porque el servidor está caído, ¿cómo deberías informar al usuario sin que la aplicación se congele? Implementa bloques try/catch en tu código."
-                </p>
             </div>
         </div>
     </section>
 
     <div class="pt-10 border-t border-gray-100 flex flex-col items-center">
         <div class="bg-[#00aaff] text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg">Certificación de Nivel Avanzado</div>
-        <p class="text-[10px] text-gray-400 mt-4 uppercase font-bold">Próximo Módulo: Optimización y Deploy</p>
     </div>
 </div>
 `
 },
+
 // ==========================================
 // 2. PRESENTACIONES (Didáctica y Slides)
 // ==========================================
