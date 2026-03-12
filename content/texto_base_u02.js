@@ -204,6 +204,45 @@ const pag_texto_base_u02 = `
             </div>
         </section>
 
+
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">8. Actividad Libre: Gamificación</h3>
+            
+            <div class="bg-gradient-to-br from-[#f0fdf4] to-[#dcfce7] p-8 md:p-10 rounded-[2rem] border border-green-200 shadow-lg relative overflow-hidden group hover:shadow-xl transition-all duration-300">
+                <i class="fas fa-frog absolute -right-6 -bottom-6 text-green-500/10 text-[12rem] group-hover:scale-110 transition-transform duration-500"></i>
+                
+                <div class="relative z-10 flex flex-col md:flex-row gap-10 items-center">
+                    
+                    <div class="flex-1">
+                        <span class="text-[10px] font-black uppercase tracking-widest text-green-600 mb-2 block">
+                            <i class="fas fa-gamepad mr-1"></i> Entrena tu memoria muscular
+                        </span>
+                        <h4 class="text-3xl font-black text-[#003366] mb-4">Flexbox Froggy</h4>
+                        
+                        <p class="text-slate-600 leading-relaxed mb-4">
+                            <strong>¿Qué es?</strong> Es un minijuego interactivo directamente en el navegador donde debes ayudar a la rana Froggy y a sus amigos a llegar a sus hojas de nenúfar escribiendo código CSS real.
+                        </p>
+                        
+                        <p class="text-slate-600 leading-relaxed mb-8">
+                            <strong>El Beneficio Técnico:</strong> Aprender CSS puro leyendo teoría puede ser abstracto. Al aplicar propiedades como <code>justify-content</code> o <code>align-items</code> y ver visualmente en tiempo real cómo se mueven los elementos, consolidarás el conocimiento de forma intuitiva y perderás el miedo a "romper" la pantalla.
+                        </p>
+                        
+                        <a href="https://flexboxfroggy.com/#es" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-black uppercase tracking-widest text-sm py-4 px-8 rounded-xl transition-colors shadow-md group-hover:shadow-lg">
+                            <span>Jugar Flexbox Froggy</span>
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="w-full md:w-5/12 flex-shrink-0">
+                        <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-white transform md:rotate-3 group-hover:rotate-0 transition-transform duration-300 bg-white">
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
         <section class="bg-[#003366] text-white p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden mt-20">
             <i class="fab fa-css3-alt absolute -right-6 -bottom-6 text-white/5 text-[15rem]"></i>
             <div class="relative z-10">
@@ -216,6 +255,8 @@ const pag_texto_base_u02 = `
                 </div>
             </div>
         </section>
+
+
 
     </div>
 </div>

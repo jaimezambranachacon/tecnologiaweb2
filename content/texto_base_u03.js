@@ -151,6 +151,69 @@ const pag_texto_base_u03 = `
             </div>
         </section>
 
+
+
+
+        <section class="mt-24">
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">6. Laboratorio Dinámico (Gamificación)</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-10">
+                La lógica de programación no se memoriza, se entrena. Hemos seleccionado tres entornos interactivos de nivel mundial para que pongas a prueba tus algoritmos en JavaScript con retroalimentación visual inmediata.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white border border-slate-200 rounded-[2rem] p-8 shadow-lg hover:shadow-yellow-500/20 hover:border-yellow-400 transition-all duration-300 group flex flex-col h-full relative overflow-hidden">
+                    <i class="fas fa-gamepad absolute -right-4 -bottom-4 text-yellow-100 text-[8rem] group-hover:scale-110 transition-transform"></i>
+                    <div class="relative z-10 flex-1">
+                        <div class="w-14 h-14 rounded-2xl bg-yellow-100 flex items-center justify-center text-yellow-600 mb-6 group-hover:bg-yellow-400 group-hover:text-white transition-colors">
+                            <i class="fas fa-swords text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-black text-[#003366] uppercase mb-3">CodeCombat (RPG)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            <strong>¿Qué es?</strong> Un videojuego de rol real. Tu personaje no se mueve con las flechas del teclado, sino escribiendo comandos reales en JavaScript (bucles, condicionales, variables) para derrotar ogros y escapar de mazmorras.
+                        </p>
+                    </div>
+                    <a href="https://codecombat.com/play" target="_blank" class="mt-auto block text-center bg-slate-50 border border-slate-200 text-[#003366] font-black uppercase text-xs py-3 rounded-xl hover:bg-yellow-400 hover:text-white hover:border-yellow-400 transition-colors z-10">
+                        Jugar CodeCombat <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-[2rem] p-8 shadow-lg hover:shadow-blue-500/20 hover:border-blue-400 transition-all duration-300 group flex flex-col h-full relative overflow-hidden">
+                    <i class="fas fa-microscope absolute -right-4 -bottom-4 text-blue-50 text-[8rem] group-hover:scale-110 transition-transform"></i>
+                    <div class="relative z-10 flex-1">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+                            <i class="fas fa-bug text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-black text-[#003366] uppercase mb-3">JS Visualizer (Tutor)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            <strong>¿Qué es?</strong> Los "rayos X" del código. Escribes tu JavaScript y esta herramienta ejecuta el código <em>paso a paso</em>, mostrando exactamente cómo cambia el valor de tus variables en la memoria RAM de la computadora. Vital para entender los bucles (<code>for</code> / <code>while</code>).
+                        </p>
+                    </div>
+                    <a href="https://pythontutor.com/javascript.html" target="_blank" class="mt-auto block text-center bg-slate-50 border border-slate-200 text-[#003366] font-black uppercase text-xs py-3 rounded-xl hover:bg-blue-500 hover:text-white hover:border-blue-500 transition-colors z-10">
+                        Abrir Visualizador <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="bg-white border border-slate-200 rounded-[2rem] p-8 shadow-lg hover:shadow-slate-500/20 hover:border-slate-800 transition-all duration-300 group flex flex-col h-full relative overflow-hidden">
+                    <i class="fab fa-codepen absolute -right-4 -bottom-4 text-slate-100 text-[8rem] group-hover:scale-110 transition-transform"></i>
+                    <div class="relative z-10 flex-1">
+                        <div class="w-14 h-14 rounded-2xl bg-slate-100 flex items-center justify-center text-slate-800 mb-6 group-hover:bg-slate-800 group-hover:text-white transition-colors">
+                            <i class="fas fa-laptop-code text-2xl"></i>
+                        </div>
+                        <h4 class="text-xl font-black text-[#003366] uppercase mb-3">CodePen (Sandbox)</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                            <strong>¿Qué es?</strong> Un entorno de desarrollo en vivo. Tienes 3 paneles (HTML, CSS y JS). Lo que escribes se renderiza al instante abajo. Es perfecto para probar scripts rápidos sin tener que crear archivos ni abrir XAMPP.
+                        </p>
+                    </div>
+                    <a href="https://codepen.io/pen/" target="_blank" class="mt-auto block text-center bg-slate-50 border border-slate-200 text-[#003366] font-black uppercase text-xs py-3 rounded-xl hover:bg-slate-800 hover:text-white hover:border-slate-800 transition-colors z-10">
+                        Crear un Pen <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        
     </div>
 </div>
 
