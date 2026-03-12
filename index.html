@@ -20,21 +20,20 @@
     <script src="./content/presentaciones.js"></script>
     <script src="./content/bibliografia.js"></script>
     <script src="./content/videos.js"></script>
-    <script src="./content/tg_u1.js"></script>
-    <script src="./content/tg_u2.js"></script>
-    <script src="./content/tg_u3.js"></script>
-    <script src="./content/tg_u4.js"></script>
-    <script src="./content/tg_u5.js"></script>
-    <script src="./content/tg_u6.js"></script>
-    <script src="./content/tg_u7.js"></script>
-    <script src="./content/tg_u8.js"></script>
-    <script src="./content/tg_u9.js"></script>
-    <script src="./content/tg_u10.js"></script>
-    <script src="./content/tg_u11.js"></script>
-    <script src="./content/tg_u12.js"></script>
-    <script src="./content/tg_u13.js"></script>
-    <script src="./content/tg_u14.js"></script>
-    <script src="./content/tg_u15.js"></script>
+
+
+    
+    <script src="./content/texto_base_u01.js"></script>
+    <script src="./content/texto_base_u02.js"></script>
+    <script src="./content/texto_base_u03.js"></script>
+    <script src="./content/texto_base_u04.js"></script>
+    <script src="./content/texto_base_u05.js"></script>
+    <script src="./content/texto_base_u06.js"></script>
+    <script src="./content/texto_base_u07.js"></script>
+    <script src="./content/texto_base_u08.js"></script>
+    <script src="./content/texto_base_u09.js"></script>
+    <script src="./content/texto_base_u10.js"></script>
+    
 
     <style>
         [v-cloak] { display: none; }
@@ -115,7 +114,10 @@
                     name: 'Contenido', 
                     links: [
                         { slug: 'texto_guia', label: 'Texto de Guía', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargo texto_guia.js' },
-                        { slug: 'tg_u1', label: 'Unidad 1: Fundamentos', icon: 'fas fa-code', content: typeof pag_tg_u1 !== 'undefined' ? pag_tg_u1 : 'No cargo tg_u1.js' },
+                        { slug: 'pag_texto_base_u01', label: 'U1: HTML Semántico', icon: 'fab fa-html5', content: pag_texto_base_u01 },
+                        { slug: 'pag_texto_base_u02', label: 'U2: Diseño CSS', icon: 'fab fa-css3-alt', content: pag_texto_base_u02 },
+                        { slug: 'pag_texto_base_u03', label: 'U3: Lógica JS', icon: 'fab fa-js', content: pag_texto_base_u03 },
+                        { slug: 'texto_base_u01', label: 'Unidad 1: Fundamentos', icon: 'fas fa-code', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'No cargo tg_u1.js' },
                         { slug: 'tg_u2', label: 'Unidad 2: Conceptos', icon: 'fas fa-code', content: typeof pag_tg_u2 !== 'undefined' ? pag_tg_u2 : 'No cargo tg_u2.js' },
                         { slug: 'tg_u3', label: 'Unidad 3: Aplicaciones', icon: 'fas fa-code', content: typeof pag_tg_u3 !== 'undefined' ? pag_tg_u3 : 'No cargo tg_u3.js' },
                         { slug: 'tg_u4', label: 'Unidad 4: Proyectos', icon: 'fas fa-code', content: typeof pag_tg_u4 !== 'undefined' ? pag_tg_u4 : 'No cargo tg_u4.js' },
