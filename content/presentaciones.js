@@ -1,151 +1,70 @@
 
 const pag_presentaciones = `
+
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
     <header class="mb-16">
         <h1 class="text-5xl md:text-6xl font-black text-[#003366] tracking-tighter uppercase leading-none">
-            RECURSOS &<br>
-            <span class="text-[#00aaff]">DOCUMENTACIÓN</span>
+            PRESENTACIONES<br>
+            <span class="text-[#00aaff]">& SLIDES</span>
         </h1>
+        <p class="mt-4 text-xl text-slate-500 font-light">
+            Material visual, esquemas y diapositivas de las sesiones teóricas.
+        </p>
         <div class="h-2 w-24 bg-[#003366] mt-6"></div>
     </header>
 
-    <section class="mb-20">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-8 border-b pb-2">01. Documentación Core</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-            
-            <a href="https://www.php.net/manual/es/" target="_blank" class="p-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-white transition-all group">
-                <i class="fab fa-php text-3xl mb-3 text-[#00aaff] group-hover:text-white"></i>
-                <h3 class="text-sm font-black uppercase tracking-tight">PHP Engine</h3>
-            </a>
+    <div class="max-w-4xl space-y-4">
 
-            <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" class="p-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-white transition-all group">
-                <i class="fab fa-html5 text-3xl mb-3 text-[#00aaff] group-hover:text-white"></i>
-                <h3 class="text-sm font-black uppercase tracking-tight">MDN Web Docs</h3>
-            </a>
+        <a href="TU_LINK_A_GOOGLE_SLIDES_O_CANVA" target="_blank" class="group flex items-center p-4 md:p-6 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-white hover:border-orange-400 hover:shadow-xl transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white group-hover:scale-110 transition-all shadow-sm flex-shrink-0">
+                <i class="fas fa-desktop text-2xl"></i>
+            </div>
+            <div class="ml-6 flex-1">
+                <span class="text-[10px] font-black uppercase tracking-widest text-orange-500 mb-1 block">Slides en Línea</span>
+                <h3 class="text-xl md:text-2xl font-black text-[#003366] group-hover:text-orange-500 transition-colors leading-tight">Unidad 1: Arquitectura Web</h3>
+                <p class="text-sm text-slate-500 mt-1">Diapositivas de la clase magistral sobre el modelo Cliente/Servidor.</p>
+            </div>
+            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 text-orange-400 transition-opacity hidden md:block text-xl"></i>
+        </a>
 
-            <a href="https://vuejs.org/guide/introduction.html" target="_blank" class="p-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-white transition-all group">
-                <i class="fab fa-vuejs text-3xl mb-3 text-[#00aaff] group-hover:text-white"></i>
-                <h3 class="text-sm font-black uppercase tracking-tight">Vue.js Guide</h3>
-            </a>
+        <a href="TU_LINK_AL_PDF" target="_blank" class="group flex items-center p-4 md:p-6 bg-slate-50 border border-slate-100 rounded-2xl hover:bg-white hover:border-red-400 hover:shadow-xl transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center text-red-500 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110 transition-all shadow-sm flex-shrink-0">
+                <i class="fas fa-file-pdf text-3xl"></i>
+            </div>
+            <div class="ml-6 flex-1">
+                <span class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1 block">Documento PDF</span>
+                <h3 class="text-xl md:text-2xl font-black text-[#003366] group-hover:text-red-500 transition-colors leading-tight">Guía de Instalación PHP 8</h3>
+                <p class="text-sm text-slate-500 mt-1">Manual detallado con capturas de pantalla para configurar XAMPP.</p>
+            </div>
+            <i class="fas fa-download opacity-0 group-hover:opacity-100 text-red-400 transition-opacity hidden md:block text-xl"></i>
+        </a>
 
-            <a href="https://react.dev/learn" target="_blank" class="p-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-white transition-all group">
-                <i class="fab fa-react text-3xl mb-3 text-[#00aaff] group-hover:text-white"></i>
-                <h3 class="text-sm font-black uppercase tracking-tight">React Docs</h3>
-            </a>
 
+        <a href="LINK_DE_TU_NUEVO_PDF" target="_blank" class="group flex items-center p-4 md:p-6 bg-red-50/30 border-2 border-dashed border-red-200 rounded-2xl hover:bg-white hover:border-red-400 hover:shadow-xl transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-red-100 flex items-center justify-center text-red-500 group-hover:bg-red-500 group-hover:text-white group-hover:scale-110 transition-all shadow-sm flex-shrink-0">
+                <i class="fas fa-file-pdf text-3xl"></i>
+            </div>
+            <div class="ml-6 flex-1">
+                <span class="text-[10px] font-black uppercase tracking-widest text-red-500 mb-1 block">Documento PDF</span>
+                <h3 class="text-xl md:text-2xl font-black text-[#003366] group-hover:text-red-500 transition-colors leading-tight">Título de tu PDF aquí</h3>
+                <p class="text-sm text-slate-500 mt-1">Breve descripción de lo que contiene el documento.</p>
+            </div>
+            <i class="fas fa-download opacity-0 group-hover:opacity-100 text-red-400 transition-opacity hidden md:block text-xl"></i>
+        </a>
+
+        <a href="LINK_DE_TUS_NUEVAS_DIAPOSITIVAS" target="_blank" class="group flex items-center p-4 md:p-6 bg-orange-50/30 border-2 border-dashed border-orange-200 rounded-2xl hover:bg-white hover:border-orange-400 hover:shadow-xl transition-all duration-300">
+            <div class="w-16 h-16 rounded-full bg-orange-100 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white group-hover:scale-110 transition-all shadow-sm flex-shrink-0">
+                <i class="fas fa-desktop text-2xl"></i>
+            </div>
+            <div class="ml-6 flex-1">
+                <span class="text-[10px] font-black uppercase tracking-widest text-orange-500 mb-1 block">Slides en Línea</span>
+                <h3 class="text-xl md:text-2xl font-black text-[#003366] group-hover:text-orange-500 transition-colors leading-tight">Título de tu Presentación aquí</h3>
+                <p class="text-sm text-slate-500 mt-1">Breve descripción de los temas cubiertos en los slides.</p>
+            </div>
+            <i class="fas fa-external-link-alt opacity-0 group-hover:opacity-100 text-orange-400 transition-opacity hidden md:block text-xl"></i>
+        </a>
         </div>
-    </section>
-
-    <section class="mb-20">
-        <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-8 border-b pb-2">02. Guías y Recursos de Estudio (Enlaces Verificados)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-5xl">
-            
-            <a href="https://developer.mozilla.org/es/docs/Learn/Server-side/First_steps/Client-Server_overview" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">01</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">Arquitectura Cliente/Servidor</h4>
-                    <p class="text-xs text-slate-500 mt-1">Guía oficial de Mozilla sobre cómo funciona la web.</p>
-                </div>
-            </a>
-
-            <a href="https://www.php.net/releases/8.0/es.php" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">02</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">PHP 8: Novedades Core</h4>
-                    <p class="text-xs text-slate-500 mt-1">Resumen oficial de características y rendimiento JIT.</p>
-                </div>
-            </a>
-
-            <a href="https://dev.mysql.com/doc/mysql-tutorial-excerpt/8.0/en/" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">03</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">Diseño de Bases MySQL</h4>
-                    <p class="text-xs text-slate-500 mt-1">Tutorial oficial de Oracle para MySQL 8.0.</p>
-                </div>
-            </a>
-
-            <a href="https://www.php.net/manual/es/language.oop5.php" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">04</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">POO en PHP</h4>
-                    <p class="text-xs text-slate-500 mt-1">Manual de clases, objetos y herencia en el servidor.</p>
-                </div>
-            </a>
-
-            <a href="https://owasp.org/www-project-top-ten/" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">05</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">Seguridad Web (OWASP Top 10)</h4>
-                    <p class="text-xs text-slate-500 mt-1">El estándar global sobre vulnerabilidades (Inyecciones, XSS).</p>
-                </div>
-            </a>
-
-            <a href="https://www.atlassian.com/es/git/tutorials/comparing-workflows" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">06</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">Git Workflow para Equipos</h4>
-                    <p class="text-xs text-slate-500 mt-1">Guía de Atlassian sobre flujos de trabajo profesionales.</p>
-                </div>
-            </a>
-
-            <a href="https://www.php.net/manual/es/tutorial.forms.php" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">07</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">Formularios y Seguridad</h4>
-                    <p class="text-xs text-slate-500 mt-1">Documentación sobre el manejo de variables POST y GET.</p>
-                </div>
-            </a>
-
-            <a href="https://developer.mozilla.org/es/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">08</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">JavaScript Fetch API</h4>
-                    <p class="text-xs text-slate-500 mt-1">El reemplazo moderno de AJAX para consumir datos.</p>
-                </div>
-            </a>
-
-            <a href="https://es.javascript.info/" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">09</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">El Lenguaje JavaScript Moderno</h4>
-                    <p class="text-xs text-slate-500 mt-1">Un tutorial profundo y detallado sobre JS puro (ES6+).</p>
-                </div>
-            </a>
-
-            <a href="https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/RESTful_api" target="_blank" class="flex gap-4 items-start group hover:bg-slate-50 p-3 rounded-xl transition-colors">
-                <span class="text-xl font-black text-slate-300 group-hover:text-[#00aaff] transition-colors italic mt-1">10</span>
-                <div>
-                    <h4 class="text-sm font-black text-[#003366] uppercase">Diseño de APIs RESTful</h4>
-                    <p class="text-xs text-slate-500 mt-1">Conceptos teóricos sobre cómo estructurar una API profesional.</p>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <section>
-        <h2 class="text-[10px] font-black uppercase tracking-[0.4em] text-slate-400 mb-8 border-b pb-2">03. Plataformas de Ayuda Rápida</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            
-            <a href="https://www.w3schools.com/" target="_blank" class="py-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-[#00aaff] transition-all">
-                <h5 class="text-[11px] font-black uppercase">W3Schools</h5>
-            </a>
-
-            <a href="https://stackoverflow.com/" target="_blank" class="py-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-[#00aaff] transition-all">
-                <h5 class="text-[11px] font-black uppercase">Stack Overflow</h5>
-            </a>
-
-            <a href="https://github.com/" target="_blank" class="py-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-[#00aaff] transition-all">
-                <h5 class="text-[11px] font-black uppercase">GitHub</h5>
-            </a>
-
-            <a href="https://css-tricks.com/" target="_blank" class="py-6 bg-slate-50 rounded-2xl hover:bg-[#003366] hover:text-[#00aaff] transition-all">
-                <h5 class="text-[11px] font-black uppercase">CSS-Tricks</h5>
-            </a>
-
-        </div>
-    </section>
-
 </div>
+
 `;
