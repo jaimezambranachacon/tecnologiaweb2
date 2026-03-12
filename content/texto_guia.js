@@ -1,5 +1,5 @@
 // content/texto_base_u01.js
-const pag_texto_base = `
+const pag_texto_guia = `
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
     <header class="mb-16">
