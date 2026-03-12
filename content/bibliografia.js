@@ -1,27 +1,17 @@
 const pag_bibliografia = `
-<div class="space-y-8">
-    <div class="bg-gradient-to-br from-[#003366] to-[#004a8c] p-12 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
-        <div class="relative z-10">
-            <h3 class="text-sm font-black uppercase tracking-[0.4em] mb-4 text-[#00aaff]">Engineering Portal</h3>
-            <h2 class="text-5xl font-bold tracking-tighter mb-6">Welcome, Jimmy.</h2>
-            <p class="text-blue-100 text-lg max-w-xl leading-relaxed italic">
-                "Este es tu nuevo ecosistema modular. Cada unidad es un archivo independiente, fácil de mantener y listo para GitHub Pages."
-            </p>
-        </div>
-        <i class="fas fa-code absolute -right-10 -bottom-10 text-white/5 text-[15rem]"></i>
-    </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="p-8 border border-slate-100 rounded-[2rem] bg-slate-50">
-            <i class="fas fa-microchip text-[#00aaff] text-3xl mb-4"></i>
-            <h4 class="font-black text-[#003366] uppercase text-sm mb-2">Modularidad Pro</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">Cada página es un archivo .js separado. Cero conflictos de código.</p>
-        </div>
-        <div class="p-8 border border-slate-100 rounded-[2rem] bg-slate-50">
-            <i class="fas fa-globe text-[#00aaff] text-3xl mb-4"></i>
-            <h4 class="font-black text-[#003366] uppercase text-sm mb-2">GitHub Ready</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">Funciona con doble clic en tu PC y perfecto al subirlo a la web.</p>
-        </div>
+<div style="width: 100% !important; display: flex !important; justify-content: center !important; font-family: sans-serif !important;">
+    <div style="width: 95% !important; max-width: 850px !important; margin: 10px 0 !important;">
+        <a href="https://www.zotero.org/groups/6281310/programacionweb" target="_blank" style="background-color: #003366 !important; color: #ffffff !important; display: flex !important; align-items: center !important; padding: 20px !important; border-radius: 15px !important; text-decoration: none !important; border-left: 10px solid #00aaff !important;">
+            <div style="min-width: 60px; height: 60px; background-color: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; border: 3px solid #00aaff;">
+                <span style="font-family: 'Arial Black', sans-serif; font-size: 35px; color: #003366; line-height: 1;">Z</span>
+            </div>
+            <div style="text-align: left !important;">
+                <span style="display: block !important; font-size: 12px !important; opacity: 0.7 !important; text-transform: uppercase !important;">Bibliografía</span>
+                <strong style="font-size: 1.2rem !important; font-weight: 800 !important; color: #ffffff !important;">3. BIBLIOGRAFÍA EN ZOTERO</strong>
+            </div>
+        </a>
     </div>
 </div>
+
 `;
