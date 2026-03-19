@@ -1,4 +1,3 @@
-
 const pag_texto_base_u07 = `
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
@@ -11,7 +10,7 @@ const pag_texto_base_u07 = `
             <span class="text-rose-600">LARAVEL 13</span>
         </h1>
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            Despídete del PHP espagueti. Aquí comenzamos a construir software empresarial. Aprenderemos a instalar el framework, entender su estructura de carpetas y conectar nuestro primer proyecto a la Base de Datos.
+            Despídete del PHP espagueti. Aquí comenzamos a construir software empresarial. Aprenderemos a instalar el framework, configurarlo correctamente, entender su estructura y conectar nuestro primer proyecto a la Base de Datos.
         </p>
         <div class="h-2 w-24 bg-rose-600 mt-8"></div>
     </header>
@@ -60,7 +59,16 @@ const pag_texto_base_u07 = `
         </section>
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. La Instalación (Creando la Magia)</h3>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. La Instalación</h3>
+            
+            <div class="bg-amber-50 border-l-4 border-amber-500 p-4 mb-6 rounded-r-lg flex items-start gap-3">
+                <i class="fas fa-exclamation-triangle text-amber-500 text-xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold text-amber-900">¡Laragon debe estar encendido!</h4>
+                    <p class="text-sm text-amber-800">Antes de ejecutar cualquier comando, asegúrate de haber iniciado los servicios de <strong>Apache y MySQL</strong> en tu panel de Laragon.</p>
+                </div>
+            </div>
+
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
                 Abre la terminal de tu Laragon (botón <strong>Terminal</strong>). Asegúrate de estar en la carpeta pública (<code>C:/laragon/www</code>) y ejecuta el siguiente comando. Cambia "sistema_vuelos" por el nombre de tu proyecto sin espacios.
             </p>
@@ -71,22 +79,85 @@ const pag_texto_base_u07 = `
 <span class="text-emerald-400">~/laragon/www</span>
 $ <span class="text-yellow-400">composer create-project</span> <span class="text-rose-400">laravel/laravel</span> <span class="text-white">sistema_vuelos</span></pre>
             </div>
-            
-            <p class="text-slate-600 mt-6 bg-slate-50 p-4 border-l-4 border-rose-500 rounded-r-lg">
-                <i class="fas fa-coffee text-rose-600 mr-2"></i> <strong>Paciencia:</strong> Composer se conectará a los servidores de Laravel y descargará miles de archivos pequeños. Una vez termine, Laragon detectará la nueva carpeta y creará tu dominio mágico automáticamente: <code>http://sistema_vuelos.test</code>.
-            </p>
         </section>
 
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. Configuración y Puesta en Marcha</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                Una vez descargado el proyecto, ábrelo en Visual Studio Code. Antes de programar, debemos configurar el entorno y levantar el servidor paso a paso.
+            </p>
+            
+            <div class="space-y-8">
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-black flex-shrink-0 text-xl shadow-lg">1</div>
+                    <div class="flex-1">
+                        <strong class="text-[#003366] text-xl block mb-2">Crear la Base de Datos</strong>
+                        <p class="text-slate-600 mb-2">Abre tu gestor de base de datos (HeidiSQL, DBeaver o phpMyAdmin) y crea una nueva base de datos llamada <code>sistema_vuelos_db</code>. <strong>Déjala vacía</strong>, Laravel creará las tablas por ti.</p>
+                    </div>
+                </div>
 
-      
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-black flex-shrink-0 text-xl shadow-lg">2</div>
+                    <div class="flex-1">
+                        <strong class="text-[#003366] text-xl block mb-2">Configurar el archivo .env</strong>
+                        <p class="text-slate-600 mb-4">En la raíz de tu proyecto en VS Code, busca el archivo <strong><code>.env</code></strong>. Este archivo guarda configuraciones sensibles y contraseñas. Modifica el bloque de conexión a la base de datos:</p>
+                        
+                        <div class="bg-slate-900 rounded-xl shadow-lg p-5 border border-slate-700">
+                            <div class="text-slate-400 text-xs mb-3 border-b border-slate-700 pb-2 font-mono">.env</div>
+                            <pre class="font-mono text-sm text-blue-300 leading-relaxed overflow-x-auto">
+DB_CONNECTION=<span class="text-green-400">mysql</span>
+DB_HOST=<span class="text-green-400">127.0.0.1</span>
+DB_PORT=<span class="text-green-400">3306</span>
+<span class="text-yellow-400 font-bold border-b border-yellow-400/30 border-dashed">DB_DATABASE=<span class="text-white">sistema_vuelos_db</span></span>
+DB_USERNAME=<span class="text-green-400">root</span>
+DB_PASSWORD=<span class="text-green-400"></span> <span class="text-gray-400">&lt;-- En Laragon suele ir vacía</span></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-black flex-shrink-0 text-xl shadow-lg">3</div>
+                    <div class="flex-1">
+                        <strong class="text-[#003366] text-xl block mb-2">Generar la Llave de Seguridad</strong>
+                        <p class="text-slate-600 mb-2">Abre la terminal integrada de VS Code (<code>Ctrl + \`</code>) y ejecuta el siguiente comando para encriptar las sesiones y cookies de tu app:</p>
+                        <div class="bg-slate-900 text-green-400 font-mono text-sm p-3 rounded shadow-inner inline-block w-full">
+                            php artisan key:generate
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-10 h-10 rounded-full bg-[#003366] text-white flex items-center justify-center font-black flex-shrink-0 text-xl shadow-lg">4</div>
+                    <div class="flex-1">
+                        <strong class="text-[#003366] text-xl block mb-2">Migrar la Base de Datos</strong>
+                        <p class="text-slate-600 mb-2">Ahora enviaremos las tablas por defecto de Laravel (usuarios, contraseñas, etc.) hacia la base de datos que creaste en el paso 1:</p>
+                        <div class="bg-slate-900 text-green-400 font-mono text-sm p-3 rounded shadow-inner inline-block w-full">
+                            php artisan migrate
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-6 items-start">
+                    <div class="w-10 h-10 rounded-full bg-rose-600 text-white flex items-center justify-center font-black flex-shrink-0 text-xl shadow-lg">5</div>
+                    <div class="flex-1">
+                        <strong class="text-rose-600 text-xl block mb-2">Levantar el Servidor</strong>
+                        <p class="text-slate-600 mb-2">Finalmente, enciende el servidor de desarrollo nativo de PHP/Laravel. Esto mantendrá la terminal ocupada:</p>
+                        <div class="bg-slate-900 text-yellow-400 font-mono text-sm p-3 rounded shadow-inner inline-block w-full">
+                            php artisan serve
+                        </div>
+                        <p class="text-sm text-slate-500 mt-3">
+                            <i class="fas fa-check-circle text-green-500 mr-1"></i> ¡Listo! Ahora puedes ir a tu navegador y entrar a <strong><code>http://localhost:8000</code></strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. Radiografía de Laravel</h3>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">4. Radiografía de Laravel</h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                Cuando abras tu proyecto en Visual Studio Code, verás muchísimas carpetas. ¡No te asustes! El 90% del tiempo como desarrollador Backend, solo trabajarás en estas cuatro:
+                ¡Tu proyecto ya está corriendo! Ahora, hablemos de su estructura. Cuando veas todas las carpetas, ¡no te asustes! El 90% del tiempo como desarrollador Backend, solo trabajarás en estas cuatro:
             </p>
-
-            
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="border border-slate-200 p-5 rounded-2xl hover:border-orange-500 transition-colors bg-white shadow-sm">
@@ -123,50 +194,11 @@ $ <span class="text-yellow-400">composer create-project</span> <span class="text
             </div>
         </section>
 
-
-        <section class="mt-20">
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">4. Configuración del Entorno (.env)</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                En la raíz de tu proyecto existe un archivo vital llamado <strong><code>.env</code></strong> (Environment / Entorno). Aquí se guardan las contraseñas y configuraciones sensibles. <strong>Regla de Ingeniería:</strong> Este archivo JAMÁS se sube a GitHub por seguridad.
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                <div class="space-y-4">
-                    <div class="flex gap-4">
-                        <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-black flex-shrink-0">1</div>
-                        <div>
-                            <strong class="text-[#003366] block">Crea la BD vacía</strong>
-                            <p class="text-sm text-slate-600">Abre tu gestor (HeidiSQL o phpMyAdmin) y crea una nueva base de datos llamada <code>sistema_vuelos_db</code>. No le crees tablas, solo la base.</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-black flex-shrink-0">2</div>
-                        <div>
-                            <strong class="text-[#003366] block">Edita el archivo .env</strong>
-                            <p class="text-sm text-slate-600">Busca el bloque de conexión y pon el nombre exacto de tu base, el usuario (root) y la contraseña (en Laragon suele ir vacía).</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900 rounded-xl shadow-lg p-5 border border-slate-700">
-                    <div class="text-slate-400 text-xs mb-3 border-b border-slate-700 pb-2 font-mono">.env</div>
-                    <pre class="font-mono text-xs text-blue-300 leading-relaxed overflow-x-auto">
-DB_CONNECTION=<span class="text-green-400">mysql</span>
-DB_HOST=<span class="text-green-400">127.0.0.1</span>
-DB_PORT=<span class="text-green-400">3306</span>
-<span class="text-yellow-400 font-bold border-b border-yellow-400/30 border-dashed">DB_DATABASE=<span class="text-white">sistema_vuelos_db</span></span>
-DB_USERNAME=<span class="text-green-400">root</span>
-DB_PASSWORD=<span class="text-green-400"></span></pre>
-                </div>
-            </div>
-        </section>
-
         <section class="mt-20">
             <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">5. Tu Primera Ruta (web.php)</h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
                 En Laravel, ninguna pantalla se muestra "por accidente". Todo debe estar explícitamente autorizado en el archivo de rutas. Imagina que <code>routes/web.php</code> es la recepcionista del edificio: ella decide a dónde va cada visitante.
             </p>
-            
             
             <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
                 <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700">
@@ -176,7 +208,7 @@ DB_PASSWORD=<span class="text-green-400"></span></pre>
 <span class="text-pink-400">&lt;?php</span>
 <span class="text-pink-400">use</span> <span class="text-yellow-300">Illuminate\\Support\\Facades\\Route</span>;
 
-<span class="text-gray-400">// Cuando el usuario entra a http://sistema_vuelos.test/saludo</span>
+<span class="text-gray-400">// Cuando el usuario entra a http://localhost:8000/saludo</span>
 <span class="text-yellow-300">Route</span>::<span class="text-yellow-300">get</span>(<span class="text-green-400">'/saludo'</span>, <span class="text-pink-400">function</span> () {
     <span class="text-pink-400">return</span> <span class="text-green-400">'¡Hola Ingenieros de la UPDS!'</span>;
 });</pre>
@@ -210,7 +242,7 @@ DB_PASSWORD=<span class="text-green-400"></span></pre>
 <span class="text-yellow-300">Route</span>::<span class="text-yellow-300">get</span>(<span class="text-green-400">'/inicio'</span>, <span class="text-pink-400">function</span> () {
     <span class="text-gray-400">// Pasamos datos a la vista usando un Arreglo</span>
     <span class="text-pink-400">return</span> <span class="text-yellow-300">view</span>(<span class="text-green-400">'inicio'</span>, [
-        <span class="text-green-400">'usuario'</span> =&gt; <span class="text-green-400">'Jimmy'</span>
+        <span class="text-green-400">'usuario'</span> =&gt; <span class="text-green-400">'Estudiante'</span>
     ]);
 });</pre>
                 </div>
@@ -259,15 +291,11 @@ DB_PASSWORD=<span class="text-green-400"></span></pre>
             </p>
         </section>
 
-
-
         <section class="mt-20">
             <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">8. Migraciones (La BD como Código)</h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
                 En Laravel, no abrimos phpMyAdmin para crear tablas. Usamos <strong>Migraciones</strong>. Esto es literalmente "Control de Versiones para tu Base de Datos". Si te equivocas, puedes deshacer la tabla con un comando en lugar de borrarla a mano.
             </p>
-
-            
             
             <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-xl mb-6">
                 <h4 class="font-bold text-blue-900 mb-2"><i class="fas fa-lightbulb text-yellow-500 mr-2"></i>Pro-Tip de Arquitecto: El Comando 2x1</h4>
@@ -371,7 +399,6 @@ DB_PASSWORD=<span class="text-green-400"></span></pre>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
                 Un error de novato es copiar y pegar el Navbar y el Footer en todas las páginas HTML. En Laravel, creamos una <strong>Plantilla Maestra (Layout)</strong> y las demás vistas solo "inyectan" su contenido en ella usando <code>@extends</code> y <code>@section</code>.
             </p>
-            
         </section>
 
         <section class="mt-20">
@@ -436,8 +463,6 @@ DB_PASSWORD=<span class="text-green-400"></span></pre>
                 </div>
             </div>
         </section>
-
-        
 
     </div>
 </div>
