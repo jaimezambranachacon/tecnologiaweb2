@@ -1,262 +1,206 @@
 // content/texto_base_u02.js
+
+
+// content/texto_base_u11.js
+
 const pag_texto_base_u02 = `
+
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
     <header class="mb-20">
-        <span class="text-blue-500 font-black uppercase text-xs tracking-[0.3em]">TEXTO BASE / UNIDAD 02</span>
+        <span class="text-cyan-500 font-black uppercase text-xs tracking-[0.3em] flex items-center gap-2">
+            <i class="fab fa-react text-lg"></i> TEXTO BASE / UNIDAD 11
+        </span>
         <h1 class="text-5xl md:text-6xl font-black text-[#003366] tracking-tighter uppercase leading-none mt-2">
-            ARQUITECTURA<br>
-            <span class="text-blue-500">VISUAL (CSS3)</span>
+            REACT JS:<br>
+            <span class="text-cyan-500">DOMINIO DE COMPONENTES</span>
         </h1>
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            Cascading Style Sheets (CSS) es el lenguaje de diseño que define la presentación de nuestro documento estructurado. En esta unidad, dominaremos la separación real entre el contenido (HTML) y la Experiencia de Usuario (UX/UI).
+            No podemos construir una App móvil robusta sin entender la lógica reactiva. En esta unidad profundizaremos en el flujo de datos unidireccional, la gestión de estados complejos y la renderización dinámica.
         </p>
-        <div class="h-2 w-24 bg-[#003366] mt-8"></div>
+        <div class="h-2 w-24 bg-cyan-500 mt-8"></div>
     </header>
 
     <div class="max-w-5xl space-y-20">
 
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">1. Selectores y Especificidad</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Para darle estilo a un elemento, primero debemos "atraparlo". La Cascada en CSS significa que las reglas se aplican de arriba hacia abajo, pero la <strong>Especificidad</strong> dicta qué regla gana si hay un conflicto (un ID siempre vence a una Clase).
+    <section class="mb-20">
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">1. El Origen: La Solución de Meta al Caos</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <div class="text-lg text-slate-600 leading-relaxed space-y-4">
+            <p>
+                <strong>React</strong> fue creado por <strong>Jordan Walke</strong>, un ingeniero de software en Facebook (ahora Meta). Se implementó por primera vez en el News Feed de Facebook en 2011 y más tarde en Instagram en 2012.
             </p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700">
-                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-                    <span class="text-slate-400 text-[10px] font-mono ml-2 uppercase">style.css</span>
-                </div>
-                <pre class="p-6 text-xs md:text-sm font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">/* 1. Selector de Etiqueta (Baja especificidad) */</span>
-<span class="text-pink-400">p</span> <span class="text-white">{</span>
-    <span class="text-blue-300">color</span><span class="text-white">:</span> <span class="text-green-400">#333333</span><span class="text-white">;</span>
-    <span class="text-blue-300">line-height</span><span class="text-white">:</span> <span class="text-yellow-300">1.6</span><span class="text-white">;</span>
-<span class="text-white">}</span>
+            <p>
+                <strong>¿Por qué se creó?</strong> Facebook enfrentaba un problema masivo: su interfaz era tan compleja que las actualizaciones de datos (como una nueva notificación) causaban errores en cascada. El DOM tradicional del navegador es lento y difícil de manejar a gran escala.
+            </p>
+            <p>
+                La solución de React fue el <strong>Virtual DOM</strong>: una copia ligera de la interfaz que permite a React calcular qué cambió exactamente y actualizar solo esa pequeña parte del sitio, sin recargar todo. Esto revolucionó la velocidad de las aplicaciones modernas.
+            </p>
+        </div>
+        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-200">
+            <h4 class="font-black text-[#003366] text-sm uppercase tracking-widest mb-4">Puntos Clave de su Filosofía:</h4>
+            <ul class="space-y-4 text-sm text-slate-500">
+                <li class="flex gap-3"><i class="fas fa-cubes text-cyan-500 mt-1"></i> <strong>Declarativo:</strong> Tú dices qué quieres ver en pantalla, no cómo hacerlo paso a paso.</li>
+                <li class="flex gap-3"><i class="fas fa-recycle text-cyan-500 mt-1"></i> <strong>Componentizado:</strong> La UI se divide en piezas pequeñas, independientes y reutilizables.</li>
+                <li class="flex gap-3"><i class="fas fa-arrow-down text-cyan-500 mt-1"></i> <strong>Flujo Unidireccional:</strong> Los datos viajan del padre al hijo, facilitando el rastreo de errores (debug).</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
-<span class="text-gray-400">/* 2. Selector de Clase (Media especificidad - RECOMENDADO) */</span>
-<span class="text-pink-400">.alerta-error</span> <span class="text-white">{</span>
-    <span class="text-blue-300">background-color</span><span class="text-white">:</span> <span class="text-green-400">#fee2e2</span><span class="text-white">;</span>
-    <span class="text-blue-300">border-left</span><span class="text-white">:</span> <span class="text-yellow-300">4px</span> <span class="text-pink-400">solid</span> <span class="text-green-400">#ef4444</span><span class="text-white">;</span>
-<span class="text-white">}</span>
 
-<span class="text-gray-400">/* 3. Selector de ID (Alta especificidad - Usar con cautela) */</span>
-<span class="text-pink-400">#cabecera-principal</span> <span class="text-white">{</span>
-    <span class="text-blue-300">height</span><span class="text-white">:</span> <span class="text-yellow-300">80px</span><span class="text-white">;</span>
-<span class="text-white">}</span>
 
-<span class="text-gray-400">/* 4. Pseudo-clases (Interacción del usuario) */</span>
-<span class="text-pink-400">.btn-enviar:hover</span> <span class="text-white">{</span>
-    <span class="text-blue-300">transform</span><span class="text-white">:</span> <span class="text-yellow-300">scale</span>(<span class="text-yellow-300">1.05</span>)<span class="text-white">;</span>
-    <span class="text-blue-300">cursor</span><span class="text-white">:</span> <span class="text-green-400">pointer</span><span class="text-white">;</span>
-<span class="text-white">}</span></pre>
+
+
+<section class="mb-20">
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. Control de Datos: useState y Más</h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-8">
+        Para un ingeniero, el <strong>Estado</strong> es la representación del sistema en un momento dado. Sin estado, una App móvil es solo una imagen estática.
+    </p>
+
+    <div class="space-y-12">
+        <div class="bg-white border-2 border-slate-100 p-8 rounded-3xl shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="bg-cyan-100 text-cyan-700 font-black px-4 py-1 rounded-lg text-xs uppercase">useState</span>
+                <h4 class="text-xl font-black text-[#003366]">La Memoria del Componente</h4>
             </div>
-        </section>
+            <p class="text-slate-600 mb-6">
+                Es el Hook principal. Permite que el componente "recuerde" información, como el nombre de un pasajero en tu app de vuelos o si un formulario tiene errores.
+            </p>
+            <div class="bg-slate-900 rounded-xl p-6 font-mono text-sm text-blue-300 overflow-x-auto">
+                <span class="text-pink-400">const</span> [vueloId, setVueloId] = <span class="text-yellow-300">useState</span>(<span class="text-purple-400">null</span>);
+            </div>
+        </div>
+
+        <div class="bg-white border-2 border-slate-100 p-8 rounded-3xl shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="bg-indigo-100 text-indigo-700 font-black px-4 py-1 rounded-lg text-xs uppercase">Props</span>
+                <h4 class="text-xl font-black text-[#003366]">Pase de Parámetros</h4>
+            </div>
+            <p class="text-slate-600 mb-4">
+                Las <strong>Properties</strong> son la forma en que un componente recibe configuración desde afuera. Son inmutables (el componente hijo no puede cambiarlas, solo leerlas).
+            </p>
+            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bold text-indigo-600 uppercase">
+                <li class="bg-indigo-50 p-3 rounded-lg text-center border border-indigo-100">Inmutabilidad</li>
+                <li class="bg-indigo-50 p-3 rounded-lg text-center border border-indigo-100">Configurabilidad</li>
+            </ul>
+        </div>
+
+        <div class="bg-white border-2 border-slate-100 p-8 rounded-3xl shadow-sm">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="bg-amber-100 text-amber-700 font-black px-4 py-1 rounded-lg text-xs uppercase">Condicionales</span>
+                <h4 class="text-xl font-black text-[#003366]">Interfaz Inteligente</h4>
+            </div>
+            <p class="text-slate-600 mb-6">
+                React permite mostrar diferentes elementos según el estado. Por ejemplo: mostrar un <em>spinner</em> de carga mientras esperamos la respuesta de tu API de Laravel.
+            </p>
+            <div class="bg-slate-900 rounded-xl p-6 font-mono text-sm text-blue-300 overflow-x-auto">
+                { cargando ? &lt;Loading /&gt; : &lt;ListaVuelos /&gt; }
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. El Modelo de Caja (Box Model)</h3>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. Props: Comunicación Unidireccional</h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                El concepto más importante de CSS. <strong>Todo elemento HTML es una caja rectangular</strong>. Entender cómo el margen (afuera), el borde, el relleno (adentro) y el contenido interactúan es vital para no romper los diseños.
+                Los componentes deben ser reutilizables. Las <strong>Props</strong> son los atributos que enviamos de un componente Padre a un Hijo.
             </p>
-            
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-2xl mb-6">
-                <p class="text-sm text-blue-900"><strong>El reseteo universal:</strong> Por defecto, si le das a una caja 100px de ancho y 20px de padding, la caja medirá 140px. Para obligar a CSS a respetar tus medidas, los ingenieros siempre usamos <code>box-sizing: border-box;</code>.</p>
-            </div>
-
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs md:text-sm font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">/* Reseteo Profesional Estándar */</span>
-<span class="text-pink-400">*</span>, <span class="text-pink-400">*::before</span>, <span class="text-pink-400">*::after</span> <span class="text-white">{</span>
-    <span class="text-blue-300">margin</span><span class="text-white">:</span> <span class="text-yellow-300">0</span><span class="text-white">;</span>
-    <span class="text-blue-300">padding</span><span class="text-white">:</span> <span class="text-yellow-300">0</span><span class="text-white">;</span>
-    <span class="text-blue-300">box-sizing</span><span class="text-white">:</span> <span class="text-green-400">border-box</span><span class="text-white">;</span>
-<span class="text-white">}</span>
-
-<span class="text-pink-400">.tarjeta-producto</span> <span class="text-white">{</span>
-    <span class="text-blue-300">width</span><span class="text-white">:</span> <span class="text-yellow-300">300px</span><span class="text-white">;</span>      <span class="text-gray-400">/* Ancho total (incluye padding y border) */</span>
-    <span class="text-blue-300">padding</span><span class="text-white">:</span> <span class="text-yellow-300">20px</span><span class="text-white">;</span>     <span class="text-gray-400">/* Espacio interno hacia el texto */</span>
-    <span class="text-blue-300">border</span><span class="text-white">:</span> <span class="text-yellow-300">1px</span> <span class="text-pink-400">solid</span> <span class="text-green-400">#ccc</span><span class="text-white">;</span> <span class="text-gray-400">/* Borde visible */</span>
-    <span class="text-blue-300">margin-bottom</span><span class="text-white">:</span> <span class="text-yellow-300">15px</span><span class="text-white">;</span> <span class="text-gray-400">/* Espacio externo hacia otras cajas */</span>
-<span class="text-white">}</span></pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. Flujo y Posicionamiento</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                A veces necesitamos sacar un elemento de su orden natural (como un menú fijo arriba o un botón de chat flotante). Para esto usamos la propiedad <code>position</code>.
-            </p>
-
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-black text-[#003366] mb-2 uppercase text-sm">Relative & Absolute</h4>
-                    <p class="text-sm text-slate-500 mb-4">Un elemento <code>absolute</code> se mueve libremente <strong>dentro</strong> del primer contenedor padre que tenga <code>relative</code>.</p>
-                    <pre class="bg-slate-900 p-4 rounded-xl text-[10px] font-mono text-blue-300 overflow-x-auto">
-<span class="text-pink-400">.padre</span> { <span class="text-blue-300">position</span>: <span class="text-green-400">relative</span>; }
-<span class="text-pink-400">.hijo-flotante</span> {
-    <span class="text-blue-300">position</span>: <span class="text-green-400">absolute</span>;
-    <span class="text-blue-300">top</span>: <span class="text-yellow-300">10px</span>;
-    <span class="text-blue-300">right</span>: <span class="text-yellow-300">10px</span>;
+                    <h4 class="font-bold text-cyan-600 mb-2">Componente Hijo (Tarjeta)</h4>
+                    <pre class="text-[10px] font-mono text-slate-700 bg-white p-4 rounded-lg border">
+function Card({ titulo, destino }) {
+  return (
+    &lt;div&gt;
+      &lt;h3&gt;{titulo}&lt;/h3&gt;
+      &lt;p&gt;{destino}&lt;/p&gt;
+    &lt;/div&gt;
+  );
 }</pre>
                 </div>
-                
                 <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-black text-[#003366] mb-2 uppercase text-sm">Fixed & Sticky</h4>
-                    <p class="text-sm text-slate-500 mb-4"><code>Fixed</code> se ancla a la pantalla del usuario (no se mueve al hacer scroll). <code>Sticky</code> se pega al llegar a un punto.</p>
-                    <pre class="bg-slate-900 p-4 rounded-xl text-[10px] font-mono text-blue-300 overflow-x-auto">
-<span class="text-pink-400">.menu-navegacion</span> {
-    <span class="text-blue-300">position</span>: <span class="text-green-400">fixed</span>;
-    <span class="text-blue-300">top</span>: <span class="text-yellow-300">0</span>;
-    <span class="text-blue-300">width</span>: <span class="text-yellow-300">100%</span>;
-    <span class="text-blue-300">z-index</span>: <span class="text-yellow-300">999</span>; <span class="text-gray-400">/* Capa superior */</span>
-}</pre>
+                    <h4 class="font-bold text-indigo-600 mb-2">Uso en el Padre</h4>
+                    <pre class="text-[10px] font-mono text-slate-700 bg-white p-4 rounded-lg border">
+&lt;Card 
+  titulo="Vuelo 102" 
+  destino="Santa Cruz" 
+/&gt;</pre>
                 </div>
             </div>
         </section>
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">4. Arquitectura de Layout: Flexbox</h3>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. Renderizado de Listas (Map)</h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                <strong>El estándar absoluto para alineación unidimensional (filas o columnas).</strong> Reemplaza por completo el uso de <code>float</code>. Con Flexbox, centrar un elemento vertical y horizontalmente dejó de ser un dolor de cabeza.
+                En React no usamos ciclos <code>for</code>. Usamos el método <code>.map()</code> para transformar arreglos de datos en elementos visuales. Cada elemento debe tener una <strong>key</strong> única.
             </p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <div class="bg-slate-800 px-4 py-2 border-b border-slate-700">
-                    <span class="text-slate-400 text-[10px] font-mono uppercase">Ejemplo: Barra de Navegación</span>
+            <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
+                <pre class="p-6 text-sm font-mono leading-relaxed text-blue-300">
+{vuelos.<span class="text-yellow-300">map</span>((vuelo) => (
+  &lt;div <span class="text-pink-400">key</span>={vuelo.id}&gt;
+    &lt;span&gt;{vuelo.codigo}&lt;/span&gt;
+  &lt;/div&gt;
+))}</pre>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">4. Inputs Controlados</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                A diferencia de HTML puro, en React el "dueño" de lo que se escribe en un input es el estado de React. Esto se conoce como <strong>Two-way data binding</strong>.
+            </p>
+            <div class="bg-cyan-50 border-l-4 border-cyan-500 p-8 rounded-r-2xl">
+                <pre class="text-xs font-mono text-cyan-900 leading-relaxed">
+&lt;input 
+  type="text" 
+  value={nombre} 
+  onChange={(e) => setNombre(e.target.value)} 
+/&gt;</pre>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">5. useEffect: El Corazón de la API</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                Este Hook controla los efectos secundarios. Lo usaremos para sincronizar nuestra App móvil con la base de datos de Laravel.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-6 bg-slate-900 rounded-xl">
+                    <h5 class="text-white font-bold text-xs uppercase mb-4">Caso A: Al Cargar</h5>
+                    <pre class="text-[10px] text-cyan-400 font-mono">
+useEffect(() => {
+  // Solo se ejecuta una vez
+}, []);</pre>
                 </div>
-                <pre class="p-6 text-xs md:text-sm font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">.navbar</span> <span class="text-white">{</span>
-    <span class="text-blue-300">display</span><span class="text-white">:</span> <span class="text-green-400">flex</span><span class="text-white">;</span>                 <span class="text-gray-400">/* Activa el motor Flexbox */</span>
-    <span class="text-blue-300">flex-direction</span><span class="text-white">:</span> <span class="text-green-400">row</span><span class="text-white">;</span>           <span class="text-gray-400">/* Elementos en fila (por defecto) */</span>
-    <span class="text-blue-300">justify-content</span><span class="text-white">:</span> <span class="text-green-400">space-between</span><span class="text-white">;</span>  <span class="text-gray-400">/* Separa el logo de los enlaces */</span>
-    <span class="text-blue-300">align-items</span><span class="text-white">:</span> <span class="text-green-400">center</span><span class="text-white">;</span>             <span class="text-gray-400">/* Centrado vertical perfecto */</span>
-    <span class="text-blue-300">gap</span><span class="text-white">:</span> <span class="text-yellow-300">20px</span><span class="text-white">;</span>                     <span class="text-gray-400">/* Separación exacta entre elementos interiores */</span>
-<span class="text-white">}</span></pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">5. CSS Grid Layout</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Mientras Flexbox domina una dimensión, <strong>Grid domina las dos dimensiones (filas y columnas a la vez)</strong>. Es la herramienta definitiva para crear galerías de productos, paneles de administración (dashboards) o estructuras generales de la página web.
-            </p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <div class="bg-slate-800 px-4 py-2 border-b border-slate-700">
-                    <span class="text-slate-400 text-[10px] font-mono uppercase">Ejemplo: Galería de 3 Columnas Responsiva</span>
-                </div>
-                <pre class="p-6 text-xs md:text-sm font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">.galeria-productos</span> <span class="text-white">{</span>
-    <span class="text-blue-300">display</span><span class="text-white">:</span> <span class="text-green-400">grid</span><span class="text-white">;</span>
-    <span class="text-gray-400">/* Crea 3 columnas de igual tamaño (1 fracción cada una) */</span>
-    <span class="text-blue-300">grid-template-columns</span><span class="text-white">:</span> <span class="text-yellow-300">repeat</span>(<span class="text-yellow-300">3</span>, <span class="text-yellow-300">1fr</span>)<span class="text-white">;</span> 
-    <span class="text-blue-300">gap</span><span class="text-white">:</span> <span class="text-yellow-300">30px</span><span class="text-white">;</span> <span class="text-gray-400">/* Espacio entre las tarjetas */</span>
-<span class="text-white">}</span></pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">6. Diseño Responsivo (Media Queries)</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Tu sistema debe verse impecable tanto en un monitor 4K como en un móvil de 6 pulgadas. Para esto usamos <code>@media</code>, inyectando reglas CSS condicionales basadas en el ancho de la pantalla del dispositivo.
-            </p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs md:text-sm font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">/* Estilos por defecto (Enfoque Mobile-First) */</span>
-<span class="text-pink-400">.contenedor</span> <span class="text-white">{</span>
-    <span class="text-blue-300">width</span><span class="text-white">:</span> <span class="text-yellow-300">100%</span><span class="text-white">;</span>
-    <span class="text-blue-300">padding</span><span class="text-white">:</span> <span class="text-yellow-300">15px</span><span class="text-white">;</span>
-<span class="text-white">}</span>
-
-<span class="text-gray-400">/* Si la pantalla es mayor a 768px (Tablets y PC) */</span>
-<span class="text-pink-400">@media</span> (<span class="text-blue-300">min-width</span><span class="text-white">:</span> <span class="text-yellow-300">768px</span>) <span class="text-white">{</span>
-    <span class="text-pink-400">.contenedor</span> <span class="text-white">{</span>
-        <span class="text-blue-300">width</span><span class="text-white">:</span> <span class="text-yellow-300">750px</span><span class="text-white">;</span>
-        <span class="text-blue-300">margin</span><span class="text-white">:</span> <span class="text-yellow-300">0</span> <span class="text-pink-400">auto</span><span class="text-white">;</span> <span class="text-gray-400">/* Centrado horizontal */</span>
-    <span class="text-white">}</span>
-<span class="text-white">}</span></pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">7. Variables CSS (Custom Properties)</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                El CSS moderno nos permite declarar variables globales. Esto facilita el mantenimiento del sistema (si el cliente pide cambiar el "color primario" de la empresa, cambias <strong>una sola línea de código</strong> y se actualiza toda la aplicación).
-            </p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs md:text-sm font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">/* Definición de Variables en la raíz del documento */</span>
-<span class="text-pink-400">:root</span> <span class="text-white">{</span>
-    <span class="text-blue-300">--color-primario</span><span class="text-white">:</span> <span class="text-green-400">#003366</span><span class="text-white">;</span>
-    <span class="text-blue-300">--color-secundario</span><span class="text-white">:</span> <span class="text-green-400">#00aaff</span><span class="text-white">;</span>
-    <span class="text-blue-300">--fuente-base</span><span class="text-white">:</span> <span class="text-green-400">'Inter'</span>, <span class="text-pink-400">sans-serif</span><span class="text-white">;</span>
-<span class="text-white">}</span>
-
-<span class="text-gray-400">/* Uso de la variable */</span>
-<span class="text-pink-400">.boton-principal</span> <span class="text-white">{</span>
-    <span class="text-blue-300">background-color</span><span class="text-white">:</span> <span class="text-yellow-300">var</span>(<span class="text-green-400">--color-primario</span>)<span class="text-white">;</span>
-    <span class="text-blue-300">font-family</span><span class="text-white">:</span> <span class="text-yellow-300">var</span>(<span class="text-green-400">--fuente-base</span>)<span class="text-white">;</span>
-<span class="text-white">}</span></pre>
-            </div>
-        </section>
-
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">8. Actividad Libre: Gamificación</h3>
-            
-            <div class="bg-gradient-to-br from-[#f0fdf4] to-[#dcfce7] p-8 md:p-10 rounded-[2rem] border border-green-200 shadow-lg relative overflow-hidden group hover:shadow-xl transition-all duration-300">
-                <i class="fas fa-frog absolute -right-6 -bottom-6 text-green-500/10 text-[12rem] group-hover:scale-110 transition-transform duration-500"></i>
-                
-                <div class="relative z-10 flex flex-col md:flex-row gap-10 items-center">
-                    
-                    <div class="flex-1">
-                        <span class="text-[10px] font-black uppercase tracking-widest text-green-600 mb-2 block">
-                            <i class="fas fa-gamepad mr-1"></i> Entrena tu memoria muscular
-                        </span>
-                        <h4 class="text-3xl font-black text-[#003366] mb-4">Flexbox Froggy</h4>
-                        
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            <strong>¿Qué es?</strong> Es un minijuego interactivo directamente en el navegador donde debes ayudar a la rana Froggy y a sus amigos a llegar a sus hojas de nenúfar escribiendo código CSS real.
-                        </p>
-                        
-                        <p class="text-slate-600 leading-relaxed mb-8">
-                            <strong>El Beneficio Técnico:</strong> Aprender CSS puro leyendo teoría puede ser abstracto. Al aplicar propiedades como <code>justify-content</code> o <code>align-items</code> y ver visualmente en tiempo real cómo se mueven los elementos, consolidarás el conocimiento de forma intuitiva y perderás el miedo a "romper" la pantalla.
-                        </p>
-                        
-                        <a href="https://flexboxfroggy.com/#es" target="_blank" class="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white font-black uppercase tracking-widest text-sm py-4 px-8 rounded-xl transition-colors shadow-md group-hover:shadow-lg">
-                            <span>Jugar Flexbox Froggy</span>
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                    </div>
-                    
-                    <div class="w-full md:w-5/12 flex-shrink-0">
-                        <div class="rounded-xl overflow-hidden shadow-2xl border-4 border-white transform md:rotate-3 group-hover:rotate-0 transition-transform duration-300 bg-white">
-                            
-                        </div>
-                    </div>
-                    
+                <div class="p-6 bg-slate-900 rounded-xl">
+                    <h5 class="text-white font-bold text-xs uppercase mb-4">Caso B: Por dependencia</h5>
+                    <pre class="text-[10px] text-cyan-400 font-mono">
+useEffect(() => {
+  // Se ejecuta cada vez que 'id' cambie
+}, [id]);</pre>
                 </div>
             </div>
         </section>
 
-        <section class="bg-[#003366] text-white p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden mt-20">
-            <i class="fab fa-css3-alt absolute -right-6 -bottom-6 text-white/5 text-[15rem]"></i>
+        <section class="bg-[#003366] text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
+            <i class="fab fa-react absolute -right-10 -bottom-10 text-white/5 text-[15rem]"></i>
             <div class="relative z-10">
-                <h3 class="text-3xl font-black text-[#00aaff] uppercase mb-4">Conclusión de Ingeniería</h3>
-                <p class="text-lg text-blue-50 font-light leading-relaxed mb-6">
-                    A lo largo del proyecto formativo, no escribiremos CSS desde cero. Utilizaremos frameworks utilitarios como <strong>Tailwind CSS</strong> o de componentes como <strong>Bootstrap</strong> para agilizar el desarrollo. Sin embargo, <strong>el framework no hace magia</strong>; bajo el capó, todo se compila a las reglas de Flexbox, Grid y Especificidad que acabas de leer. Dominar el "CSS Puro" te hace un desarrollador a prueba de balas.
-                </p>
-                <div class="inline-block border-t border-blue-400/30 pt-4 mt-2">
-                    <span class="text-[10px] uppercase tracking-widest text-blue-300 font-bold">» Fin de la Unidad 02</span>
+                <h3 class="text-2xl font-black text-cyan-400 uppercase mb-6">Checklist del Desarrollador React</h3>
+                <div class="space-y-4 text-sm">
+                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿Dividiste tu interfaz en componentes pequeños?</p>
+                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿Estás pasando datos correctamente mediante Props?</p>
+                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿El estado maneja solo lo que realmente debe cambiar?</p>
+                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿Usaste .map() con una key única para tus listas?</p>
                 </div>
             </div>
         </section>
 
-
+        
 
     </div>
 </div>
