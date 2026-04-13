@@ -1,192 +1,139 @@
 // content/texto_base_u01.js
 
 const pag_texto_base_u01 = `
+
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
     <header class="mb-20">
-        <span class="text-[#00aaff] font-black uppercase text-xs tracking-[0.3em]">TEXTO BASE / UNIDAD 01</span>
+        <span class="text-indigo-600 font-black uppercase text-xs tracking-[0.3em] flex items-center gap-2">
+            <i class="fas fa-mobile-alt text-lg"></i> TEXTO BASE / UNIDAD 10
+        </span>
         <h1 class="text-5xl md:text-6xl font-black text-[#003366] tracking-tighter uppercase leading-none mt-2">
-            ESTRUCTURA<br>
-            <span class="text-[#00aaff]">SEMÁNTICA (HTML5)</span>
+            INTRODUCCIÓN AL<br>
+            <span class="text-indigo-600">DESARROLLO MÓVIL</span>
         </h1>
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            El lenguaje de marcado hipertextual es el esqueleto de toda la web. Aquí aprenderemos a estructurar la información con etiquetas semánticas antes de darle diseño (CSS) o interactividad (JS).
+            Desde la aparición del primer iPhone en 2007, el mundo cambió. Para un Ingeniero Web, el desarrollo móvil no es una opción, es la evolución natural de sus sistemas. Entenderemos la guerra de ecosistemas y cómo dominarlos con código moderno.
         </p>
-        <div class="h-2 w-24 bg-[#003366] mt-8"></div>
+        <div class="h-2 w-24 bg-indigo-600 mt-8"></div>
     </header>
 
-    <div class="max-w-4xl space-y-16">
+    <div class="max-w-5xl space-y-20">
 
         <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">1. El Boilerplate (Estructura Básica)</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">Todo documento web requiere una estructura inicial obligatoria que declara el tipo de documento, el idioma y la configuración de metadatos.</p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <div class="bg-slate-800 px-4 py-2 flex items-center gap-2 border-b border-slate-700">
-                    <div class="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#27c93f]"></div>
-                    <span class="text-slate-400 text-[10px] font-mono ml-2 uppercase">index.html</span>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">1. La Dualidad del Mercado (Nativo)</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                Históricamente, el desarrollo móvil se dividió en dos grandes murallas. Programar para una implicaba ignorar a la otra, exigiendo lenguajes y herramientas totalmente distintas:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-8 bg-green-50 rounded-3xl border border-green-100 shadow-sm relative overflow-hidden">
+                    <i class="fab fa-android absolute -right-4 -bottom-4 text-green-200 text-8xl"></i>
+                    <h4 class="text-2xl font-black text-green-800 uppercase mb-4">Android (Google)</h4>
+                    <ul class="space-y-3 text-sm text-green-900 font-medium">
+                        <li><i class="fas fa-code mr-2"></i> Lenguajes: <strong>Java</strong> y el moderno <strong>Kotlin</strong>.</li>
+                        <li><i class="fas fa-tools mr-2"></i> IDE: Android Studio.</li>
+                        <li><i class="fas fa-globe mr-2"></i> Mercado: Más del 70% de usuarios globales.</li>
+                    </ul>
                 </div>
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">&lt;!DOCTYPE html&gt;</span>
-<span class="text-pink-400">&lt;html</span> <span class="text-yellow-300">lang</span>=<span class="text-green-400">"es"</span><span class="text-pink-400">&gt;</span>
-<span class="text-pink-400">&lt;head&gt;</span>
-    <span class="text-pink-400">&lt;meta</span> <span class="text-yellow-300">charset</span>=<span class="text-green-400">"UTF-8"</span><span class="text-pink-400">&gt;</span>
-    <span class="text-pink-400">&lt;title&gt;</span><span class="text-white">Mi primera página</span><span class="text-pink-400">&lt;/title&gt;</span>
-<span class="text-pink-400">&lt;/head&gt;</span>
-<span class="text-pink-400">&lt;body&gt;</span>
-    <span class="text-pink-400">&lt;h1&gt;</span><span class="text-white">Hola Mundo</span><span class="text-pink-400">&lt;/h1&gt;</span>
-<span class="text-pink-400">&lt;/body&gt;</span>
-<span class="text-pink-400">&lt;/html&gt;</span></pre>
-            </div>
-        </section>
 
-        <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">2. Encabezados y Párrafos</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">Jerarquizan la información. Los buscadores (SEO) leen los <code>&lt;h1&gt;</code> al <code>&lt;h6&gt;</code> para entender la importancia de cada bloque de texto.</p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">&lt;h1&gt;</span><span class="text-white">Título principal del sitio</span><span class="text-pink-400">&lt;/h1&gt;</span>
-<span class="text-pink-400">&lt;h2&gt;</span><span class="text-white">Subtítulo o sección</span><span class="text-pink-400">&lt;/h2&gt;</span>
-<span class="text-pink-400">&lt;p&gt;</span><span class="text-white">Este es un párrafo de ejemplo para mostrar texto continuo.</span><span class="text-pink-400">&lt;/p&gt;</span></pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">3. Listas</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">Fundamentales no solo para enumerar datos, sino también para construir menús de navegación en la web moderna.</p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">&lt;!-- Lista Desordenada (Viñetas) --&gt;</span>
-<span class="text-pink-400">&lt;ul&gt;</span>
-    <span class="text-pink-400">&lt;li&gt;</span><span class="text-white">Manzana</span><span class="text-pink-400">&lt;/li&gt;</span>
-    <span class="text-pink-400">&lt;li&gt;</span><span class="text-white">Banana</span><span class="text-pink-400">&lt;/li&gt;</span>
-<span class="text-pink-400">&lt;/ul&gt;</span>
-
-<span class="text-gray-400">&lt;!-- Lista Ordenada (Números) --&gt;</span>
-<span class="text-pink-400">&lt;ol&gt;</span>
-    <span class="text-pink-400">&lt;li&gt;</span><span class="text-white">Primero</span><span class="text-pink-400">&lt;/li&gt;</span>
-    <span class="text-pink-400">&lt;li&gt;</span><span class="text-white">Segundo</span><span class="text-pink-400">&lt;/li&gt;</span>
-<span class="text-pink-400">&lt;/ol&gt;</span></pre>
-            </div>
-        </section>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <section>
-                <h3 class="text-xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">4. Hipervínculos</h3>
-                <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                    <pre class="p-6 text-[10px] font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">&lt;a</span> <span class="text-yellow-300">href</span>=<span class="text-green-400">"https://google.com"</span><span class="text-pink-400">&gt;</span><span class="text-white">Ir a Google</span><span class="text-pink-400">&lt;/a&gt;</span>
-<span class="text-pink-400">&lt;a</span> <span class="text-yellow-300">href</span>=<span class="text-green-400">"pagina.html"</span><span class="text-pink-400">&gt;</span><span class="text-white">Página local</span><span class="text-pink-400">&lt;/a&gt;</span></pre>
+                <div class="p-8 bg-slate-100 rounded-3xl border border-slate-200 shadow-sm relative overflow-hidden">
+                    <i class="fab fa-apple absolute -right-4 -bottom-4 text-slate-300 text-8xl"></i>
+                    <h4 class="text-2xl font-black text-slate-800 uppercase mb-4">iOS (Apple)</h4>
+                    <ul class="space-y-3 text-sm text-slate-700 font-medium">
+                        <li><i class="fas fa-code mr-2"></i> Lenguajes: Objective-C y el actual <strong>Swift</strong>.</li>
+                        <li><i class="fas fa-tools mr-2"></i> IDE: Xcode (Requiere macOS).</li>
+                        <li><i class="fas fa-coins mr-2"></i> Mercado: Menor cuota, pero usuarios con mayor gasto en apps.</li>
+                    </ul>
                 </div>
-            </section>
-            
-            <section>
-                <h3 class="text-xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">5. Imágenes</h3>
-                <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                    <pre class="p-6 text-[10px] font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">&lt;img</span> <span class="text-yellow-300">src</span>=<span class="text-green-400">"foto.jpg"</span> 
-     <span class="text-yellow-300">alt</span>=<span class="text-green-400">"Descripción SEO"</span> 
-     <span class="text-yellow-300">width</span>=<span class="text-green-400">"300"</span><span class="text-pink-400">&gt;</span></pre>
-                </div>
-            </section>
-        </div>
-
-        <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">6. Tablas de Datos</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">Utilizadas estrictamente para mostrar datos tabulares (reportes, estadísticas), nunca para diseñar la estructura de la página.</p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">&lt;table</span> <span class="text-yellow-300">border</span>=<span class="text-green-400">"1"</span><span class="text-pink-400">&gt;</span>
-    <span class="text-pink-400">&lt;tr&gt;</span> <span class="text-gray-400">&lt;!-- Fila de encabezados --&gt;</span>
-        <span class="text-pink-400">&lt;th&gt;</span><span class="text-white">Nombre</span><span class="text-pink-400">&lt;/th&gt;</span>
-        <span class="text-pink-400">&lt;th&gt;</span><span class="text-white">Edad</span><span class="text-pink-400">&lt;/th&gt;</span>
-    <span class="text-pink-400">&lt;/tr&gt;</span>
-    <span class="text-pink-400">&lt;tr&gt;</span> <span class="text-gray-400">&lt;!-- Fila de datos --&gt;</span>
-        <span class="text-pink-400">&lt;td&gt;</span><span class="text-white">Ana</span><span class="text-pink-400">&lt;/td&gt;</span>
-        <span class="text-pink-400">&lt;td&gt;</span><span class="text-white">25</span><span class="text-pink-400">&lt;/td&gt;</span>
-    <span class="text-pink-400">&lt;/tr&gt;</span>
-<span class="text-pink-400">&lt;/table&gt;</span></pre>
             </div>
         </section>
 
         <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">7. Formularios (Interacción)</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">El mecanismo principal para enviar datos desde el navegador del cliente hacia nuestro servidor backend (PHP).</p>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. La Revolución Multiplataforma</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                Como ingenieros, buscamos eficiencia. ¿Por qué escribir dos veces el mismo sistema? Así nacen los frameworks multiplataforma que permiten usar <strong>un solo código para ambas tiendas (App Store y Play Store)</strong>.
+            </p>
             
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-pink-400">&lt;form</span> <span class="text-yellow-300">action</span>=<span class="text-green-400">"/procesar.php"</span> <span class="text-yellow-300">method</span>=<span class="text-green-400">"POST"</span><span class="text-pink-400">&gt;</span>
-    
-    <span class="text-pink-400">&lt;label&gt;</span><span class="text-white">Nombre:</span><span class="text-pink-400">&lt;/label&gt;</span>
-    <span class="text-pink-400">&lt;input</span> <span class="text-yellow-300">type</span>=<span class="text-green-400">"text"</span> <span class="text-yellow-300">name</span>=<span class="text-green-400">"nombre"</span><span class="text-pink-400">&gt;</span>
-    
-    <span class="text-pink-400">&lt;br&gt;</span>
-    
-    <span class="text-pink-400">&lt;label&gt;</span><span class="text-white">Mensaje:</span><span class="text-pink-400">&lt;/label&gt;</span>
-    <span class="text-pink-400">&lt;textarea</span> <span class="text-yellow-300">name</span>=<span class="text-green-400">"mensaje"</span><span class="text-pink-400">&gt;&lt;/textarea&gt;</span>
-    
-    <span class="text-pink-400">&lt;button</span> <span class="text-yellow-300">type</span>=<span class="text-green-400">"submit"</span><span class="text-pink-400">&gt;</span><span class="text-white">Enviar Datos</span><span class="text-pink-400">&lt;/button&gt;</span>
-
-<span class="text-pink-400">&lt;/form&gt;</span></pre>
+            <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-xl mb-8">
+                <h4 class="font-bold text-indigo-900 mb-2">Requisito Crítico: Dominar React</h4>
+                <p class="text-sm text-indigo-800">
+                    Para entrar a <strong>React Native</strong>, primero debemos ser maestros en <strong>React JS</strong>. La lógica de componentes, estados (State) y efectos (Hooks) que aprendimos para la web es el 90% de lo que usaremos en el móvil.
+                </p>
             </div>
         </section>
 
         <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">8. Multimedia Nativa</h3>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">&lt;!-- Audio con controles nativos --&gt;</span>
-<span class="text-pink-400">&lt;audio</span> <span class="text-yellow-300">controls</span><span class="text-pink-400">&gt;</span>
-    <span class="text-pink-400">&lt;source</span> <span class="text-yellow-300">src</span>=<span class="text-green-400">"musica.mp3"</span> <span class="text-yellow-300">type</span>=<span class="text-green-400">"audio/mpeg"</span><span class="text-pink-400">&gt;</span>
-<span class="text-pink-400">&lt;/audio&gt;</span>
-
-<span class="text-gray-400">&lt;!-- Video --&gt;</span>
-<span class="text-pink-400">&lt;video</span> <span class="text-yellow-300">width</span>=<span class="text-green-400">"320"</span> <span class="text-yellow-300">controls</span><span class="text-pink-400">&gt;</span>
-    <span class="text-pink-400">&lt;source</span> <span class="text-yellow-300">src</span>=<span class="text-green-400">"video.mp4"</span> <span class="text-yellow-300">type</span>=<span class="text-green-400">"video/mp4"</span><span class="text-pink-400">&gt;</span>
-<span class="text-pink-400">&lt;/video&gt;</span></pre>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. Ranking de Tecnologías Móviles 2026</h3>
+            <div class="overflow-x-auto bg-white rounded-2xl shadow-lg border border-slate-200">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-[#003366] text-white uppercase text-xs tracking-widest">
+                            <th class="p-4 font-black">Framework</th>
+                            <th class="p-4 font-black">Creador</th>
+                            <th class="p-4 font-black">Lenguaje</th>
+                            <th class="p-4 font-black">Ventaja de Ingeniería</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-slate-100 hover:bg-indigo-50 transition-colors">
+                            <td class="p-4 font-bold text-[#003366]"><i class="fab fa-react text-cyan-500 mr-2"></i> React Native</td>
+                            <td class="p-4">Meta (Facebook)</td>
+                            <td class="p-4">JavaScript / TS</td>
+                            <td class="p-4">Usa componentes nativos reales. Ideal para equipos Web.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-indigo-50 transition-colors">
+                            <td class="p-4 font-bold text-[#003366]"><i class="fas fa-feather-alt text-blue-400 mr-2"></i> Flutter</td>
+                            <td class="p-4">Google</td>
+                            <td class="p-4">Dart</td>
+                            <td class="p-4">Rendimiento casi nativo. Control total de cada píxel.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-indigo-50 transition-colors">
+                            <td class="p-4 font-bold text-[#003366]"><i class="fas fa-layer-group text-blue-600 mr-2"></i> MAUI / Xamarin</td>
+                            <td class="p-4">Microsoft</td>
+                            <td class="p-4">C#</td>
+                            <td class="p-4">Perfecto para empresas integradas al ecosistema .NET.</td>
+                        </tr>
+                        <tr class="hover:bg-indigo-50 transition-colors">
+                            <td class="p-4 font-bold text-[#003366]"><i class="fas fa-mobile text-slate-400 mr-2"></i> PWA</td>
+                            <td class="p-4">Estándar Web</td>
+                            <td class="p-4">HTML/CSS/JS</td>
+                            <td class="p-4">Webs que "parecen" apps. Sin pasar por las tiendas.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
-        <section>
-            <h3 class="text-2xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-4">9. Contenedores (Divs y Spans)</h3>
-            <p class="text-slate-600 leading-relaxed mb-4">Etiquetas "vacías" de significado, pero vitales para agrupar elementos y aplicarles estilos CSS o manipularlos con JS.</p>
-            
-            <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden border border-slate-700">
-                <pre class="p-6 text-xs font-mono leading-relaxed text-blue-300 overflow-x-auto">
-<span class="text-gray-400">&lt;!-- Elemento de Bloque (Ocupa todo el ancho) --&gt;</span>
-<span class="text-pink-400">&lt;div</span> <span class="text-yellow-300">class</span>=<span class="text-green-400">"caja-principal"</span><span class="text-pink-400">&gt;</span>
-    <span class="text-pink-400">&lt;p&gt;</span><span class="text-white">Este es un bloque agrupado.</span><span class="text-pink-400">&lt;/p&gt;</span>
-<span class="text-pink-400">&lt;/div&gt;</span>
-
-<span class="text-gray-400">&lt;!-- Elemento en Línea (No rompe el párrafo) --&gt;</span>
-<span class="text-pink-400">&lt;p&gt;</span><span class="text-white">Texto con </span><span class="text-pink-400">&lt;span</span> <span class="text-yellow-300">class</span>=<span class="text-green-400">"resalte"</span><span class="text-pink-400">&gt;</span><span class="text-white">una parte destacada</span><span class="text-pink-400">&lt;/span&gt;</span><span class="text-white">.</span><span class="text-pink-400">&lt;/p&gt;</span></pre>
+        <section class="mt-20">
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">4. Breve Historia: El fin de PhoneGap</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                En los inicios (2011), existía <strong>PhoneGap/Cordova</strong>. Intentaban meter una página web dentro de una "cáscara" móvil. El resultado: Apps lentas y que se sentían "falsas". 
+            </p>
+            <div class="bg-rose-50 border-l-4 border-rose-500 p-6 rounded-r-xl">
+                <p class="text-sm text-rose-800 italic">
+                    "React Native cambió las reglas en 2015 al proponer: 'Escribe en JS, pero genera componentes reales de Android/iOS'. Ya no es una web disfrazada, es software nativo controlado por JavaScript."
+                </p>
             </div>
         </section>
 
-        <section class="bg-[#003366] text-white p-8 md:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
-            <i class="fas fa-check-circle absolute -right-6 -bottom-6 text-white/10 text-[10rem]"></i>
+        <section class="mt-20 mb-10 bg-gradient-to-br from-indigo-900 to-indigo-700 p-8 md:p-12 rounded-[2rem] shadow-2xl text-white relative overflow-hidden">
+            <i class="fas fa-rocket absolute -right-10 -bottom-10 text-white/5 text-[20rem] transform -rotate-12"></i>
             <div class="relative z-10">
-                <h3 class="text-2xl font-black text-[#00aaff] uppercase mb-6">10. Buenas Prácticas de Ingeniería</h3>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-4">
-                        <i class="fas fa-check text-green-400 mt-1"></i>
-                        <p class="text-sm text-blue-50 font-light"><strong>Semántica y Accesibilidad:</strong> Usa siempre atributos como <code>alt</code> en las imágenes y <code>title</code> en enlaces clave para lectores de pantalla.</p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <i class="fas fa-check text-green-400 mt-1"></i>
-                        <p class="text-sm text-blue-50 font-light"><strong>Separación de Responsabilidades:</strong> No uses HTML para diseñar (evita atributos como <code>&lt;font&gt;</code> o <code>&lt;center&gt;</code>). El diseño es trabajo exclusivo de CSS.</p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <i class="fas fa-check text-green-400 mt-1"></i>
-                        <p class="text-sm text-blue-50 font-light"><strong>Validación Continua:</strong> Analiza siempre tu código HTML final usando la herramienta oficial del <a href="https://validator.w3.org/" target="_blank" class="text-yellow-400 hover:underline font-bold">W3C Validator</a> para prevenir errores estructurales.</p>
-                    </li>
-                </ul>
+                <h3 class="text-3xl font-black uppercase text-indigo-300 mb-6">Hacia el Proyecto Formativo</h3>
+                <p class="text-lg text-indigo-100 leading-relaxed mb-8">
+                    En esta asignatura, nos enfocaremos en <strong>React Native + Expo</strong>. ¿Por qué? Porque como expertos en Laravel y Web, es el camino más rápido para desplegar soluciones empresariales en Santa Cruz.
+                </p>
+                <div class="space-y-4 font-mono text-sm">
+                    <div class="flex items-center gap-4 bg-white/10 p-4 rounded-xl border border-white/20">
+                        <span class="bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+                        <p>Aprenderemos la sintaxis de <strong>React Hooks</strong>.</p>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white/10 p-4 rounded-xl border border-white/20">
+                        <span class="bg-indigo-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
+                        <p>Desplegaremos una App usando <strong>Expo Go</strong> en sus celulares reales.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -194,3 +141,6 @@ const pag_texto_base_u01 = `
 </div>
 
 `;
+
+
+

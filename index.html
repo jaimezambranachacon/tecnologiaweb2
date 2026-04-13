@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPDS - Ingeniería Web II</title>
+    <title>UPDS - Programacion Movil</title>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -48,7 +48,7 @@
     
     <aside class="w-72 bg-[#003366] text-white flex flex-col fixed inset-y-0 shadow-2xl z-50 transition-transform lg:translate-x-0 lg:static" :class="isMobile ? 'translate-x-0' : '-translate-x-full'">
         <div class="p-8 border-b border-white/10">
-            <h1 class="text-xl font-black italic tracking-tighter uppercase text-[#00aaff]">Tecnologia Web II</h1>            
+            <h1 class="text-xl font-black italic tracking-tighter uppercase text-[#00aaff]">Programacion Movil 1</h1>            
         </div>
 
         <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
@@ -116,15 +116,16 @@
                     name: 'Contenido', 
                     links: [
                         { slug: 'texto_guia', label: 'Texto de Guía', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargo texto_guia.js' },
-                        { slug: 'pag_texto_base_u01', label: 'U1: HTML Semántico', icon: 'fab fa-html5', content: pag_texto_base_u01 },
+                        { slug: 'pag_texto_base_u01', label: 'U1: Introduccion al dev movil', icon: 'fab fa-html5', content: pag_texto_base_u01 },
                         { slug: 'pag_texto_base_u02', label: 'U2: Diseño CSS', icon: 'fab fa-css3-alt', content: pag_texto_base_u02 },
+                        /* 
                         { slug: 'pag_texto_base_u03', label: 'U3: Lógica JS', icon: 'fab fa-js', content: pag_texto_base_u03 },                                                
                         { slug: 'pag_texto_base_u04', label: 'U4: PHP', icon: 'fab fa-js', content: pag_texto_base_u04 },                       
 
                         { slug: 'pag_texto_base_u05', label: 'U5: Bases de Datos', icon: 'fas fa-database', content: pag_texto_base_u05 },
                         
                         { slug: 'pag_texto_base_u06', label: 'U6: Frameworks', icon: 'fas fa-cubes', content: pag_texto_base_u06 },
-                        /* 
+                        
                         { slug: 'pag_texto_base_u07', label: 'U7: Seguridad Web', icon: 'fas fa-shield-alt', content: pag_texto_base_u07 },
                         { slug: 'pag_texto_base_u08', label: 'U8: DevOps', icon: 'fas fa-server', content: pag_texto_base_u08 },
                         { slug: 'pag_texto_base_u09', label: 'U9: Accesibilidad', icon: 'fas fa-universal-access', content: pag_texto_base_u09 },
