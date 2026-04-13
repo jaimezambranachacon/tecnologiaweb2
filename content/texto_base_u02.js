@@ -97,6 +97,7 @@ const pag_texto_base_u02 = `
             <div class="bg-slate-900 rounded-xl p-6 font-mono text-sm text-blue-300 overflow-x-auto">
                 { cargando ? &lt;Loading /&gt; : &lt;ListaVuelos /&gt; }
             </div>
+            
         </div>
     </div>
 </section>

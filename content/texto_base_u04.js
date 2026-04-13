@@ -288,15 +288,292 @@ const pag_texto_base_u04 = `
             </div>
         </section>
 
-        <section class="bg-indigo-600 text-white p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden mt-20">
-            <i class="fab fa-php absolute -right-6 -bottom-6 text-white/10 text-[15rem]"></i>
-            <div class="relative z-10">
-                <h3 class="text-3xl font-black text-indigo-200 uppercase mb-4">La Evolución a Laravel</h3>
-                <p class="text-lg text-indigo-50 font-light leading-relaxed mb-6">
-                    Felicidades. Acabas de comprender el núcleo del ecosistema backend moderno. Cuando entremos a <strong>Laravel</strong>, verás que cada Controlador, Modelo y Migración no es más que una "Clase Hija" que hereda (<code>extends</code>) de las clases maestras del framework. Dominar la POO es el único requisito real para dominar cualquier framework del mercado.
+
+<section class="mt-20">
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">10. Anatomía de un Servidor Web</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                Antes de instalar nuestro entorno de trabajo, debemos dominar el vocabulario técnico de la infraestructura web. En el Backend, tú no programas para un navegador, programas para un <strong>Servidor</strong>.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100 hover:shadow-md transition-all">
+                    <h4 class="font-black text-indigo-900 text-lg mb-4 border-b border-indigo-200 pb-2">Infraestructura</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong class="text-indigo-700 block"><i class="fas fa-server mr-2"></i>Servidor Web (Apache/Nginx):</strong> Es el "recepcionista". Es el programa que está escuchando 24/7 esperando que alguien escriba tu URL. Cuando llega una petición, busca tus archivos PHP y los ejecuta.
+                        </li>
+                        <li>
+                            <strong class="text-indigo-700 block"><i class="fas fa-database mr-2"></i>BD vs SGBD:</strong> La <strong>BD (Base de Datos)</strong> es la información cruda. El <strong>SGBD (Sistema Gestor)</strong> como MariaDB o MySQL, es el software inteligente que nos permite leer, guardar o borrar esos datos de forma segura.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 hover:shadow-md transition-all">
+                    <h4 class="font-black text-slate-800 text-lg mb-4 border-b border-slate-200 pb-2">Protocolos y Peticiones</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <strong class="text-slate-700 block"><i class="fas fa-globe mr-2"></i>HTTP vs HTTPS:</strong> HTTP es el camión de correos normal (cualquiera puede ver el paquete). HTTPS es un camión blindado; la información viaja encriptada usando un certificado SSL.
+                        </li>
+                        <li>
+                            <strong class="text-slate-700 block"><i class="fas fa-exchange-alt mr-2"></i>GET vs POST:</strong> 
+                            <span class="text-sm text-slate-600 block mt-1"><span class="font-bold text-blue-600">GET:</span> Pides información. Los datos viajan a la vista en la URL (ej: <code>?id=5</code>). Ideal para búsquedas.</span>
+                            <span class="text-sm text-slate-600 block mt-1"><span class="font-bold text-green-600">POST:</span> Envías información sensible. Los datos viajan ocultos en el cuerpo de la petición. Obligatorio para contraseñas y pagos.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-20 mb-10">
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">11. Entornos Locales: La Era de Laragon</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                Para programar en tu computadora (Localhost) sin tener que pagar un servidor real en internet, usamos emuladores. Por años, la industria usó <strong>XAMPP</strong> o <strong>WAMP</strong>. Eran buenos, pero pesados, difíciles de actualizar y propensos a errores de puertos. Hoy, la ingeniería moderna exige herramientas más ágiles.
+            </p>
+
+            <div class="bg-white border-2 border-indigo-500 rounded-[2rem] p-8 md:p-10 shadow-xl relative overflow-hidden group">
+                <i class="fas fa-rocket absolute -right-6 -bottom-6 text-indigo-50 text-[15rem] group-hover:scale-110 group-hover:-translate-y-4 transition-transform duration-500"></i>
+                
+                <div class="relative z-10">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-600 text-white flex items-center justify-center shadow-lg">
+                            <i class="fas fa-layer-group text-3xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-black text-[#003366] uppercase">Laragon</h4>
+                            <span class="text-indigo-500 font-bold text-sm tracking-widest uppercase">El Estándar Definitivo para Laravel</span>
+                        </div>
+                    </div>
+
+                    <p class="text-slate-700 leading-relaxed mb-8 max-w-3xl">
+                        Laragon es un entorno de desarrollo universal increíblemente rápido, ligero e independiente. A diferencia de XAMPP, no modifica los archivos del sistema operativo de tu computadora, lo que significa que nunca se "romperá" misteriosamente por una actualización de Windows.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="flex gap-4 items-start">
+                            <i class="fas fa-magic text-2xl text-yellow-500 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-[#003366]">Dominios Mágicos (.test)</h5>
+                                <p class="text-sm text-slate-600 mt-1">Olvida el feo <code>localhost/mi_carpeta/index.php</code>. Laragon crea "Virtual Hosts" automáticamente. Si tu carpeta se llama "farmacia", tu URL local será un profesional <code>http://farmacia.test</code>.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 items-start">
+                            <i class="fab fa-git-alt text-2xl text-orange-600 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-[#003366]">Ecosistema Integrado</h5>
+                                <p class="text-sm text-slate-600 mt-1">No solo trae PHP, Apache y MariaDB. Ya incluye <strong>Git</strong> (para control de versiones) y <strong>Node.js / NPM</strong> (necesario para compilar el frontend moderno de Laravel).</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <i class="fas fa-bolt text-2xl text-blue-500 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-[#003366]">Cambio de Versiones en 1 Clic</h5>
+                                <p class="text-sm text-slate-600 mt-1">¿Tienes un proyecto viejo en PHP 7.4 y uno nuevo en PHP 8.2? En XAMPP tendrías que desinstalar todo. En Laragon cambias la versión con un solo clic sin apagar el servidor.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <i class="fas fa-globe text-2xl text-green-500 mt-1"></i>
+                            <div>
+                                <h5 class="font-bold text-[#003366]">Compartir por Internet (Ngrok)</h5>
+                                <p class="text-sm text-slate-600 mt-1">Trae una función nativa para generar un link público temporal. Puedes mostrarle tu sistema a un cliente en otra ciudad directamente desde tu computadora, sin subirlo a un hosting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="mt-20">
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">12. Despliegue: Servidores de Producción (VPS)</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                Una vez que tu código funciona en Laragon, debes subirlo a internet. En el pasado, usábamos "Shared Hosting" (Hosting Compartido), pero para sistemas modernos hechos en Laravel, eso es ineficiente y problemático. La industria actual utiliza <strong>VPS (Virtual Private Server)</strong>. 
+            </p>
+            [Image of Virtual Private Server (VPS) architecture showing virtualized isolated server instances on a physical server hardware]
+            
+            <div class="bg-slate-900 rounded-[2rem] p-8 shadow-xl text-white mb-10">
+                <div class="flex items-center gap-4 mb-4">
+                    <i class="fab fa-linux text-5xl text-yellow-500"></i>
+                    <div>
+                        <h4 class="text-2xl font-black text-white uppercase">El Requisito de Oro: Linux</h4>
+                        <span class="text-yellow-500 text-sm font-bold tracking-widest uppercase">La terminal es tu nueva mejor amiga</span>
+                    </div>
+                </div>
+                <p class="text-slate-300 leading-relaxed mb-4">
+                    Al alquilar un VPS, te entregan una computadora en blanco (sin pantalla, sin ratón, solo una consola de comandos negra). El 90% de los servidores del mundo ejecutan <strong>Linux (Ubuntu o Debian)</strong>.
                 </p>
-                <div class="inline-block border-t border-indigo-400/30 pt-4 mt-2">
-                    <span class="text-[10px] uppercase tracking-widest text-indigo-300 font-bold">» Fin de la Unidad 04</span>
+                <p class="text-slate-300 leading-relaxed">
+                    Un ingeniero web élite debe conocer los comandos básicos de Linux: <code>cd</code> (navegar), <code>ls</code> (listar), <code>nano</code> (editar archivos), <code>chmod</code> (permisos) y <code>sudo</code> (superusuario). Si dominas la terminal, dominas internet.
+                </p>
+            </div>
+        </section>
+
+        <section class="mt-10 mb-10">
+            <h4 class="text-2xl font-black text-[#003366] mb-6 flex items-center gap-3">
+                <i class="fas fa-trophy text-yellow-500"></i> Ranking Oficial: Top 10 Proveedores VPS
+            </h4>
+            <p class="text-slate-600 mb-8">
+                Existen miles de empresas, pero como ingeniero, debes elegir proveedores que ofrezcan acceso "Root" total, discos NVMe y redes de alta velocidad. Aquí tienes los gigantes de la industria categorizados:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <div class="bg-white border-t-4 border-blue-500 rounded-2xl p-6 shadow-md">
+                    <h5 class="font-black text-blue-900 mb-4 uppercase text-sm tracking-widest">Los Favoritos de la Industria</h5>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 text-blue-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">1</span>
+                            <div>
+                                <a href="https://www.digitalocean.com/" target="_blank" class="font-bold text-[#003366] hover:text-blue-500 transition-colors">DigitalOcean <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                <p class="text-xs text-slate-500 mt-1">El estándar de oro para desarrolladores. Sus "Droplets" son facilísimos de usar y tienen la mejor documentación del mundo.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 text-blue-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">2</span>
+                            <div>
+                                <a href="https://aws.amazon.com/ec2/" target="_blank" class="font-bold text-[#003366] hover:text-blue-500 transition-colors">AWS (Amazon EC2) <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                <p class="text-xs text-slate-500 mt-1">Nivel corporativo pesado. Si trabajas en un banco o transnacional, usarás Amazon. Curva de aprendizaje empinada.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 text-blue-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">3</span>
+                            <div>
+                                <a href="https://www.hetzner.com/" target="_blank" class="font-bold text-[#003366] hover:text-blue-500 transition-colors">Hetzner <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                <p class="text-xs text-slate-500 mt-1">El gigante alemán. Ofrece una potencia bruta increíble por precios muy bajos, pero sus servidores están en Europa.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 text-blue-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">4</span>
+                            <div>
+                                <a href="https://www.vultr.com/" target="_blank" class="font-bold text-[#003366] hover:text-blue-500 transition-colors">Vultr <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                <p class="text-xs text-slate-500 mt-1">Competidor directo de DigitalOcean. Despliegue en 60 segundos y centros de datos en todo el planeta.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="bg-blue-100 text-blue-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">5</span>
+                            <div>
+                                <a href="https://www.linode.com/" target="_blank" class="font-bold text-[#003366] hover:text-blue-500 transition-colors">Linode (Akamai) <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                <p class="text-xs text-slate-500 mt-1">Pioneros en el Cloud Computing. Muy respetados por su estabilidad y excelente soporte técnico.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white border-t-4 border-emerald-500 rounded-2xl p-6 shadow-md flex flex-col justify-between">
+                    <div>
+                        <h5 class="font-black text-emerald-900 mb-4 uppercase text-sm tracking-widest">Valor Costo/Beneficio & Gratuitos</h5>
+                        <ul class="space-y-4">
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-100 text-emerald-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">6</span>
+                                <div>
+                                    <a href="https://contabo.com/" target="_blank" class="font-bold text-[#003366] hover:text-emerald-500 transition-colors">Contabo <span class="bg-emerald-500 text-white text-[9px] px-2 py-0.5 rounded ml-1">Recomendado</span> <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                    <p class="text-xs text-slate-500 mt-1">La mejor relación calidad-precio del mercado mundial. Te dan muchísima RAM (hasta 6GB) y almacenamiento por menos de $6 dólares al mes. Ideal para iniciar proyectos serios.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-100 text-emerald-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">7</span>
+                                <div>
+                                    <a href="https://www.hostinger.com/vps-hosting" target="_blank" class="font-bold text-[#003366] hover:text-emerald-500 transition-colors">Hostinger VPS <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                    <p class="text-xs text-slate-500 mt-1">Famosos por su marketing y precios agresivos en el primer año. Interfaz muy amigable para principiantes.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-100 text-emerald-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">8</span>
+                                <div>
+                                    <a href="https://www.bluehost.com/hosting/vps" target="_blank" class="font-bold text-[#003366] hover:text-emerald-500 transition-colors">Bluehost <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                    <p class="text-xs text-slate-500 mt-1">Un clásico de la web. Son los reyes del WordPress, pero sus servidores VPS son bastante sólidos si ya tienes tu ecosistema ahí.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-100 text-emerald-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">9</span>
+                                <div>
+                                    <a href="https://www.oracle.com/cloud/free/" target="_blank" class="font-bold text-[#003366] hover:text-emerald-500 transition-colors">Oracle Cloud <span class="bg-rose-500 text-white text-[9px] px-2 py-0.5 rounded ml-1">GRATIS</span> <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                    <p class="text-xs text-slate-500 mt-1">Tienen la capa "Always Free" (Siempre Gratis) más agresiva del mercado. Te regalan un VPS ARM con 24GB de RAM. El problema: su registro falla mucho por validación de tarjetas.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="bg-emerald-100 text-emerald-700 font-bold w-6 h-6 rounded flex items-center justify-center flex-shrink-0">10</span>
+                                <div>
+                                    <a href="https://cloud.google.com/free" target="_blank" class="font-bold text-[#003366] hover:text-emerald-500 transition-colors">Google Cloud Platform <span class="bg-rose-500 text-white text-[9px] px-2 py-0.5 rounded ml-1">GRATIS</span> <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i></a>
+                                    <p class="text-xs text-slate-500 mt-1">Ofrecen una instancia <code>e2-micro</code> completamente gratuita de por vida. Es muy limitada (apenas para pruebas de la universidad), pero está respaldada por la red de Google.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+      <section class="mt-20 mb-10">
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">14. Paneles de Control Web</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                Configurar el Servidor Web (Nginx/Apache), instalar PHP, asegurar la base de datos MariaDB y emitir certificados HTTPS (SSL) a pura consola de Linux puede tomar horas y es propenso a errores. Para eso inventaron los <strong>Paneles de Control</strong>: software que instalas en tu VPS para administrarlo todo mediante una interfaz gráfica amigable desde tu navegador.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-6">
+                
+                <a href="https://www.cloudpanel.io/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-blue-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-cloud text-4xl text-blue-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">CloudPanel</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">Ultra rápido, enfocado en PHP/Nginx. Ideal y optimizado para Laravel.</p>
+                </a>
+
+                <a href="https://cyberpanel.net/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-indigo-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-bolt text-4xl text-indigo-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">CyberPanel</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">Utiliza OpenLiteSpeed. Velocidad de respuesta absurda, gran opción moderna.</p>
+                </a>
+
+                <a href="https://www.aapanel.com/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-emerald-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-cubes text-4xl text-emerald-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">aaPanel</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">Modular y visual (App Store interna). El líder indiscutible en Asia.</p>
+                </a>
+
+                <a href="https://hestiacp.com/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-red-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-fire text-4xl text-red-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">HestiaCP</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">Una evolución de VestaCP, de código abierto, muy activo y seguro.</p>
+                </a>
+
+                <a href="https://fastpanel.direct/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-purple-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-tachometer-alt text-4xl text-purple-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">FastPanel</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">Interfaz visual hermosa y moderna. Muy fácil de entender y 100% gratuito.</p>
+                </a>
+
+                <a href="https://vestacp.com/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-orange-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-v text-4xl text-orange-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">VestaCP</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">El clásico y ligero. Consume muy poca RAM. Perfecto para VPS pequeños.</p>
+                </a>
+
+                <a href="https://www.virtualmin.com/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-teal-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-server text-4xl text-teal-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">Virtualmin</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">Legendario y de código abierto (basado en Webmin). Máximo control técnico.</p>
+                </a>
+
+                <a href="https://www.directadmin.com/" target="_blank" class="group bg-slate-50 border border-slate-200 p-5 rounded-2xl text-center hover:bg-white hover:border-cyan-500 hover:shadow-xl transition-all block">
+                    <i class="fas fa-rocket text-4xl text-cyan-400 mb-3 group-hover:scale-110 transition-transform"></i>
+                    <h5 class="font-black text-[#003366] text-sm">DirectAdmin</h5>
+                    <p class="text-[11px] text-slate-500 mt-2 leading-tight">De pago, pero ultra eficiente y barato. El rival más querido de cPanel.</p>
+                </a>
+
+            </div>
+
+            <div class="bg-gradient-to-r from-rose-50 to-orange-50 border border-rose-200 p-6 rounded-2xl flex flex-col md:flex-row items-center gap-6 shadow-sm">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-crown text-5xl text-rose-500 drop-shadow-md"></i>
+                </div>
+                <div>
+                    <h5 class="font-black text-rose-900 text-lg">Los Titanes Corporativos: <a href="https://cpanel.net/" target="_blank" class="hover:underline text-rose-600">cPanel</a> & <a href="https://www.plesk.com/" target="_blank" class="hover:underline text-orange-600">Plesk</a></h5>
+                    <p class="text-sm text-rose-800 mt-2 leading-relaxed">
+                        Son el estándar absoluto en el mundo del <strong>Hosting Compartido</strong>. Son increíblemente potentes e integran todo lo imaginable, pero <strong>NO son gratis</strong> (sus licencias mensuales son muy costosas). En proyectos universitarios o VPS propios de bajo presupuesto, siempre optamos por las 8 opciones de arriba.
+                    </p>
                 </div>
             </div>
         </section>
