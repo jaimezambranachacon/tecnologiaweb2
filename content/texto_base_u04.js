@@ -278,7 +278,7 @@ const styles = StyleSheet.create({
                 <div>
                     <h5 class="text-emerald-900 font-black text-xs uppercase mb-2 tracking-widest">Nota Técnica para la Clase</h5>
                     <p class="text-sm text-slate-600 leading-relaxed italic">
-                        "Jimmy, es vital recalcar que para probar la App en sus dispositivos físicos (como tu Galaxy S23), tanto la computadora como el celular deben estar conectados a la <strong>misma red Wi-Fi</strong>. Esto permite que el túnel de Expo transfiera el bundle de JavaScript correctamente."
+                        "Es vital recalcar que para probar la App en sus dispositivos físicos (como tu Galaxy S23), tanto la computadora como el celular deben estar conectados a la <strong>misma red Wi-Fi</strong>. Esto permite que el túnel de Expo transfiera el bundle de JavaScript correctamente."
                     </p>
                 </div>
             </div>
