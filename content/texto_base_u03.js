@@ -612,20 +612,13 @@ const pag_texto_base_u03 = `
                     </ul>
                 </div>
             </div>
-
-            <div class="mt-16 bg-gradient-to-br from-[#003366] to-[#004a8c] p-10 rounded-[3rem] text-white shadow-2xl">
-                <h4 class="text-cyan-400 font-black text-xs uppercase mb-4 tracking-widest">Siguiente Paso: Conexión API</h4>
-                <p class="text-lg font-light leading-relaxed mb-6">
-                    "Jimmy, este formulario ya produce un objeto listo para ser enviado. En la siguiente fase, usaremos el método <code>fetch()</code> dentro del <code>onSubmit</code> para disparar un POST hacia tu servidor de <strong>Laravel</strong>, completando el ciclo de vida de la información."
-                </p>
-                <div class="flex gap-4">
-                    <span class="px-4 py-2 bg-white/10 rounded-full text-[10px] font-mono border border-white/20 uppercase tracking-widest italic">JSON Ready</span>
-                    <span class="px-4 py-2 bg-white/10 rounded-full text-[10px] font-mono border border-white/20 uppercase tracking-widest italic">Validación de Lógica</span>
-                </div>
-            </div>
+            
         </section>
 
 
+
+
+        
 
 
         

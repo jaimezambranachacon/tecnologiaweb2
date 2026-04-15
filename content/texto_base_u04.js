@@ -286,6 +286,220 @@ const styles = StyleSheet.create({
 
 
 
+
+
+
+        <section>
+            <div class="flex items-center justify-between mb-8 border-b-2 border-slate-100 pb-4">
+                <h3 class="text-3xl font-black text-[#003366] uppercase tracking-tighter">6. Preparación del Entorno</h3>
+                <span class="bg-emerald-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Setup Local</span>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-10 font-light italic leading-relaxed">
+                Utilizaremos la terminal de <strong>Laragon</strong> para gestionar nuestro entorno. El primer paso es validar que Node.js esté correctamente vinculado al PATH de nuestro sistema operativo.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="p-8 bg-slate-50 rounded-3xl border-l-8 border-emerald-500 shadow-sm">
+                    <h4 class="font-black text-emerald-900 uppercase text-xs mb-4 tracking-widest italic">Verificación de Comandos</h4>
+                    <p class="text-xs text-slate-500 mb-4">Abre tu terminal de Laragon y ejecuta:</p>
+                    <code class="block bg-slate-900 text-emerald-400 p-4 rounded-xl text-xs font-mono">
+                        node -v <br>
+                        npm -v
+                    </code>
+                </div>
+                <div class="p-8 bg-slate-50 rounded-3xl border-l-8 border-[#003366] shadow-sm italic">
+                    <h4 class="font-black text-[#003366] uppercase text-xs mb-4 tracking-widest">¿Por qué Node.js?</h4>
+                    <p class="text-[11px] text-slate-500 leading-relaxed">
+                        Es el motor que permite compilar nuestro código JavaScript y enviarlo al dispositivo móvil. Sin Node, el ecosistema de React Native no puede empaquetar los assets de la App.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-8">7. Despliegue del Proyecto Base</h3>
+            
+            <div class="bg-slate-900 rounded-3xl shadow-xl overflow-hidden mb-8 border border-slate-700">
+                <div class="bg-slate-800 px-6 py-3 text-[10px] font-black text-slate-400 border-b border-slate-700 flex justify-between items-center uppercase tracking-widest">
+                    <span>Terminal Laragon / WWW</span>
+                    <i class="fas fa-terminal text-blue-400"></i>
+                </div>
+                <div class="p-8">
+                    <p class="text-blue-100 text-sm mb-4">Ejecuta el siguiente comando para inicializar la estructura:</p>
+                    <code class="block bg-black/40 p-5 rounded-xl text-blue-300 text-sm font-mono border border-blue-900/50">
+                        npx create-expo-app@latest MiAppNative
+                    </code>
+                    <p class="text-slate-500 text-[10px] mt-4 italic uppercase tracking-widest">
+                        * Esto configurará automáticamente React 18 y las dependencias nativas necesarias.
+                    </p>
+                </div>
+            </div>
+                    </section>
+
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-8">8. Sincronización con Dispositivos</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="space-y-6">
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Una vez creado el proyecto, entramos a la carpeta y levantamos el servidor de desarrollo. Expo generará un <strong>Código QR</strong> que servirá de puente con tu dispositivo físico.
+                    </p>
+                    <code class="block bg-slate-100 p-4 rounded-xl text-[#003366] font-mono text-xs">
+                        cd MiAppNative <br>
+                        npx expo start
+                    </code>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-[2rem] border border-indigo-100">
+                    <h5 class="text-indigo-900 font-black text-[10px] uppercase mb-3 tracking-widest">El Proceso de Prueba:</h5>
+                    <ul class="text-[11px] space-y-2 text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-indigo-500"></i> Instalar <strong>Expo Go</strong> en Android/iOS.</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-indigo-500"></i> Escanear el código QR de la terminal.</li>
+                        <li class="flex items-center gap-2"><i class="fas fa-check-circle text-indigo-500"></i> Ver cambios instantáneos al guardar en VS Code.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-8">9. El Primer Componente Nativo</h3>
+            
+            <div class="bg-slate-900 rounded-3xl shadow-2xl overflow-hidden mb-8">
+                <div class="bg-slate-800 px-6 py-3 text-[10px] font-black text-slate-400 border-b border-slate-700 flex justify-between items-center uppercase tracking-widest">
+                    <span>App.js - Lógica de Visual Studio Code</span>
+                    <i class="fas fa-code text-blue-400"></i>
+                </div>
+                <pre class="p-8 text-sm font-mono text-blue-300 overflow-x-auto">
+import { StyleSheet, Text, View } from 'react-native';
+
+export default function App() {
+  return (
+    &lt;View style={styles.container}&gt;
+      &lt;Text style={styles.txt}&gt;¡Unidad 4: Instalación Exitosa!&lt;/Text&gt;
+    &lt;/View&gt;
+  );
+}
+
+const styles = StyleSheet.create({
+  container: { flex: 1, justifyContent: 'center', alignItems: 'center' },
+  txt: { fontSize: 20, fontWeight: 'bold' }
+});</pre>
+            </div>
+
+            <div class="p-6 bg-slate-50 rounded-2xl border-l-4 border-[#003366] italic shadow-sm">
+                <p class="text-xs text-slate-500 leading-relaxed">
+                    <strong>Nota para el Laboratorio:</strong> En React Native no existe el concepto de "página". Todo el contenido visual debe estar envuelto en un componente <code>&lt;Text&gt;</code>, de lo contrario, el motor nativo lanzará un error de renderizado.
+                </p>
+            </div>
+        </section>
+
+
+
+
+
+        <section>
+            <div class="flex items-center justify-between mb-8 border-b-2 border-slate-100 pb-4">
+                <h3 class="text-3xl font-black text-[#003366] uppercase tracking-tighter">10. Guías en Video: Configuración Paso a Paso</h3>
+                <span class="bg-red-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Multimedia Resources</span>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-10 font-light italic leading-relaxed">
+                Para complementar la teoría, dispones de esta serie de tutoriales que detallan el proceso de preparación del entorno de desarrollo y el despliegue de tu primera aplicación.
+            </p>
+
+            <div class="mt-12 p-6 bg-slate-900 rounded-3xl border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-10 h-10 bg-indigo-500 rounded-xl flex items-center justify-center text-white">
+                        <i class="fas fa-list-ol"></i>
+                    </div>
+                    <p class="text-xs text-slate-400 font-medium">
+                        Se recomienda seguir el orden correlativo para asegurar una configuración exitosa del laboratorio.
+                    </p>
+                </div>
+                <a href="https://www.youtube.com/playlist?list=PLwjlDP2JJquEitkHJ1QukXGV6Q9R5vhmU" target="_blank" class="text-[10px] font-black text-indigo-400 uppercase tracking-widest hover:text-white transition-colors">
+                    Ver Playlist Completa <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+
+
+        <section>
+            <div class="flex items-center justify-between mb-8 border-b-2 border-slate-100 pb-4">
+                <h3 class="text-3xl font-black text-[#003366] uppercase tracking-tighter">11. Laboratorios Inicial en React Native</h3>
+                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Interactive Code</span>
+            </div>
+
+            <p class="text-lg text-slate-600 mb-10 font-light italic leading-relaxed">
+                Utiliza estos fragmentos de código para experimentar en el panel interactivo de la <a href="https://reactnative.dev/docs/getting-started" target="_blank" class="text-indigo-600 font-bold underline">Documentación Oficial</a>. Copia, pega y observa los resultados instantáneamente.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-[#003366] rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <h4 class="font-black text-[#003366] uppercase text-xs tracking-widest">A. Gestión de Formulario</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-6 leading-relaxed">
+                        Control de entradas con <code>TextInput</code> y <code>Switch</code>. Aprende a capturar datos de técnicos y hangares en un solo objeto de estado.
+                    </p>
+                    <a href="https://gist.github.com/jaimezambranachacon/a1445fb29910ebf8d0b5db683a683c12" target="_blank" class="text-[10px] font-black text-indigo-500 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fab fa-github-alt"></i> Ver Gist de Ingeniería <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-cyan-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h4 class="font-black text-cyan-900 uppercase text-xs tracking-widest">B. Lógica de Contador</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-6 leading-relaxed">
+                        Implementación de <code>useState</code> para disparar eventos táctiles. Ideal para entender la reactividad nativa y el renderizado condicional.
+                    </p>
+                    <a href="https://gist.github.com/jaimezambranachacon/0fac7cb6cf1312849f163aae20775275" target="_blank" class="text-[10px] font-black text-indigo-500 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fab fa-github-alt"></i> Ver Gist de Lógica <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-indigo-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-paint-brush"></i>
+                        </div>
+                        <h4 class="font-black text-indigo-900 uppercase text-xs tracking-widest">C. Layout y Flexbox</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-6 leading-relaxed">
+                        Domina el posicionamiento en móviles. Uso de <code>StyleSheet</code> para crear interfaces responsivas mediante el motor Flexbox nativo.
+                    </p>
+                    <a href="https://gist.github.com/jaimezambranachacon/7b53533e796f525da97c8d4db4cb0bd5" target="_blank" class="text-[10px] font-black text-indigo-500 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fab fa-github-alt"></i> Ver Gist de Estilos <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-[2.5rem] border border-slate-100 hover:shadow-xl transition-all group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-white shadow-lg">
+                            <i class="fas fa-cat"></i>
+                        </div>
+                        <h4 class="font-black text-emerald-900 uppercase text-xs tracking-widest">D. Consumo de API (Gatos)</h4>
+                    </div>
+                    <p class="text-[11px] text-slate-500 mb-6 leading-relaxed">
+                        Consumo de datos asíncronos mediante <code>fetch</code> y visualización en <code>FlatList</code>. Preparación para conectar con tu backend de Laravel.
+                    </p>
+                    <a href="https://gist.github.com/jaimezambranachacon/7f45fa39fbe8112e58c38ff5a119f95f" target="_blank" class="text-[10px] font-black text-indigo-500 uppercase tracking-widest flex items-center gap-2">
+                        <i class="fab fa-github-alt"></i> Ver Gist de Red <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+           
+        </section>
+
         
 
     </div>
