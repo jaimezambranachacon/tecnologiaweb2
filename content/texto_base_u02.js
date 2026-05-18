@@ -1,207 +1,115 @@
 // content/texto_base_u02.js
 
-
-// content/texto_base_u11.js
-
 const pag_texto_base_u02 = `
-
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
     <header class="mb-20">
-        <span class="text-cyan-500 font-black uppercase text-xs tracking-[0.3em] flex items-center gap-2">
-            <i class="fab fa-react text-lg"></i> TEXTO BASE / UNIDAD 11
+        <span class="text-blue-600 font-black uppercase text-xs tracking-[0.3em] flex items-center gap-2">
+            <i class="fas fa-th text-lg"></i> TEXTO BASE / UNIDAD 2
         </span>
         <h1 class="text-5xl md:text-6xl font-black text-[#003366] tracking-tighter uppercase leading-none mt-2">
-            REACT JS:<br>
-            <span class="text-cyan-500">DOMINIO DE COMPONENTES</span>
+            PÍXELES VS.<br>
+            <span class="text-blue-600">VECTORES</span>
         </h1>
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            No podemos construir una App móvil robusta sin entender la lógica reactiva. En esta unidad profundizaremos en el flujo de datos unidireccional, la gestión de estados complejos y la renderización dinámica.
+            La base de cualquier sistema multimedia interactivo es entender cómo el navegador interpreta la luz y la forma. Dominar la diferencia entre un Mapa de Bits y un Gráfico Vectorial es la diferencia entre un software profesional y uno mediocre.
         </p>
-        <div class="h-2 w-24 bg-cyan-500 mt-8"></div>
+        <div class="h-2 w-24 bg-blue-600 mt-8"></div>
     </header>
 
     <div class="max-w-5xl space-y-20">
 
-    <section class="mb-20">
-    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">1. El Origen: La Solución de Meta al Caos</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <div class="text-lg text-slate-600 leading-relaxed space-y-4">
-            <p>
-                <strong>React</strong> fue creado por <strong>Jordan Walke</strong>, un ingeniero de software en Facebook (ahora Meta). Se implementó por primera vez en el News Feed de Facebook en 2011 y más tarde en Instagram en 2012.
-            </p>
-            <p>
-                <strong>¿Por qué se creó?</strong> Facebook enfrentaba un problema masivo: su interfaz era tan compleja que las actualizaciones de datos (como una nueva notificación) causaban errores en cascada. El DOM tradicional del navegador es lento y difícil de manejar a gran escala.
-            </p>
-            <p>
-                La solución de React fue el <strong>Virtual DOM</strong>: una copia ligera de la interfaz que permite a React calcular qué cambió exactamente y actualizar solo esa pequeña parte del sitio, sin recargar todo. Esto revolucionó la velocidad de las aplicaciones modernas.
-            </p>
-        </div>
-        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-200">
-            <h4 class="font-black text-[#003366] text-sm uppercase tracking-widest mb-4">Puntos Clave de su Filosofía:</h4>
-            <ul class="space-y-4 text-sm text-slate-500">
-                <li class="flex gap-3"><i class="fas fa-cubes text-cyan-500 mt-1"></i> <strong>Declarativo:</strong> Tú dices qué quieres ver en pantalla, no cómo hacerlo paso a paso.</li>
-                <li class="flex gap-3"><i class="fas fa-recycle text-cyan-500 mt-1"></i> <strong>Componentizado:</strong> La UI se divide en piezas pequeñas, independientes y reutilizables.</li>
-                <li class="flex gap-3"><i class="fas fa-arrow-down text-cyan-500 mt-1"></i> <strong>Flujo Unidireccional:</strong> Los datos viajan del padre al hijo, facilitando el rastreo de errores (debug).</li>
-            </ul>
-        </div>
-    </div>
-</section>
-
-
-
-
-
-<section class="mb-20">
-    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. Control de Datos: useState y Más</h3>
-    <p class="text-lg text-slate-600 leading-relaxed mb-8">
-        Para un ingeniero, el <strong>Estado</strong> es la representación del sistema en un momento dado. Sin estado, una App móvil es solo una imagen estática.
-    </p>
-
-    <div class="space-y-12">
-        <div class="bg-white border-2 border-slate-100 p-8 rounded-3xl shadow-sm">
-            <div class="flex items-center gap-4 mb-6">
-                <span class="bg-cyan-100 text-cyan-700 font-black px-4 py-1 rounded-lg text-xs uppercase">useState</span>
-                <h4 class="text-xl font-black text-[#003366]">La Memoria del Componente</h4>
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">1. El ADN de la Imagen Digital</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h4 class="text-xl font-bold text-blue-700 mb-4 tracking-tight uppercase">Mapa de Bits (Raster)</h4>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        Son cuadrículas de puntos llamados <strong>píxeles</strong>. Cada píxel contiene información de color (RGBA). Es el formato ideal para la fotografía y videos complejos.
+                    </p>
+                    <ul class="text-sm space-y-2 font-medium text-slate-500">
+                        <li><i class="fas fa-compress-arrows-alt mr-2"></i> Dependen de la resolución.</li>
+                        <li><i class="fas fa-file-image mr-2"></i> Formatos: JPG, PNG, WebP.</li>
+                        <li><i class="fas fa-search-plus mr-2"></i> Pierden calidad al ampliarse (pixelación).</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold text-emerald-600 mb-4 tracking-tight uppercase">Gráficos Vectoriales</h4>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        No usan píxeles, sino <strong>fórmulas matemáticas</strong> (puntos, líneas y curvas). En la web, esto se traduce al lenguaje SVG (Scalable Vector Graphics).
+                    </p>
+                    <ul class="text-sm space-y-2 font-medium text-slate-500">
+                        <li><i class="fas fa-expand mr-2"></i> Resolución infinita (nunca se pixelan).</li>
+                        <li><i class="fas fa-code mr-2"></i> Formatos: SVG, AI, EPS.</li>
+                        <li><i class="fas fa-weight-hanging mr-2"></i> Archivos extremadamente ligeros.</li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-slate-600 mb-6">
-                Es el Hook principal. Permite que el componente "recuerde" información, como el nombre de un pasajero en tu app de vuelos o si un formulario tiene errores.
-            </p>
-            <div class="bg-slate-900 rounded-xl p-6 font-mono text-sm text-blue-300 overflow-x-auto">
-                <span class="text-pink-400">const</span> [vueloId, setVueloId] = <span class="text-yellow-300">useState</span>(<span class="text-purple-400">null</span>);
-            </div>
-        </div>
+        </section>
 
-        <div class="bg-white border-2 border-slate-100 p-8 rounded-3xl shadow-sm">
-            <div class="flex items-center gap-4 mb-6">
-                <span class="bg-indigo-100 text-indigo-700 font-black px-4 py-1 rounded-lg text-xs uppercase">Props</span>
-                <h4 class="text-xl font-black text-[#003366]">Pase de Parámetros</h4>
-            </div>
-            <p class="text-slate-600 mb-4">
-                Las <strong>Properties</strong> son la forma en que un componente recibe configuración desde afuera. Son inmutables (el componente hijo no puede cambiarlas, solo leerlas).
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. Herramientas de Desarrollo</h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                Para desarrollar sistemas digitales interactivos, un Ingeniero debe dominar herramientas que permitan exportar estos recursos de forma optimizada para la red[cite: 9, 20].
             </p>
-            <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-bold text-indigo-600 uppercase">
-                <li class="bg-indigo-50 p-3 rounded-lg text-center border border-indigo-100">Inmutabilidad</li>
-                <li class="bg-indigo-50 p-3 rounded-lg text-center border border-indigo-100">Configurabilidad</li>
-            </ul>
-        </div>
-
-        <div class="bg-white border-2 border-slate-100 p-8 rounded-3xl shadow-sm">
-            <div class="flex items-center gap-4 mb-6">
-                <span class="bg-amber-100 text-amber-700 font-black px-4 py-1 rounded-lg text-xs uppercase">Condicionales</span>
-                <h4 class="text-xl font-black text-[#003366]">Interfaz Inteligente</h4>
-            </div>
-            <p class="text-slate-600 mb-6">
-                React permite mostrar diferentes elementos según el estado. Por ejemplo: mostrar un <em>spinner</em> de carga mientras esperamos la respuesta de tu API de Laravel.
-            </p>
-            <div class="bg-slate-900 rounded-xl p-6 font-mono text-sm text-blue-300 overflow-x-auto">
-                { cargando ? &lt;Loading /&gt; : &lt;ListaVuelos /&gt; }
-            </div>
             
-        </div>
-    </div>
-</section>
-
-
-
-
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. Props: Comunicación Unidireccional</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Los componentes deben ser reutilizables. Las <strong>Props</strong> son los atributos que enviamos de un componente Padre a un Hijo.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-cyan-600 mb-2">Componente Hijo (Tarjeta)</h4>
-                    <pre class="text-[10px] font-mono text-slate-700 bg-white p-4 rounded-lg border">
-function Card({ titulo, destino }) {
-  return (
-    &lt;div&gt;
-      &lt;h3&gt;{titulo}&lt;/h3&gt;
-      &lt;p&gt;{destino}&lt;/p&gt;
-    &lt;/div&gt;
-  );
-}</pre>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                    <h5 class="font-black text-[#003366] uppercase text-sm mb-3">Rasterización</h5>
+                    <p class="text-xs text-slate-500 mb-4">Software para procesar imágenes fotográficas y texturas para modelos 3D.</p>
+                    <span class="text-[10px] font-bold bg-slate-200 px-2 py-1 rounded">Photoshop / GIMP</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200">
-                    <h4 class="font-bold text-indigo-600 mb-2">Uso en el Padre</h4>
-                    <pre class="text-[10px] font-mono text-slate-700 bg-white p-4 rounded-lg border">
-&lt;Card 
-  titulo="Vuelo 102" 
-  destino="Santa Cruz" 
-/&gt;</pre>
+                <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
+                    <h5 class="font-black text-[#003366] uppercase text-sm mb-3">Vectorización</h5>
+                    <p class="text-xs text-slate-500 mb-4">Creación de interfaces (UI), iconos y personajes para animaciones 2D.</p>
+                    <span class="text-[10px] font-bold bg-slate-200 px-2 py-1 rounded">Illustrator / Figma</span>
+                </div>
+                <div class="p-6 bg-blue-50 rounded-2xl border border-blue-100">
+                    <h5 class="font-black text-blue-700 uppercase text-sm mb-3">Simuladores Online</h5>
+                    <p class="text-xs text-slate-500 mb-4">Prueba algoritmos de filtros y compresión directamente.</p>
+                    <a href="https://squoosh.app/" target="_blank" class="text-[10px] font-bold text-blue-600 underline">Ir a Squoosh.app</a>
                 </div>
             </div>
         </section>
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. Renderizado de Listas (Map)</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                En React no usamos ciclos <code>for</code>. Usamos el método <code>.map()</code> para transformar arreglos de datos en elementos visuales. Cada elemento debe tener una <strong>key</strong> única.
-            </p>
-            <div class="bg-slate-900 rounded-2xl overflow-hidden shadow-xl border border-slate-700">
-                <pre class="p-6 text-sm font-mono leading-relaxed text-blue-300">
-{vuelos.<span class="text-yellow-300">map</span>((vuelo) => (
-  &lt;div <span class="text-pink-400">key</span>={vuelo.id}&gt;
-    &lt;span&gt;{vuelo.codigo}&lt;/span&gt;
-  &lt;/div&gt;
-))}</pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">4. Inputs Controlados</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                A diferencia de HTML puro, en React el "dueño" de lo que se escribe en un input es el estado de React. Esto se conoce como <strong>Two-way data binding</strong>.
-            </p>
-            <div class="bg-cyan-50 border-l-4 border-cyan-500 p-8 rounded-r-2xl">
-                <pre class="text-xs font-mono text-cyan-900 leading-relaxed">
-&lt;input 
-  type="text" 
-  value={nombre} 
-  onChange={(e) => setNombre(e.target.value)} 
-/&gt;</pre>
-            </div>
-        </section>
-
-        <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">5. useEffect: El Corazón de la API</h3>
-            <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Este Hook controla los efectos secundarios. Lo usaremos para sincronizar nuestra App móvil con la base de datos de Laravel.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="p-6 bg-slate-900 rounded-xl">
-                    <h5 class="text-white font-bold text-xs uppercase mb-4">Caso A: Al Cargar</h5>
-                    <pre class="text-[10px] text-cyan-400 font-mono">
-useEffect(() => {
-  // Solo se ejecuta una vez
-}, []);</pre>
-                </div>
-                <div class="p-6 bg-slate-900 rounded-xl">
-                    <h5 class="text-white font-bold text-xs uppercase mb-4">Caso B: Por dependencia</h5>
-                    <pre class="text-[10px] text-cyan-400 font-mono">
-useEffect(() => {
-  // Se ejecuta cada vez que 'id' cambie
-}, [id]);</pre>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. El Lienzo Multimedia</h3>
+            <div class="bg-indigo-900 text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                <i class="fas fa-pencil-ruler absolute -right-10 -bottom-10 text-white/5 text-[15rem] rotate-12"></i>
+                <div class="relative z-10 space-y-6">
+                    <h4 class="text-2xl font-black text-blue-300 italic uppercase">¿Por qué usamos Canvas en JS?</h4>
+                    <p class="text-lg leading-relaxed opacity-90">
+                        El elemento <code>&lt;canvas&gt;</code> es un híbrido. Nos permite dibujar formas vectoriales mediante comandos de JavaScript, pero el resultado final se procesa como un Mapa de Bits de alto rendimiento.
+                    </p>
+                    <div class="p-6 bg-white/10 rounded-2xl border border-white/20 font-mono text-sm">
+                        <span class="text-blue-300">// Ejemplo de dibujo vectorial en lienzo raster</span><br>
+                        ctx.beginPath();<br>
+                        ctx.arc(100, 75, 50, 0, 2 * Math.PI);<br>
+                        ctx.stroke();
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-[#003366] text-white p-10 rounded-[3rem] shadow-2xl relative overflow-hidden">
-            <i class="fab fa-react absolute -right-10 -bottom-10 text-white/5 text-[15rem]"></i>
-            <div class="relative z-10">
-                <h3 class="text-2xl font-black text-cyan-400 uppercase mb-6">Checklist del Desarrollador React</h3>
-                <div class="space-y-4 text-sm">
-                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿Dividiste tu interfaz en componentes pequeños?</p>
-                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿Estás pasando datos correctamente mediante Props?</p>
-                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿El estado maneja solo lo que realmente debe cambiar?</p>
-                    <p class="flex items-center gap-3"><i class="fas fa-check-circle text-cyan-400"></i> ¿Usaste .map() con una key única para tus listas?</p>
+        <section class="mt-20 border-t border-slate-100 pt-12">
+            <h3 class="text-2xl font-black text-[#003366] uppercase mb-8">Saberes Esenciales Aplicados</h3>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-black">1</div>
+                    <div>
+                        <h5 class="font-bold text-slate-800">Optimización de Activos</h5>
+                        <p class="text-sm text-slate-500 mt-1">Aprenderemos a reducir el peso de las imágenes sin sacrificar la calidad para sistemas web fluidos.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="w-12 h-12 rounded-full bg-[#003366] text-white flex items-center justify-center shrink-0 font-black">2</div>
+                    <div>
+                        <h5 class="font-bold text-slate-800">Manipulación de Píxeles</h5>
+                        <p class="text-sm text-slate-500 mt-1">Crearemos simuladores que cambian colores, brillo y contraste mediante algoritmos directos sobre la matriz de píxeles.</p>
+                    </div>
                 </div>
             </div>
         </section>
-
-        
 
     </div>
 </div>
