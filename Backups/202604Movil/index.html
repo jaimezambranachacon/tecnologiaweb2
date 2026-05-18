@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPDS - Ingeniería Web y Móvil</title>
+    <title>UPDS - Programacion Movil</title>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,14 +21,20 @@
     <script src="./content/bibliografia.js"></script>
     <script src="./content/videos.js"></script>
     <script src="./content/ingles.js"></script>
+
+
     
+    <script src="./content/texto_base_u01.js"></script>
+    <script src="./content/texto_base_u02.js"></script>
+    <script src="./content/texto_base_u03.js"></script>
+    <script src="./content/texto_base_u04.js"></script>
+    <script src="./content/texto_base_u05.js"></script>
+    <script src="./content/texto_base_u06.js"></script>
     <script src="./content/texto_base_u07.js"></script>
     <script src="./content/texto_base_u08.js"></script>
     <script src="./content/texto_base_u09.js"></script>
-    
     <script src="./content/texto_base_u10.js"></script>
-    <script src="./content/texto_base_u11.js"></script>
-    <script src="./content/texto_base_u12.js"></script>
+    
 
     <style>
         [v-cloak] { display: none; }
@@ -40,7 +48,7 @@
     
     <aside class="w-72 bg-[#003366] text-white flex flex-col fixed inset-y-0 shadow-2xl z-50 transition-transform lg:translate-x-0 lg:static" :class="isMobile ? 'translate-x-0' : '-translate-x-full'">
         <div class="p-8 border-b border-white/10">
-            <h1 class="text-xl font-black italic tracking-tighter uppercase text-[#00aaff]">Tecnología Web II</h1>            
+            <h1 class="text-xl font-black italic tracking-tighter uppercase text-[#00aaff]">Programacion Movil 1</h1>            
         </div>
 
         <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
@@ -62,7 +70,7 @@
     <main class="flex-1 flex flex-col h-screen overflow-hidden bg-white">
         <header class="h-16 border-b border-slate-100 flex items-center justify-between px-8 flex-none">
             <button @click="isMobile = !isMobile" class="lg:hidden text-[#003366]"><i class="fas fa-bars"></i></button>
-            <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">UPDS • 2026</div>
+            <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">DJ • 2026</div>
         </header>
 
         <div class="flex-1 overflow-y-auto p-8 lg:p-16 custom-scrollbar">
@@ -77,6 +85,8 @@
     </main>
 </div>
 
+[Image of a professional web documentation layout with a sidebar menu and main content area]
+
 <script>
     const { createApp, ref, onMounted } = Vue;
 
@@ -86,34 +96,61 @@
             const currentSlug = ref('inicio');
             const currentBody = ref('');
 
-            // ESTRUCTURA DEL MENÚ
+            // ESTRUCTURA DEL MENÚ: Solo editas esto para agregar temas
             const menuStructure = [
                 { 
                     name: 'Introducción', 
                     links: [
-                        { slug: 'inicio', label: 'Bienvenida', icon: 'fas fa-home', content: typeof pag_inicio !== 'undefined' ? pag_inicio : 'Error: inicio.js no cargado' },
-                        { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel', content: typeof pag_normas !== 'undefined' ? pag_normas : 'Error: normas.js no cargado' },
-                        { slug: 'videos', label: 'Videos', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'Error: videos.js no cargado' },
-                        { slug: 'ingles', label: 'Inglés DUOLINGO', icon: 'fas fa-globe', content: typeof pag_ingles !== 'undefined' ? pag_ingles : 'Error: ingles.js no cargado' }
+                        { slug: 'inicio', label: 'Bienvenida', icon: 'fas fa-home', content: typeof pag_inicio !== 'undefined' ? pag_inicio : 'No cargo inicio.js' },
+                        { slug: 'normas', label: 'Normas', icon: 'fas fa-gavel', content: typeof pag_normas !== 'undefined' ? pag_normas : 'No cargo normas.js' },
+                        { slug: 'proyecto', label: 'Proyecto Formativo', icon: 'fas fa-project-diagram', content: typeof pag_proyecto !== 'undefined' ? pag_proyecto : 'No cargo proyecto.js' },
+                    
+                        { slug: 'presentaciones', label: 'Presentaciones', icon: 'fas fa-chalkboard-user', content: typeof pag_presentaciones !== 'undefined' ? pag_presentaciones : 'No cargo presentaciones.js' },
+                        { slug: 'bibliografia', label: 'Bibliografía', icon: 'fas fa-book-open', content: typeof pag_bibliografia !== 'undefined' ? pag_bibliografia : 'No cargo bibliografia.js' },
+                        { slug: 'videos', label: 'Videos', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargo videos.js' },
+                        { slug: 'ingles', label: 'Inglés DUOLINGO', icon: 'fas fa-globe', content: typeof pag_ingles !== 'undefined' ? pag_ingles : 'No cargo ingles.js' }
+
                     ]
                 },
                 { 
-                    name: 'Backend & Frameworks', 
+                    name: 'Contenido', 
                     links: [
-                        { slug: 'u07', label: 'U7: Laravel Básico', icon: 'fab fa-laravel', content: typeof pag_texto_base_u07 !== 'undefined' ? pag_texto_base_u07 : 'Error: u07 no cargado' },
-                        { slug: 'u08', label: 'U8: CRUD & Eloquent', icon: 'fas fa-database', content: typeof pag_texto_base_u08 !== 'undefined' ? pag_texto_base_u08 : 'Error: u08 no cargado' },
-                        { slug: 'u09', label: 'U9: API Restful', icon: 'fas fa-network-wired', content: typeof pag_texto_base_u09 !== 'undefined' ? pag_texto_base_u09 : 'Error: u09 no cargado' }
-                    ]
-                },
-                { 
-                    name: 'Desarrollo Móvil', 
-                    links: [
-                        { slug: 'u10', label: 'U10: Fundamentos React', icon: 'fab fa-react', content: typeof pag_texto_base_u10 !== 'undefined' ? pag_texto_base_u10 : 'Error: u10 no cargado' },
-                        { slug: 'u11', label: 'U11: React Native Core', icon: 'fas fa-mobile-alt', content: typeof pag_texto_base_u11 !== 'undefined' ? pag_texto_base_u11 : 'Error: u11 no cargado' },
-                        { slug: 'u12', label: 'U12: Navegación y APIs', icon: 'fas fa-route', content: typeof pag_texto_base_u12 !== 'undefined' ? pag_texto_base_u12 : 'Error: u12 no cargado' }
+                        { slug: 'texto_guia', label: 'Texto de Guía', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargo texto_guia.js' },
+                        { slug: 'pag_texto_base_u01', label: 'U1: Introduccion al dev movil', icon: 'fab fa-html5', content: pag_texto_base_u01 },
+                        { slug: 'pag_texto_base_u02', label: 'U2: REACT JS', icon: 'fab fa-css3-alt', content: pag_texto_base_u02 },
+                        
+                        { slug: 'pag_texto_base_u03', label: 'U3: DINÁMICA DE ESTADOS Y PROPS EN REACT JS', icon: 'fab fa-js', content: pag_texto_base_u03 },                                                
+
+                        
+                        { slug: 'pag_texto_base_u04', label: 'U4: React Native', icon: 'fab fa-js', content: pag_texto_base_u04 },                       
+
+                        { slug: 'pag_texto_base_u05', label: '05: ESTILOS Y MAQUETACIÓN ', icon: 'fas fa-database', content: pag_texto_base_u05 },
+/*                         
+                        { slug: 'pag_texto_base_u06', label: 'U6: Frameworks', icon: 'fas fa-cubes', content: pag_texto_base_u06 },
+                        
+                        { slug: 'pag_texto_base_u07', label: 'U7: Seguridad Web', icon: 'fas fa-shield-alt', content: pag_texto_base_u07 },
+                        { slug: 'pag_texto_base_u08', label: 'U8: DevOps', icon: 'fas fa-server', content: pag_texto_base_u08 },
+                        { slug: 'pag_texto_base_u09', label: 'U9: Accesibilidad', icon: 'fas fa-universal-access', content: pag_texto_base_u09 },
+                         
+                        { slug: 'pag_texto_base_u07', label: 'U7: Laravel', icon: 'fas fa-shield-alt', content: pag_texto_base_u07 },
+
+                        { slug: 'pag_texto_base_u08', label: 'U8: Laravel avanzado', icon: 'fas fa-server', content: pag_texto_base_u08 },
+                        
+                        { slug: 'pag_texto_base_u09', label: 'U9: ApiRest con Laravel', icon: 'fas fa-universal-access', content: pag_texto_base_u09 },
+                        /*
+                        { slug: 'pag_texto_base_u10', label: 'U10: Tendencias', icon: 'fas fa-rocket', content: pag_texto_base_u10 }
+                        */
+                        
+
+                 
+                        
+                     
                     ]
                 }
             ];
+
+
+
 
             const navigate = (slug) => {
                 let found = null;

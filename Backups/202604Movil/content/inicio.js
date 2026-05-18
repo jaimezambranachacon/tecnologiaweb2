@@ -3,55 +3,85 @@ const pag_inicio = `
 <div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
     
     <header class="mb-16">
-        <div class="flex items-center gap-4 mb-4">
-            <span class="bg-[#00aaff] text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
-                Ciclo Académico 2026
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-[#003366] text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">
+                Facultad de Ingeniería
+            </span>
+            <span class="border border-slate-200 px-3 py-1 rounded-full text-[10px] font-bold text-slate-400 uppercase tracking-widest">
+                Gestión 2026
             </span>
         </div>
-        <h1 class="text-5xl md:text-7xl font-black text-[#003366] tracking-tighter uppercase leading-none">
-            INGENIERÍA<br>
-            <span class="text-[#00aaff]">WEB II</span>
+        <h1 class="text-5xl md:text-7xl font-black text-[#003366] tracking-tighter uppercase leading-none mt-2">
+            Programación<br>
+            <span class="text-[#00aaff]">Móvil I</span>
         </h1>
-        <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            Bienvenido al portal de aprendizaje. Aquí transitaremos desde la arquitectura robusta de <strong>Laravel</strong> hasta el desarrollo de aplicaciones móviles modernas con <strong>React Native</strong>.
-        </p>
         <div class="h-2 w-24 bg-[#003366] mt-8"></div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mb-16">
-        <div class="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all">
-            <i class="fab fa-laravel text-4xl text-[#003366] mb-4"></i>
-            <h3 class="text-xl font-black text-[#003366] uppercase mb-2">Backend Master</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">
-                Dominaremos el ecosistema de Laravel 13, desde migraciones y Eloquent hasta la creación de APIs RESTful profesionales.
-            </p>
-        </div>
+    <div class="max-w-4xl space-y-12">
+        <p class="text-2xl md:text-3xl text-slate-600 leading-tight font-light">
+            Bienvenido al siguiente nivel de la ingeniería. Aquí, el código deja de vivir solo en el navegador para convertirse en <strong class="text-[#003366] font-black italic">experiencias nativas</strong> en la palma de la mano.
+        </p>
 
-        <div class="p-8 bg-slate-50 rounded-[2rem] border border-slate-100 hover:shadow-xl transition-all">
-            <i class="fab fa-react text-4xl text-[#00aaff] mb-4"></i>
-            <h3 class="text-xl font-black text-[#003366] uppercase mb-2">Mobile First</h3>
-            <p class="text-sm text-slate-500 leading-relaxed">
-                Aprenderemos a consumir nuestras APIs utilizando React Native, convirtiendo lógica web en experiencias móviles nativas.
-            </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-6">
+            <div class="group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h4 class="text-[#003366] font-black uppercase text-xs tracking-widest">De la Web al App</h4>
+                </div>
+                <p class="text-slate-500 leading-relaxed text-sm">
+                    Evolucionamos tu stack de <strong>React JS</strong> hacia <strong>React Native</strong>. No solo creamos interfaces; construimos sistemas móviles que consumen las APIs que diseñaste en el Backend.
+                </p>
+            </div>
+
+            <div class="group">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white transition-all">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4 class="text-[#003366] font-black uppercase text-xs tracking-widest">Enfoque Nativo</h4>
+                </div>
+                <p class="text-slate-500 leading-relaxed text-sm">
+                    Dominaremos el despliegue multiplataforma con <strong>Expo</strong>, aprendiendo a gestionar el ciclo de vida de una aplicación tanto en <strong>Android</strong> como en <strong>iOS</strong>.
+                </p>
+            </div>
         </div>
     </div>
 
-    <section class="bg-[#003366] p-10 rounded-[3rem] text-white relative overflow-hidden shadow-2xl">
-        <div class="relative z-10">
-            <h4 class="text-[#00aaff] font-black uppercase text-xs tracking-widest mb-2">Mensaje del Docente</h4>
-            <p class="text-2xl font-bold italic leading-tight mb-6">
-                "Este entorno está diseñado para que experimentes el flujo real de un Ingeniero de Software."
-            </p>
-            <div class="flex items-center gap-4">
-                <div class="h-12 w-12 rounded-full bg-[#00aaff] flex items-center justify-center font-black">JZ</div>
-                <div>
-                    <p class="text-sm font-bold">Ing. Jaime Zambrana Chacon</p>
-                    <p class="text-[10px] text-blue-300 uppercase tracking-widest">Docente UPDS - Facultad de Ingeniería</p>
+    <section class="mt-20 p-8 md:p-12 bg-slate-50 rounded-[3rem] border border-slate-100 relative overflow-hidden">
+        <div class="relative z-10 flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1">
+                <h3 class="text-xl font-black text-[#003366] uppercase mb-4">El Desafío del Semestre</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                    Tu proyecto formativo consistirá en resolver un problema real de nuestro contexto local, integrando una arquitectura <strong>Full-Stack</strong>: un potente cerebro en la nube (Laravel) y una interfaz móvil de alto rendimiento (React Native).
+                </p>
+                <div class="flex gap-4">
+                    <div class="text-center">
+                        <p class="text-2xl font-black text-[#00aaff]">20</p>
+                        <p class="text-[9px] uppercase font-bold text-slate-400">Días de Sprint</p>
+                    </div>
+                    <div class="w-px h-10 bg-slate-200"></div>
+                    <div class="text-center">
+                        <p class="text-2xl font-black text-[#00aaff]">100%</p>
+                        <p class="text-[9px] uppercase font-bold text-slate-400">Efectividad API</p>
+                    </div>
                 </div>
             </div>
+            <div class="w-48 h-48 bg-white rounded-3xl shadow-2xl flex items-center justify-center p-6 transform rotate-3 hover:rotate-0 transition-transform">
+                <i class="fas fa-code-branch text-6xl text-slate-200"></i>
+            </div>
         </div>
-        <i class="fas fa-code absolute -right-10 -bottom-10 text-white/5 text-[15rem]"></i>
     </section>
 
+    <footer class="mt-16 border-t border-slate-100 pt-8 flex justify-between items-center">
+        <p class="text-[10px] font-bold text-slate-300 uppercase tracking-widest">Ing. Jaime Zambrana Chacon • UPDS</p>
+        <div class="flex gap-4 text-slate-300">
+            <i class="fab fa-react"></i>
+            <i class="fab fa-laravel"></i>
+            <i class="fab fa-android"></i>
+        </div>
+    </footer>
 </div>
 `;

@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPDS - Programacion Movil</title>
+    <title>Sistemas Multimedia | UPDS 2026</title>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <script src="./content/inicio.js"></script>
+   <script src="./content/inicio.js"></script>
     <script src="./content/normas.js"></script>
     <script src="./content/programa.js"></script>
     <script src="./content/proyecto.js"></script>
@@ -36,56 +36,97 @@
     <script src="./content/texto_base_u10.js"></script>
     
 
+
+
+
     <style>
         [v-cloak] { display: none; }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #00aaff; border-radius: 10px; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #00aaff 0%, #003366 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Animación suave de cambio de página */
+        .page-enter-active { animation: slideIn 0.5s ease-out; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
-<body class="bg-slate-50 font-sans antialiased text-slate-900">
+<body class="bg-[#f0f4f8] font-sans antialiased text-slate-900">
 
-<div id="app" v-cloak class="flex min-h-screen relative">
+<div id="app" v-cloak class="flex min-h-screen">
     
-    <aside class="w-72 bg-[#003366] text-white flex flex-col fixed inset-y-0 shadow-2xl z-50 transition-transform lg:translate-x-0 lg:static" :class="isMobile ? 'translate-x-0' : '-translate-x-full'">
-        <div class="p-8 border-b border-white/10">
-            <h1 class="text-xl font-black italic tracking-tighter uppercase text-[#00aaff]">Programacion Movil 1</h1>            
+    <aside class="w-80 bg-[#001f3f] text-white flex flex-col fixed inset-y-0 shadow-2xl z-50 transition-transform lg:translate-x-0 lg:static" :class="isMobile ? 'translate-x-0' : '-translate-x-full'">
+        <div class="p-8 border-b border-white/5 bg-gradient-to-br from-[#001f3f] to-[#003366]">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 bg-[#00aaff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00aaff]/30">
+                    <i class="fas fa-layer-group text-white text-xl"></i>
+                </div>
+                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Sistemas <br><span class="text-[#00aaff]">Multimedia</span></h1>
+            </div>
+            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • Ingenieria</p>
         </div>
 
         <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
             <div v-for="section in menuStructure" :key="section.name">
-                <h3 class="text-[10px] font-black uppercase text-[#00aaff] tracking-widest mb-4 opacity-70">{{ section.name }}</h3>
-                <ul class="space-y-2">
+                <h3 class="text-[11px] font-bold uppercase text-[#00aaff] tracking-[0.2em] mb-4 opacity-80">{{ section.name }}</h3>
+                <ul class="space-y-1.5">
                     <li v-for="link in section.links" :key="link.slug">
                         <button @click="navigate(link.slug)" 
-                                :class="['w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition-all', currentSlug === link.slug ? 'bg-[#00aaff] text-white shadow-lg' : 'hover:bg-white/5 text-gray-400']">
-                            <i :class="link.icon" class="w-5 text-center"></i>
+                                :class="['w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition-all duration-300', 
+                                currentSlug === link.slug ? 'bg-gradient-to-r from-[#00aaff] to-[#0088cc] text-white shadow-md' : 'hover:bg-white/5 text-gray-400 hover:text-white']">
+                            <i :class="link.icon" class="w-5 text-center text-sm"></i>
                             {{ link.label }}
                         </button>
                     </li>
                 </ul>
             </div>
         </nav>
+
+        <div class="p-6 bg-black/20 text-center">
+            <div class="text-[10px] text-gray-500 font-bold">DOCENTE</div>
+            <div class="text-xs font-bold text-white uppercase italic">Ing. Jaime Zambrana Chacon</div>
+        </div>
     </aside>
 
-    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-white">
-        <header class="h-16 border-b border-slate-100 flex items-center justify-between px-8 flex-none">
-            <button @click="isMobile = !isMobile" class="lg:hidden text-[#003366]"><i class="fas fa-bars"></i></button>
-            <div class="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">DJ • 2026</div>
+    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-slate-50">
+        <header class="h-16 glass-panel flex items-center justify-between px-8 flex-none z-40">
+            <button @click="isMobile = !isMobile" class="lg:hidden text-[#003366] text-xl">
+                <i class="fas" :class="isMobile ? 'fa-times' : 'fa-bars-staggered'"></i>
+            </button>
+            <div class="flex items-center gap-6 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                <span class="flex items-center gap-2"><i class="fas fa-circle text-[6px] text-green-500 animate-pulse"></i> Servidor UPDS Activo</span>
+                <span class="hidden md:block">Santa Cruz, Bolivia</span>
+            </div>
         </header>
 
-        <div class="flex-1 overflow-y-auto p-8 lg:p-16 custom-scrollbar">
-            <article class="max-w-4xl mx-auto">
-                <div v-if="currentBody" v-html="currentBody" class="animate-in fade-in duration-700"></div>
-                <div v-else class="text-center py-20 text-slate-300">
-                    <i class="fas fa-file-circle-question text-6xl mb-4"></i>
-                    <p class="font-bold">Selecciona un tema del menú</p>
+        <div class="flex-1 overflow-y-auto p-6 lg:p-12 custom-scrollbar relative">
+            <div class="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
+                <i class="fas fa-cubes text-[20rem]"></i>
+            </div>
+
+            <article class="max-w-5xl mx-auto page-enter-active">
+                <div v-if="currentBody" v-html="currentBody" class="prose prose-slate max-w-none"></div>
+                
+                <div v-if="currentSlug === 'ejemplo-interactivo'" class="mt-8">
+                    <div class="bg-white p-6 rounded-2xl shadow-xl border border-slate-200">
+                        <h3 class="text-xl font-bold mb-4 text-gradient">Simulador de Píxeles Dinámicos (JS/Canvas)</h3>
+                        <canvas id="multimediaCanvas" class="w-full h-80 bg-slate-900 rounded-xl cursor-crosshair"></canvas>
+                        <p class="mt-4 text-sm text-slate-500 italic">Mueve el mouse sobre el canvas para interactuar con los nodos de información.</p>
+                    </div>
                 </div>
             </article>
         </div>
     </main>
 </div>
-
-[Image of a professional web documentation layout with a sidebar menu and main content area]
 
 <script>
     const { createApp, ref, onMounted } = Vue;
@@ -116,34 +157,23 @@
                     name: 'Contenido', 
                     links: [
                         { slug: 'texto_guia', label: 'Texto de Guía', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargo texto_guia.js' },
-                        { slug: 'pag_texto_base_u01', label: 'U1: Introduccion al dev movil', icon: 'fab fa-html5', content: pag_texto_base_u01 },
-                        { slug: 'pag_texto_base_u02', label: 'U2: REACT JS', icon: 'fab fa-css3-alt', content: pag_texto_base_u02 },
-                        
-                        { slug: 'pag_texto_base_u03', label: 'U3: DINÁMICA DE ESTADOS Y PROPS EN REACT JS', icon: 'fab fa-js', content: pag_texto_base_u03 },                                                
+                        { slug: 'pag_texto_base_u01', label: 'U1: HTML Semántico', icon: 'fab fa-html5', content: pag_texto_base_u01 },
+                        { slug: 'pag_texto_base_u02', label: 'U2: Diseño CSS', icon: 'fab fa-css3-alt', content: pag_texto_base_u02 },
+                        { slug: 'pag_texto_base_u03', label: 'U3: Lógica JS', icon: 'fab fa-js', content: pag_texto_base_u03 },                                                
+                        { slug: 'pag_texto_base_u04', label: 'U4: PHP', icon: 'fab fa-js', content: pag_texto_base_u04 },                       
 
+                        { slug: 'pag_texto_base_u05', label: 'U5: Bases de Datos', icon: 'fas fa-database', content: pag_texto_base_u05 },
                         
-                        { slug: 'pag_texto_base_u04', label: 'U4: React Native', icon: 'fab fa-js', content: pag_texto_base_u04 },                       
-
-                        { slug: 'pag_texto_base_u05', label: '05: ESTILOS Y MAQUETACIÓN ', icon: 'fas fa-database', content: pag_texto_base_u05 },
-/*                         
                         { slug: 'pag_texto_base_u06', label: 'U6: Frameworks', icon: 'fas fa-cubes', content: pag_texto_base_u06 },
-                        
+                        /* 
                         { slug: 'pag_texto_base_u07', label: 'U7: Seguridad Web', icon: 'fas fa-shield-alt', content: pag_texto_base_u07 },
                         { slug: 'pag_texto_base_u08', label: 'U8: DevOps', icon: 'fas fa-server', content: pag_texto_base_u08 },
                         { slug: 'pag_texto_base_u09', label: 'U9: Accesibilidad', icon: 'fas fa-universal-access', content: pag_texto_base_u09 },
-                         
-                        { slug: 'pag_texto_base_u07', label: 'U7: Laravel', icon: 'fas fa-shield-alt', content: pag_texto_base_u07 },
-
-                        { slug: 'pag_texto_base_u08', label: 'U8: Laravel avanzado', icon: 'fas fa-server', content: pag_texto_base_u08 },
-                        
-                        { slug: 'pag_texto_base_u09', label: 'U9: ApiRest con Laravel', icon: 'fas fa-universal-access', content: pag_texto_base_u09 },
-                        /*
                         { slug: 'pag_texto_base_u10', label: 'U10: Tendencias', icon: 'fas fa-rocket', content: pag_texto_base_u10 }
                         */
                         
 
-                 
-                        
+                            
                      
                     ]
                 }
