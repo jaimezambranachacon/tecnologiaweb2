@@ -1,111 +1,134 @@
 // content/texto_base_u02.js
 
 const pag_texto_base_u02 = `
-<div class="bg-white min-h-screen p-8 md:p-16 text-slate-800">
+<div class="bg-white min-h-screen p-8 md:p-16 text-slate-800 animate-in fade-in duration-700">
     
     <header class="mb-20">
-        <span class="text-blue-600 font-black uppercase text-xs tracking-[0.3em] flex items-center gap-2">
-            <i class="fas fa-th text-lg"></i> TEXTO BASE / UNIDAD 2
+        <span class="text-indigo-600 font-black uppercase text-xs tracking-[0.3em] flex items-center gap-2">
+            <i class="fas fa-layer-group text-lg"></i> TEXTO BASE / UNIDAD 2
         </span>
         <h1 class="text-5xl md:text-6xl font-black text-[#003366] tracking-tighter uppercase leading-none mt-2">
-            PÍXELES VS.<br>
-            <span class="text-blue-600">VECTORES</span>
+            SOBRECARGA DE<br>
+            <span class="text-indigo-600">FUNCIONES Y MÉTODOS</span>
         </h1>
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            La base de cualquier sistema multimedia interactivo es entender cómo el navegador interpreta la luz y la forma. Dominar la diferencia entre un Mapa de Bits y un Gráfico Vectorial es la diferencia entre un software profesional y uno mediocre.
+            La elegancia y la reusabilidad del software dependen de la flexibilidad de sus interfaces lógicas. En esta unidad aprenderás el concepto de sobrecarga de firmas y su aplicación técnica para construir funciones inteligentes y polimórficas.
         </p>
-        <div class="h-2 w-24 bg-blue-600 mt-8"></div>
+        <div class="h-2 w-24 bg-indigo-600 mt-8"></div>
     </header>
 
     <div class="max-w-5xl space-y-20">
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">1. El ADN de la Imagen Digital</h3>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+                1. ¿Qué es la Sobrecarga (Overloading)?
+            </h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+                En la programación convencional estructurada, dos funciones en el mismo ámbito territorial no podían llamarse igual. La <strong>Sobrecarga de Funciones</strong> rompe esta barrera, permitiéndote declarar múltiples funciones o métodos con el **mismo nombre**, pero diferenciados obligatoriamente por su **firma (signature)**.
+            </p>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
-                    <h4 class="text-xl font-bold text-blue-700 mb-4 tracking-tight uppercase">Mapa de Bits (Raster)</h4>
+                    <h4 class="text-xl font-bold text-indigo-700 mb-4 tracking-tight uppercase">La Firma de una Función</h4>
                     <p class="text-slate-600 leading-relaxed mb-4">
-                        Son cuadrículas de puntos llamados <strong>píxeles</strong>. Cada píxel contiene información de color (RGBA). Es el formato ideal para la fotografía y videos complejos.
+                        El compilador no identifica a una función únicamente por su nombre. Para diferenciar funciones homónimas, el motor del lenguaje analiza minuciosamente sus parámetros de entrada basándose en tres reglas estrictas:
                     </p>
                     <ul class="text-sm space-y-2 font-medium text-slate-500">
-                        <li><i class="fas fa-compress-arrows-alt mr-2"></i> Dependen de la resolución.</li>
-                        <li><i class="fas fa-file-image mr-2"></i> Formatos: JPG, PNG, WebP.</li>
-                        <li><i class="fas fa-search-plus mr-2"></i> Pierden calidad al ampliarse (pixelación).</li>
+                        <li><i class="fas fa-arrow-up-9-1 mr-2"></i> <strong>La cantidad</strong> de argumentos declarados.</li>
+                        <li><i class="fas fa-font mr-2"></i> <strong>El tipo de dato</strong> de cada parámetro (ej: int vs. float).</li>
+                        <li><i class="fas fa-arrow-down-1-9 mr-2"></i> <strong>El orden</strong> preciso en el que aparecen expuestos.</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-bold text-emerald-600 mb-4 tracking-tight uppercase">Gráficos Vectoriales</h4>
+                    <h4 class="text-xl font-bold text-emerald-600 mb-4 tracking-tight uppercase">Beneficios en Ingeniería</h4>
                     <p class="text-slate-600 leading-relaxed mb-4">
-                        No usan píxeles, sino <strong>fórmulas matemáticas</strong> (puntos, líneas y curvas). En la web, esto se traduce al lenguaje SVG (Scalable Vector Graphics).
+                        La sobrecarga es una de las manifestaciones más tempranas del polimorfismo (Polimorfismo en tiempo de compilación o ad-hoc). Sus ventajas directas sobre la metodología secuencial clásica son evidentes:
                     </p>
                     <ul class="text-sm space-y-2 font-medium text-slate-500">
-                        <li><i class="fas fa-expand mr-2"></i> Resolución infinita (nunca se pixelan).</li>
-                        <li><i class="fas fa-code mr-2"></i> Formatos: SVG, AI, EPS.</li>
-                        <li><i class="fas fa-weight-hanging mr-2"></i> Archivos extremadamente ligeros.</li>
+                        <li><i class="fas fa-eye mr-2"></i> <strong>Legibilidad Absoluta:</strong> Evita inventar nombres confusos como <code>calcularInt()</code> o <code>calcularFloat()</code>.</li>
+                        <li><i class="fas fa-recycle mr-2"></i> <strong>Abstracción Limpia:</strong> Centraliza comportamientos semánticos idénticos bajo una misma identidad.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">2. Herramientas de Desarrollo</h3>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+                2. El Comportamiento en los Ecosistemas de Desarrollo
+            </h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                Para desarrollar sistemas digitales interactivos, un Ingeniero debe dominar herramientas que permitan exportar estos recursos de forma optimizada para la red[cite: 9, 20].
+                De acuerdo con la línea de desarrollo tecnológico elegida por cada equipo para el proyecto formativo, la sobrecarga opera bajo diferentes paradigmas internos de los compiladores e intérpretes:
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-                    <h5 class="font-black text-[#003366] uppercase text-sm mb-3">Rasterización</h5>
-                    <p class="text-xs text-slate-500 mb-4">Software para procesar imágenes fotográficas y texturas para modelos 3D.</p>
-                    <span class="text-[10px] font-bold bg-slate-200 px-2 py-1 rounded">Photoshop / GIMP</span>
+                    <h5 class="font-black text-[#003366] uppercase text-sm mb-3">C++ Nativo</h5>
+                    <p class="text-xs text-slate-500 mb-4">Soporte estricto en tiempo de compilación mediante <em>Name Mangling</em> (el compilador altera el nombre interno de los métodos vinculando sus tipos de parámetros).</p>
+                    <span class="text-[10px] font-bold bg-slate-200 px-2 py-1 rounded">Static Polymorphism</span>
                 </div>
                 <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-                    <h5 class="font-black text-[#003366] uppercase text-sm mb-3">Vectorización</h5>
-                    <p class="text-xs text-slate-500 mb-4">Creación de interfaces (UI), iconos y personajes para animaciones 2D.</p>
-                    <span class="text-[10px] font-bold bg-slate-200 px-2 py-1 rounded">Illustrator / Figma</span>
+                    <h5 class="font-black text-[#003366] uppercase text-sm mb-3">Python Avanzado</h5>
+                    <p class="text-xs text-slate-500 mb-4">Al ser un lenguaje dinámico, Python no soporta sobrecarga nativa por firmas. Se emula utilizando parámetros por defecto (<code>None</code>), argumentos variables (<code>*args</code>) o decoradores.</p>
+                    <span class="text-[10px] font-bold bg-slate-200 px-2 py-1 rounded">Dynamic Overloading</span>
                 </div>
-                <div class="p-6 bg-blue-50 rounded-2xl border border-blue-100">
-                    <h5 class="font-black text-blue-700 uppercase text-sm mb-3">Simuladores Online</h5>
-                    <p class="text-xs text-slate-500 mb-4">Prueba algoritmos de filtros y compresión directamente.</p>
-                    <a href="https://squoosh.app/" target="_blank" class="text-[10px] font-bold text-blue-600 underline">Ir a Squoosh.app</a>
+                <div class="p-6 bg-indigo-50 rounded-2xl border border-indigo-100">
+                    <h5 class="font-black text-indigo-700 uppercase text-sm mb-3">JavaScript (ES6)</h5>
+                    <p class="text-xs text-slate-500 mb-4">Similar a Python. Una función sobreescribe a la anterior. Se implementa inspeccionando el operador <code>typeof</code> o evaluando la propiedad <code>arguments.length</code>.</p>
+                    <span class="text-[10px] font-bold bg-indigo-200 text-indigo-800 px-2 py-1 rounded">Runtime Inspection</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">3. El Lienzo Multimedia</h3>
-            <div class="bg-indigo-900 text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
-                <i class="fas fa-pencil-ruler absolute -right-10 -bottom-10 text-white/5 text-[15rem] rotate-12"></i>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+                3. Implementación de Sobrecarga de Métodos
+            </h3>
+            <div class="bg-indigo-900 text-white p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden mb-8">
+                <i class="fas fa-laptop-code absolute -right-10 -bottom-10 text-white/5 text-[15rem] rotate-12"></i>
                 <div class="relative z-10 space-y-6">
-                    <h4 class="text-2xl font-black text-blue-300 italic uppercase">¿Por qué usamos Canvas en JS?</h4>
+                    <h4 class="text-2xl font-black text-indigo-300 italic uppercase">Caso Práctico: El Renderizador del Simulador</h4>
                     <p class="text-lg leading-relaxed opacity-90">
-                        El elemento <code>&lt;canvas&gt;</code> es un híbrido. Nos permite dibujar formas vectoriales mediante comandos de JavaScript, pero el resultado final se procesa como un Mapa de Bits de alto rendimiento.
+                        Imagina que estás construyendo la interfaz gráfica de tu simulador interactivo para el proyecto formativo. Necesitas un método llamado <code>dibujar()</code>. Dependiendo de los activos que reciba en memoria dinámica, la firma debe mutar automáticamente su comportamiento:
                     </p>
-                    <div class="p-6 bg-white/10 rounded-2xl border border-white/20 font-mono text-sm">
-                        <span class="text-blue-300">// Ejemplo de dibujo vectorial en lienzo raster</span><br>
-                        ctx.beginPath();<br>
-                        ctx.arc(100, 75, 50, 0, 2 * Math.PI);<br>
-                        ctx.stroke();
+                    
+                    <div class="bg-slate-950 rounded-2xl overflow-hidden font-mono text-xs md:text-sm text-slate-300 border border-indigo-800">
+                        <div class="bg-slate-900 px-4 py-2 border-b border-indigo-950 flex justify-between items-center text-[10px] uppercase font-bold tracking-widest text-slate-400">
+                            <span>Ejemplo Arquitectónico de Sobrecarga</span>
+                            <i class="fas fa-code text-indigo-400"></i>
+                        </div>
+                        <pre class="p-6 overflow-x-auto leading-relaxed text-indigo-200">
+// Firma 1: Dibuja un punto simple en un espacio coordenado
+void dibujar(int x, int y);
+
+// Firma 2: Sobrecarga por tipo. Dibuja un vector de precisión espacial
+void dibujar(double x, double y);
+
+// Firma 3: Sobrecarga por cantidad. Dibuja una caja delimitadora completa de colisión
+void dibujar(int x, int y, int ancho, int alto);</pre>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="mt-20 border-t border-slate-100 pt-12">
-            <h3 class="text-2xl font-black text-[#003366] uppercase mb-8">Saberes Esenciales Aplicados</h3>
+            <h3 class="text-2xl font-black text-[#003366] uppercase mb-8">Saberes Esenciales Aplicados (Criterio de Verificación)</h3>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center shrink-0 font-black">1</div>
+                    <div class="w-12 h-12 rounded-full bg-indigo-600 text-white flex items-center justify-center shrink-0 font-black shadow-md">1</div>
                     <div>
-                        <h5 class="font-bold text-slate-800">Optimización de Activos</h5>
-                        <p class="text-sm text-slate-500 mt-1">Aprenderemos a reducir el peso de las imágenes sin sacrificar la calidad para sistemas web fluidos.</p>
+                        <h5 class="font-bold text-slate-800">Diseño de Firmas Limpias</h5>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Aprenderás a estructurar e identificar parámetros inequívocos para evitar la ambigüedad en tiempo de compilación (<em>Ambiguous Compile-Time Errors</em>).
+                        </p>
                     </div>
                 </div>
                 <div class="flex gap-4">
-                    <div class="w-12 h-12 rounded-full bg-[#003366] text-white flex items-center justify-center shrink-0 font-black">2</div>
+                    <div class="w-12 h-12 rounded-full bg-[#003366] text-white flex items-center justify-center shrink-0 font-black shadow-md">2</div>
                     <div>
-                        <h5 class="font-bold text-slate-800">Manipulación de Píxeles</h5>
-                        <p class="text-sm text-slate-500 mt-1">Crearemos simuladores que cambian colores, brillo y contraste mediante algoritmos directos sobre la matriz de píxeles.</p>
+                        <h5 class="font-bold text-slate-800">Polimorfismo Estático Robusto</h5>
+                        <p class="text-sm text-slate-500 mt-1">
+                            Aplicarás la sobrecarga combinada con variables instanciadas dinámicamente en el proyecto para optimizar las rutinas matemáticas del sistema interactivo[cite: 10, 18].
+                        </p>
                     </div>
                 </div>
             </div>
