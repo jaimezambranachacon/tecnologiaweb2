@@ -219,6 +219,186 @@ const pag_texto_base_u01 = `
             </div>
         </section>
 
+        <section class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-slate-100">
+        <div class="border-b-2 border-slate-100 pb-4 mb-6">
+            <span class="text-amber-600 font-black uppercase text-xs tracking-[0.3em] block mb-1">Aclaración de Ingeniería</span>
+            <h3 class="text-3xl font-black text-[#003366] uppercase tracking-tighter">1. El Uso Real de los Punteros: ¿Didáctica o Producción?</h3>
+        </div>
+        
+        <p class="text-lg text-slate-600 leading-relaxed mb-6 font-light">
+            Es vital aclarar que, en el desarrollo de software comercial moderno, <strong>rara vez escribirás punteros manuales (como <code class="font-mono bg-slate-100 px-1 py-0.5 rounded text-sm text-amber-700">*ptr</code>)</strong> en tu día a día. Los lenguajes de alto nivel actuales cuentan con recolectores de basura automáticos y sistemas de abstracción que protegen la memoria RAM de forma transparente.
+        </p>
+        
+        <div class="bg-amber-50 border-l-4 border-amber-500 p-6 rounded-r-xl mb-8">
+            <p class="text-sm text-amber-900 leading-relaxed font-medium">
+                <strong>¿Por qué los estudiamos entonces?</strong> El uso de punteros en esta asignatura tiene un <strong>fin puramente didáctico y formativo</strong>. Manipular punteros te obliga a entender cómo funciona el hardware bajo el capó, las direcciones físicas y la diferencia real entre el Stack y el Heap. Desarrollar esta destreza mental es lo que te capacita para diseñar arquitecturas de software masivas y optimizadas, sin importar el lenguaje de programación que elijas en el futuro.
+            </p>
+        </div>
+
+        <h4 class="text-xl font-black text-[#003366] uppercase mb-4 tracking-tight">¿Dónde se siguen usando obligatoriamente?</h4>
+        <div class="overflow-x-auto bg-white rounded-2xl border border-slate-200 shadow-sm">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-[#003366] text-white uppercase text-xs tracking-widest">
+                        <th class="p-4 font-black">Área de la Industria</th>
+                        <th class="p-4 font-black">¿Por qué son necesarios?</th>
+                        <th class="p-4 font-black">Ejemplos Reales</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm text-slate-700">
+                    <tr class="border-b border-slate-100 hover:bg-slate-50">
+                        <td class="p-4 font-bold text-slate-800">Sistemas Operativos</td>
+                        <td class="p-4 text-xs">Para comunicarse de forma directa con los transistores del hardware y gestionar los drivers de los componentes.</td>
+                        <td class="p-4 font-mono text-xs text-blue-600">Kernel de Linux, Windows, macOS.</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-slate-50">
+                        <td class="p-4 font-bold text-slate-800">Motores de Videojuegos</td>
+                        <td class="p-4 text-xs">Exigen renderizar millones de polígonos a 120 cuadros por segundo, por lo que no pueden esperar a un recolector de basura automático.</td>
+                        <td class="p-4 font-mono text-xs text-blue-600">Unreal Engine (C++), Unity Core.</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 hover:bg-slate-50">
+                        <td class="p-4 font-bold text-slate-800">Sistemas Embebidos</td>
+                        <td class="p-4 text-xs">Dispositivos con procesadores diminutos y memoria RAM extremadamente limitada (a veces menos de 2 KB).</td>
+                        <td class="p-4 font-mono text-xs text-blue-600">Microcontroladores, Arduino, Marcapasos.</td>
+                    </tr>
+                    <tr class="hover:bg-slate-50">
+                        <td class="p-4 font-bold text-slate-800">Bases de Datos de Alta Velocidad</td>
+                        <td class="p-4 text-xs">Requieren indexar y ordenar miles de millones de registros en tiempo récord directamente en las celdas de la RAM.</td>
+                        <td class="p-4 font-mono text-xs text-blue-600">Redis, Motores internos de PostgreSQL.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-slate-100">
+        <div class="border-b-2 border-slate-100 pb-4 mb-8">
+            <span class="text-blue-600 font-black uppercase text-xs tracking-[0.3em] block mb-1">Traducción de Código</span>
+            <h3 class="text-3xl font-black text-[#003366] uppercase tracking-tighter">2. Compiladores vs. Intérpretes</h3>
+        </div>
+
+        <p class="text-lg text-slate-600 leading-relaxed mb-10 font-light">
+            Las computadoras no entienden palabras como <code class="font-mono bg-slate-100 px-1 py-0.5 rounded text-sm text-blue-600">int</code>, <code class="font-mono bg-slate-100 px-1 py-0.5 rounded text-sm text-blue-600">cout</code> o <code class="font-mono bg-slate-100 px-1 py-0.5 rounded text-sm text-blue-600">if</code>; únicamente procesan impulsos eléctricos (ceros y unos). Existen dos grandes tecnologías encargadas de traducir nuestro código fuente a código de máquina ejecutable:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div class="p-8 bg-slate-50 border border-slate-200 rounded-3xl relative overflow-hidden">
+                <div class="w-12 h-12 bg-[#003366] text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                    <i class="fas fa-file-shield"></i>
+                </div>
+                <h4 class="text-2xl font-black text-[#003366] uppercase mb-3">¿Qué es un Compilador?</h4>
+                <p class="text-xs text-slate-600 leading-relaxed mb-4">
+                    Es un software que toma el código fuente completo, lo analiza de golpe en busca de errores sintácticos y lo traduce de manera masiva en un archivo binario ejecutable independiente (como un archivo <code class="font-mono text-rose-600">.exe</code>). Una vez compilado, el programa corre a la velocidad máxima del hardware sin depender del código original.
+                </p>
+                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <strong>Ejemplos reales:</strong> GCC (MinGW en Windows), Clang, MSVC.
+                </div>
+            </div>
+
+            <div class="p-8 bg-blue-50 border border-blue-100 rounded-3xl relative overflow-hidden">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-xl mb-4 shadow-md">
+                    <i class="fas fa-bolt-lightning"></i>
+                </div>
+                <h4 class="text-2xl font-black text-blue-800 uppercase mb-3">¿Qué es un Intérprete?</h4>
+                <p class="text-xs text-slate-700 leading-relaxed mb-4">
+                    Es un programa que no genera archivos ejecutables binarios. En su lugar, lee tu código fuente <strong>línea por línea en tiempo de ejecución</strong>, traduciéndola y ejecutándola en el procesador de forma instantánea. Es muy flexible para realizar cambios rápidos, pero su rendimiento es estructuralmente más lento que el de un compilador.
+                </p>
+                <div class="text-[10px] font-bold text-blue-500 uppercase tracking-wider">
+                    <strong>Ejemplos reales:</strong> Motor V8 de Google Chrome, Intérprete oficial de CPython.
+                </div>
+            </div>
+        </div>
+
+        <h4 class="text-xl font-black text-[#003366] uppercase mb-6 tracking-tight"><i class="fas fa-list-check mr-2 text-blue-500"></i>Clasificación de los Lenguajes en la Industria</h4>
+        
+        <div class="space-y-4">
+            <div class="p-5 bg-white border border-slate-200 rounded-2xl hover:shadow-md transition-shadow flex items-start gap-4">
+                <span class="bg-emerald-100 text-emerald-800 font-black uppercase text-[9px] px-2.5 py-1 rounded-md tracking-wider flex-none mt-1">
+                    Compilados
+                </span>
+                <div>
+                    <h5 class="font-bold text-slate-800 text-sm">C, C++, Rust, Go</h5>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                        <strong>Elemento clave:</strong> Generan ejecutables nativos optimizados para la arquitectura específica de la CPU (x86_64 / ARM). Tienen control absoluto sobre el mapa de la memoria RAM y son ideales para software de alto rendimiento.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-5 bg-white border border-slate-200 rounded-2xl hover:shadow-md transition-shadow flex items-start gap-4">
+                <span class="bg-amber-100 text-amber-800 font-black uppercase text-[9px] px-2.5 py-1 rounded-md tracking-wider flex-none mt-1">
+                    Interpretados
+                </span>
+                <div>
+                    <h5 class="font-bold text-slate-800 text-sm">Python, JavaScript, Ruby, PHP</h5>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                        <strong>Elemento clave:</strong> Son lenguajes dinámicos y altamente portables. El mismo archivo de código corre en Windows, Linux o Mac sin necesidad de ser recompilado, siempre y cuando el entorno de ejecución (intérprete) esté instalado.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-5 bg-white border border-slate-200 rounded-2xl hover:shadow-md transition-shadow flex items-start gap-4">
+                <span class="bg-purple-100 text-purple-800 font-black uppercase text-[9px] px-2.5 py-1 rounded-md tracking-wider flex-none mt-1">
+                    Híbridos (JIT)
+                </span>
+                <div>
+                    <h5 class="font-bold text-slate-800 text-sm">Java, C# (C-Sharp)</h5>
+                    <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+                        <strong>Elemento clave:</strong> Se compilan a un código intermedio universal llamado <strong>Bytecode</strong> (archivos <code class="font-mono">.class</code> o <code class="font-mono">.dll</code>). Al ejecutarse, una Máquina Virtual intermedia (JVM / .NET CLR) compila ese código dinámicamente en tiempo real (Just-In-Time Compilation) para acelerar el procesamiento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-900 text-white p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden">
+        <i class="fas fa-cubes absolute -right-10 -bottom-10 text-white/5 text-[22rem] transform -rotate-12"></i>
+        
+        <div class="relative z-10">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-12 h-12 bg-emerald-500 rounded-2xl flex items-center justify-center text-slate-900 text-2xl shadow-lg">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div>
+                    <span class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-400 block">Entorno de Laboratorio</span>
+                    <h3 class="text-2xl font-black uppercase text-white">3. El Uso de Code::Blocks como Entorno Integrado</h3>
+                </div>
+            </div>
+
+            <p class="text-slate-300 text-base leading-relaxed mb-8 max-w-4xl font-light">
+                Para el desarrollo práctico de nuestras clases y la validación de algoritmos de bajo nivel, utilizaremos **Code::Blocks** como nuestra herramienta de cabecera. Es un Entorno de Desarrollo Integrado (IDE) de código abierto, sumamente liviano y especializado en los lenguajes C y C++.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 font-mono text-xs">
+                <div class="bg-white/5 p-5 rounded-xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <h5 class="text-emerald-400 font-bold uppercase mb-2 text-[11px] tracking-wider"><i class="fas fa-microchip mr-1"></i>Compilador Embebido</h5>
+                        <p class="text-slate-400 leading-relaxed">
+                            Code::Blocks no compila el código por sí solo; integra la suite de compiladores de hardware **GCC (GNU Compiler Collection)** a través de MinGW, permitiendo generar archivos binarios optimizados en un par de milisegundos.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <h5 class="text-emerald-400 font-bold uppercase mb-2 text-[11px] tracking-wider"><i class="fas fa-bug-slash mr-1"></i>Auditoría y Depurador</h5>
+                        <p class="text-slate-400 leading-relaxed">
+                            Incluye herramientas nativas de inspección avanzada (Debugging). Te permite colocar puntos de interrupción (<em>Breakpoints</em>) en las líneas de código para pausar el programa en vivo y auditar visualmente cómo van cambiando las direcciones hexadecimales de tus punteros en la RAM.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white/5 p-5 rounded-xl border border-white/10 flex flex-col justify-between">
+                    <div>
+                        <h5 class="text-emerald-400 font-bold uppercase mb-2 text-[11px] tracking-wider"><i class="fas fa-bolt mr-1"></i>Flujo Automatizado</h5>
+                        <p class="text-slate-400 leading-relaxed">
+                            Al presionar la tecla rápida **F9**, el IDE automatiza de forma transparente las tres fases del desarrollo en una sola acción de pantalla: guarda los cambios del archivo fuente, invoca al compilador GCC y despliega la consola de comandos de hardware resultante.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     </div>
 </div>
 `;

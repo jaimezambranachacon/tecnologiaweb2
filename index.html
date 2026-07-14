@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación III | UPDS 2026</title>
+    <title>Programación Básica | UPDS 2026</title>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,11 +56,11 @@
         <div class="p-8 border-b border-white/5 bg-gradient-to-br from-[#001f3f] to-[#003366]">
             <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 h-10 bg-[#00aaff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00aaff]/30">
-                    <i class="fas fa-code-branch text-white text-xl"></i>
+                    <i class="fas fa-code text-white text-xl"></i>
                 </div>
-                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Programación <br><span class="text-[#00aaff]">III</span></h1>
+                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Programación <br><span class="text-[#00aaff]">Básica</span></h1>
             </div>
-            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0123</p>
+            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0120</p>
         </div>
 
         <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
@@ -98,7 +98,7 @@
 
         <div class="flex-1 overflow-y-auto p-6 lg:p-12 custom-scrollbar relative">
             <div class="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
-                <i class="fas fa-code text-[20rem]"></i>
+                <i class="fas fa-laptop-code text-[20rem]"></i>
             </div>
 
             <article class="max-w-5xl mx-auto page-enter-active">
@@ -117,29 +117,29 @@
             const currentSlug = ref('inicio');
             const currentBody = ref('');
 
-            // ESTRUCTURA DEL MENÚ FORMAL PARA PROGRAMACIÓN III
+            // ESTRUCTURA DEL MENÚ FORMAL ADAPTADA A PROGRAMACIÓN BÁSICA (SIS-0120)
             const menuStructure = [
                 { 
                     name: 'Introducción', 
                     links: [
-                        { slug: 'inicio', label: 'Bienvenida', icon: 'fas fa-home', content: typeof pag_inicio !== 'undefined' ? pag_inicio : 'No cargó inicio.js' },
+                        { slug: 'inicio', label: 'Bienvenida al Módulo', icon: 'fas fa-home', content: typeof pag_inicio !== 'undefined' ? pag_inicio : 'No cargó inicio.js' },
                         { slug: 'normas', label: 'Normas de Convivencia', icon: 'fas fa-gavel', content: typeof pag_normas !== 'undefined' ? pag_normas : 'No cargó normas.js' },
-                        { slug: 'proyecto', label: 'Proyecto Formativo POO', icon: 'fas fa-project-diagram', content: typeof pag_proyecto !== 'undefined' ? pag_proyecto : 'No cargó proyecto.js' },
-                        { slug: 'presentaciones', label: 'Presentaciones', icon: 'fas fa-chalkboard-user', content: typeof pag_presentaciones !== 'undefined' ? pag_presentaciones : 'No cargó presentaciones.js' },
-                        { slug: 'bibliografia', label: 'Bibliografía del Módulo', icon: 'fas fa-book-open', content: typeof pag_bibliografia !== 'undefined' ? pag_bibliografia : 'No cargó bibliografia.js' },
-                        { slug: 'videos', label: 'Clases Grabadas', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargó videos.js' },
-                        { slug: 'ingles', label: 'Inglés DUOLINGO', icon: 'fas fa-globe', content: typeof pag_ingles !== 'undefined' ? pag_ingles : 'No cargó ingles.js' }
+                        { slug: 'proyecto', label: 'Proyecto Formativo Integrador', icon: 'fas fa-project-diagram', content: typeof pag_proyecto !== 'undefined' ? pag_proyecto : 'No cargó proyecto.js' },
+                        { slug: 'presentaciones', label: 'Presentaciones Clave', icon: 'fas fa-chalkboard-user', content: typeof pag_presentaciones !== 'undefined' ? pag_presentaciones : 'No cargó presentaciones.js' },
+                        { slug: 'bibliografia', label: 'Bibliografía y Recursos', icon: 'fas fa-book-open', content: typeof pag_bibliografia !== 'undefined' ? pag_bibliografia : 'No cargó bibliografia.js' },
+                        { slug: 'videos', label: 'Sesiones Grabadas', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargó videos.js' },
+                        { slug: 'ingles', label: 'Inglés con DUOLINGO', icon: 'fas fa-globe', content: typeof pag_ingles !== 'undefined' ? pag_ingles : 'No cargó ingles.js' }
                     ]
                 },
                 { 
                     name: 'Unidades de Contenido', 
                     links: [
-                        { slug: 'texto_guia', label: 'Texto de Guía Completo', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargó texto_guia.js' },
-                        { slug: 'pag_texto_base_u01', label: 'U1: Punteros y Gestión en Heap', icon: 'fas fa-server', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u02', label: 'U2: Sobrecarga de Firmas y Funciones', icon: 'fas fa-layer-group', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u03', label: 'U3: Algoritmos y Pilas Recursivas', icon: 'fas fa-arrows-spin', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u04', label: 'U4: Paradigma POO, Clases e Instancias', icon: 'fas fa-cubes', content: typeof pag_texto_base_u04 !== 'undefined' ? pag_texto_base_u04 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u05', label: 'U5: Herencia Avanzada y Polimorfismo', icon: 'fas fa-network-wired', content: typeof pag_texto_base_u05 !== 'undefined' ? pag_texto_base_u05 : 'Contenido no disponible' }
+                        { slug: 'texto_guia', label: 'Texto Guía Completo', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargó texto_guia.js' },
+                        { slug: 'pag_texto_base_u01', label: 'U1: Algoritmos e Introducción a Python', icon: 'fas fa-arrow-turn-down', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u02', label: 'U2: Tipos de Datos, Variables y Operadores', icon: 'fas fa-calculator', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u03', label: 'U3: Estructuras de Control Condicional', icon: 'fas fa-code-branch', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u04', label: 'U4: Estructuras de Control Repetitivas (Bucles)', icon: 'fas fa-arrows-spin', content: typeof pag_texto_base_u04 !== 'undefined' ? pag_texto_base_u04 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u05', label: 'U5: Funciones y Procesamiento de Cadenas', icon: 'fas fa-font', content: typeof pag_texto_base_u05 !== 'undefined' ? pag_texto_base_u05 : 'Contenido no disponible' }
                     ]
                 }
             ];

@@ -2,15 +2,6 @@
 
 // 1. DATA CORE: Base de datos limpia de los estudiantes
 const duo_history = [
-     {
-        mes: "Junio 2026",
-        principal: true, // El primer elemento siempre se dibujará en el podio superior
-        estudiantes: [
-            { posicion: 1, nombre: "Oscar Denilsón Crespo Carrillo", xp: "25371 y 11h", foto: "https://lh3.googleusercontent.com/contacts/AG6tpzHCj9mBCHok22wHztSXOpZblzEltp6IxIAsw-x9N5KprgUWF0Y6=s272-p-k-rw-no" },
-            { posicion: 2, nombre: "Michel", xp: "11420 y 10h", foto: "" }, 
-            { posicion: 3, nombre: "Roberto Colodro Montero", xp: "10980 y 4h", foto: "" }
-        ]
-    },
     {
         mes: "Mayo 2026",
         principal: true, // El primer elemento siempre se dibujará en el podio superior
