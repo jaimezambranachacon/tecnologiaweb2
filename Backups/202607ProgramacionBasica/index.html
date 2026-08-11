@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programación Básica | UPDS 2026</title>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="./content/inicio.js"></script>
+    <script src="./content/normas.js"></script>
+    <script src="./content/programa.js"></script>
+    <script src="./content/proyecto.js"></script>
+    <script src="./content/cronograma.js"></script>
+    <script src="./content/texto_guia.js"></script>
+    <script src="./content/presentaciones.js"></script>
+    <script src="./content/bibliografia.js"></script>
+    <script src="./content/videos.js"></script>
+    <script src="./content/ingles.js"></script>
+
+    <script src="./content/texto_base_u01.js"></script>
+    <script src="./content/texto_base_u02.js"></script>
+    <script src="./content/texto_base_u03.js"></script>
+    <script src="./content/texto_base_u04.js"></script>
+    <script src="./content/texto_base_u05.js"></script>
+
+    <style>
+        [v-cloak] { display: none; }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #00aaff 0%, #003366 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .page-enter-active { animation: slideIn 0.5s ease-out; }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-[#f0f4f8] font-sans antialiased text-slate-900">
+
+<div id="app" v-cloak class="flex min-h-screen">
+    
+    <aside class="w-80 bg-[#001f3f] text-white flex flex-col fixed inset-y-0 shadow-2xl z-50 transition-transform lg:translate-x-0 lg:static" :class="isMobile ? 'translate-x-0' : '-translate-x-full'">
+        <div class="p-8 border-b border-white/5 bg-gradient-to-br from-[#001f3f] to-[#003366]">
+            <div class="flex items-center gap-3 mb-2">
+                <div class="w-10 h-10 bg-[#00aaff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00aaff]/30">
+                    <i class="fas fa-code text-white text-xl"></i>
+                </div>
+                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Programación <br><span class="text-[#00aaff]">Básica</span></h1>
+            </div>
+            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0120</p>
+        </div>
+
+        <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
+            <div v-for="section in menuStructure" :key="section.name">
+                <h3 class="text-[11px] font-bold uppercase text-[#00aaff] tracking-[0.2em] mb-4 opacity-80">{{ section.name }}</h3>
+                <ul class="space-y-1.5">
+                    <li v-for="link in section.links" :key="link.slug">
+                        <button @click="navigate(link.slug)" 
+                                :class="['w-full flex items-center gap-3 px-4 py-3 rounded-xl text-xs font-bold transition-all duration-300', 
+                                currentSlug === link.slug ? 'bg-gradient-to-r from-[#00aaff] to-[#0088cc] text-white shadow-md' : 'hover:bg-white/5 text-gray-400 hover:text-white']">
+                            <i :class="link.icon" class="w-5 text-center text-sm"></i>
+                            {{ link.label }}
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="p-6 bg-black/20 text-center">
+            <div class="text-[10px] text-gray-500 font-bold">DOCENTE UNIVERSITARIO</div>
+            <div class="text-xs font-bold text-white uppercase italic">Ing. Jaime Zambrana Chacon</div>
+        </div>
+    </aside>
+
+    <main class="flex-1 flex flex-col h-screen overflow-hidden bg-slate-50">
+        <header class="h-16 glass-panel flex items-center justify-between px-8 flex-none z-40">
+            <button @click="isMobile = !isMobile" class="lg:hidden text-[#003366] text-xl">
+                <i class="fas" :class="isMobile ? 'fa-times' : 'fa-bars-staggered'"></i>
+            </button>
+            <div class="flex items-center gap-6 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                <span class="flex items-center gap-2"><i class="fas fa-circle text-[6px] text-green-500 animate-pulse"></i> Servidor UPDS Activo</span>
+                <span class="hidden md:block">Santa Cruz de la Sierra, Bolivia</span>
+            </div>
+        </header>
+
+        <div class="flex-1 overflow-y-auto p-6 lg:p-12 custom-scrollbar relative">
+            <div class="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
+                <i class="fas fa-laptop-code text-[20rem]"></i>
+            </div>
+
+            <article class="max-w-5xl mx-auto page-enter-active">
+                <div v-if="currentBody" v-html="currentBody" class="prose prose-slate max-w-none"></div>
+            </article>
+        </div>
+    </main>
+</div>
+
+<script>
+    const { createApp, ref, onMounted } = Vue;
+
+    createApp({
+        setup() {
+            const isMobile = ref(false);
+            const currentSlug = ref('inicio');
+            const currentBody = ref('');
+
+            // ESTRUCTURA DEL MENÚ FORMAL ADAPTADA A PROGRAMACIÓN BÁSICA (SIS-0120)
+            const menuStructure = [
+                { 
+                    name: 'Introducción', 
+                    links: [
+                        { slug: 'inicio', label: 'Bienvenida al Módulo', icon: 'fas fa-home', content: typeof pag_inicio !== 'undefined' ? pag_inicio : 'No cargó inicio.js' },
+                        { slug: 'normas', label: 'Normas de Convivencia', icon: 'fas fa-gavel', content: typeof pag_normas !== 'undefined' ? pag_normas : 'No cargó normas.js' },
+                        { slug: 'proyecto', label: 'Proyecto Formativo Integrador', icon: 'fas fa-project-diagram', content: typeof pag_proyecto !== 'undefined' ? pag_proyecto : 'No cargó proyecto.js' },
+                        { slug: 'presentaciones', label: 'Presentaciones Clave', icon: 'fas fa-chalkboard-user', content: typeof pag_presentaciones !== 'undefined' ? pag_presentaciones : 'No cargó presentaciones.js' },
+                        { slug: 'bibliografia', label: 'Bibliografía y Recursos', icon: 'fas fa-book-open', content: typeof pag_bibliografia !== 'undefined' ? pag_bibliografia : 'No cargó bibliografia.js' },
+                        { slug: 'videos', label: 'Sesiones Grabadas', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargó videos.js' },
+                        { slug: 'ingles', label: 'Inglés con DUOLINGO', icon: 'fas fa-globe', content: typeof pag_ingles !== 'undefined' ? pag_ingles : 'No cargó ingles.js' }
+                    ]
+                },
+                { 
+                    name: 'Unidades de Contenido', 
+                    links: [
+                        { slug: 'texto_guia', label: 'Texto Guía Completo', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargó texto_guia.js' },
+                        { slug: 'pag_texto_base_u01', label: 'U1: Algoritmos e Introducción a Python', icon: 'fas fa-arrow-turn-down', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u02', label: 'U2: Tipos de Datos, Variables y Operadores', icon: 'fas fa-calculator', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u03', label: 'U3: Estructuras de Control Condicional', icon: 'fas fa-code-branch', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u04', label: 'U4: Estructuras de Control Repetitivas (Bucles)', icon: 'fas fa-arrows-spin', content: typeof pag_texto_base_u04 !== 'undefined' ? pag_texto_base_u04 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u05', label: 'U5: Funciones y Procesamiento de Cadenas', icon: 'fas fa-font', content: typeof pag_texto_base_u05 !== 'undefined' ? pag_texto_base_u05 : 'Contenido no disponible' }
+                    ]
+                }
+            ];
+
+            const navigate = (slug) => {
+                let found = null;
+                menuStructure.forEach(section => {
+                    const link = section.links.find(l => l.slug === slug);
+                    if(link) found = link;
+                });
+
+                if(found) {
+                    currentSlug.value = slug;
+                    currentBody.value = found.content;
+                    window.location.hash = slug;
+                }
+                isMobile.value = false;
+            };
+
+            onMounted(() => {
+                const hash = window.location.hash.replace('#', '');
+                navigate(hash || 'inicio');
+            });
+
+            return { isMobile, menuStructure, currentSlug, currentBody, navigate };
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>

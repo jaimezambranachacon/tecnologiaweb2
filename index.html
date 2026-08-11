@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programación Básica | UPDS 2026</title>
+    <title>Diseño Web I | UPDS 2026</title>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -25,8 +25,6 @@
     <script src="./content/texto_base_u01.js"></script>
     <script src="./content/texto_base_u02.js"></script>
     <script src="./content/texto_base_u03.js"></script>
-    <script src="./content/texto_base_u04.js"></script>
-    <script src="./content/texto_base_u05.js"></script>
 
     <style>
         [v-cloak] { display: none; }
@@ -56,11 +54,11 @@
         <div class="p-8 border-b border-white/5 bg-gradient-to-br from-[#001f3f] to-[#003366]">
             <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 h-10 bg-[#00aaff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00aaff]/30">
-                    <i class="fas fa-code text-white text-xl"></i>
+                    <i class="fas fa-laptop-code text-white text-xl"></i>
                 </div>
-                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Programación <br><span class="text-[#00aaff]">Básica</span></h1>
+                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Diseño Web <br><span class="text-[#00aaff]">I</span></h1>
             </div>
-            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0120</p>
+            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0140</p>
         </div>
 
         <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
@@ -98,7 +96,7 @@
 
         <div class="flex-1 overflow-y-auto p-6 lg:p-12 custom-scrollbar relative">
             <div class="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
-                <i class="fas fa-laptop-code text-[20rem]"></i>
+                <i class="fas fa-code text-[20rem]"></i>
             </div>
 
             <article class="max-w-5xl mx-auto page-enter-active">
@@ -117,7 +115,7 @@
             const currentSlug = ref('inicio');
             const currentBody = ref('');
 
-            // ESTRUCTURA DEL MENÚ FORMAL ADAPTADA A PROGRAMACIÓN BÁSICA (SIS-0120)
+            // ESTRUCTURA DEL MENÚ FORMAL ADAPTADA A DISEÑO WEB I (SIS-0140)
             const menuStructure = [
                 { 
                     name: 'Introducción', 
@@ -135,11 +133,9 @@
                     name: 'Unidades de Contenido', 
                     links: [
                         { slug: 'texto_guia', label: 'Texto Guía Completo', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargó texto_guia.js' },
-                        { slug: 'pag_texto_base_u01', label: 'U1: Algoritmos e Introducción a Python', icon: 'fas fa-arrow-turn-down', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u02', label: 'U2: Tipos de Datos, Variables y Operadores', icon: 'fas fa-calculator', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u03', label: 'U3: Estructuras de Control Condicional', icon: 'fas fa-code-branch', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u04', label: 'U4: Estructuras de Control Repetitivas (Bucles)', icon: 'fas fa-arrows-spin', content: typeof pag_texto_base_u04 !== 'undefined' ? pag_texto_base_u04 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u05', label: 'U5: Funciones y Procesamiento de Cadenas', icon: 'fas fa-font', content: typeof pag_texto_base_u05 !== 'undefined' ? pag_texto_base_u05 : 'Contenido no disponible' }
+                        { slug: 'pag_texto_base_u01', label: 'U1: Marcado Estructurado en HTML5', icon: 'fab fa-html5', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u02', label: 'U2: Estilos, Layouts y Cajas con CSS', icon: 'fab fa-css3-alt', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u03', label: 'U3: Frameworks CSS y Diseños Responsive', icon: 'fas fa-mobile-screen-button', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' }
                     ]
                 }
             ];
