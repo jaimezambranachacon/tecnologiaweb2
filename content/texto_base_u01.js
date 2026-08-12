@@ -12,14 +12,14 @@ const pag_texto_base_u01 = `
             <span class="text-blue-600">LENGUAJES DE MARCAS HTML</span>
         </h1>
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl">
-            Fundamentos de la Web, arquitectura cliente-servidor, estándares W3C, evolución histórica y desarrollo de estructuras semánticas en HTML5 para la maquetación de prototipos funcionales.
+            Fundamentos de la Web, arquitectura cliente-servidor, estándares W3C, evolución histórica de versiones, estructuras semánticas y control total sobre formularios en HTML5.
         </p>
         <div class="h-2 w-24 bg-blue-600 mt-8"></div>
     </header>
 
     <div class="max-w-5xl space-y-20">
 
-        <!-- SECCIÓN 1: HISTORIA Y FUNDAMENTOS -->
+        <!-- SECCIÓN 1: HISTORIA Y GUERRA DE NAVEGADORES -->
         <section>
             <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
                 1. Historia de la Web y la Guerra de los Navegadores
@@ -59,14 +59,67 @@ const pag_texto_base_u01 = `
                     </div>
                     <h5 class="font-black text-slate-800 text-lg mb-1">Era del W3C y HTML5</h5>
                     <p class="text-slate-500 text-xs leading-relaxed">
-                        El World Wide Web Consortium (W3C) unificó los estándares. HTML5 surgió como estándar vivo, integrando semántica moderna, multimedia nativa y soporte móvil.
+                        El World Wide Web Consortium (W3C) unificó los estándares. HTML5 surgió como un estándar vivo con semántica moderna, multimedia nativa y soporte móvil.
                     </p>
                 </div>
             </div>
 
             <hr class="border-slate-100 my-12">
 
-            <!-- CONCEPTOS CLAVE: HTML, URL, HTTP -->
+            <!-- TABLA HISTÓRICA DE VERSIONES DE HTML -->
+            <h4 class="text-2xl font-black text-[#003366] uppercase mb-6">Evolución Cronológica y Versiones de HTML</h4>
+            <div class="overflow-x-auto bg-white rounded-2xl shadow-lg border border-slate-200 mb-12">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-[#003366] text-white uppercase text-xs tracking-widest">
+                            <th class="p-4 font-black">Versión</th>
+                            <th class="p-4 font-black">Año</th>
+                            <th class="p-4 font-black">Organismo / Autor</th>
+                            <th class="p-4 font-black">Características Principales e Hitos</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-slate-700">
+                        <tr class="border-b border-slate-100 hover:bg-blue-50/50">
+                            <td class="p-4 font-bold text-slate-800">HTML 1.0</td>
+                            <td class="p-4 font-mono text-blue-600">1991</td>
+                            <td class="p-4 text-xs font-semibold">Tim Berners-Lee (CERN)</td>
+                            <td class="p-4 text-xs">Versión borrador básica con 18 etiquetas elementales orientadas a texto e hipervínculos.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50/50">
+                            <td class="p-4 font-bold text-slate-800">HTML 2.0</td>
+                            <td class="p-4 font-mono text-blue-600">1995</td>
+                            <td class="p-4 text-xs font-semibold">IETF (Internet Engineering Task Force)</td>
+                            <td class="p-4 text-xs">Primer estándar formal. Incluyó soporte inicial para formularios simples y tablas básicas.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50/50">
+                            <td class="p-4 font-bold text-slate-800">HTML 3.2</td>
+                            <td class="p-4 font-mono text-blue-600">1997</td>
+                            <td class="p-4 text-xs font-semibold">W3C</td>
+                            <td class="p-4 text-xs">Primera recomendación oficial del W3C. Integró tablas complejas, applets de Java y texto alrededor de imágenes.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50/50">
+                            <td class="p-4 font-bold text-slate-800">HTML 4.01</td>
+                            <td class="p-4 font-mono text-blue-600">1999</td>
+                            <td class="p-4 text-xs font-semibold">W3C</td>
+                            <td class="p-4 text-xs">Consolidó la separación entre contenido y presentación mediante la introducción oficial de CSS.</td>
+                        </tr>
+                        <tr class="border-b border-slate-100 hover:bg-blue-50/50">
+                            <td class="p-4 font-bold text-slate-800">XHTML 1.0</td>
+                            <td class="p-4 font-mono text-blue-600">2000</td>
+                            <td class="p-4 text-xs font-semibold">W3C</td>
+                            <td class="p-4 text-xs">Reformulación de HTML bajo reglas sintácticas estrictas de XML (cierre obligatorio de todas las etiquetas).</td>
+                        </tr>
+                        <tr class="hover:bg-blue-50/50">
+                            <td class="p-4 font-bold text-blue-600 font-black">HTML5</td>
+                            <td class="p-4 font-mono text-blue-600">2014 - Presente</td>
+                            <td class="p-4 text-xs font-semibold">WHATWG / W3C</td>
+                            <td class="p-4 text-xs">Estándar moderno con etiquetas semánticas, multimedia nativa (&lt;audio&gt;, &lt;video&gt;), APIs de Geolocalización y formularios avanzados.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TRÍADA FUNDAMENTAL DE LA WEB -->
             <h4 class="text-2xl font-black text-[#003366] uppercase mb-6">Tríada Fundamental de la Web</h4>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
@@ -101,10 +154,10 @@ const pag_texto_base_u01 = `
         <!-- SECCIÓN 2: ESTRUCTURA BÁSICA Y ETIQUETAS -->
         <section>
             <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
-                2. Estructura Básica y Etiquetas Esenciales de HTML5
+                2. Estructura Básica de un Documento HTML5
             </h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                Todo documento HTML5 debe seguir un esquema estandarizado compuesto por la declaración del tipo de documento, encabezados de metadatos (<code>&lt;head&gt;</code>) y el cuerpo visible de la página (<code>&lt;body&gt;</code>).
+                Todo documento HTML5 debe seguir un esquema estandarizado compuesto por la declaración del tipo de documento, metadatos en el <code>&lt;head&gt;</code> y el contenido visible en el <code>&lt;body&gt;</code>.
             </p>
 
             <div class="bg-slate-900 rounded-2xl shadow-2xl overflow-hidden font-mono text-sm text-slate-200 mb-8">
@@ -129,67 +182,189 @@ const pag_texto_base_u01 = `
     <span class="text-blue-400">&lt;/header&gt;</span>
 
     <span class="text-blue-400">&lt;main&gt;</span>
-        <span class="text-blue-400">&lt;p&gt;</span>Este es un párrafo de texto en HTML5 con un <span class="text-blue-400">&lt;a</span> <span class="text-yellow-400">href</span>=<span class="text-emerald-400">"#"</span><span class="text-blue-400">&gt;</span>enlace de hipertexto<span class="text-blue-400">&lt;/a&gt;</span>.<span class="text-blue-400">&lt;/p&gt;</span>
+        <span class="text-blue-400">&lt;p&gt;</span>Párrafo descriptivo con un <span class="text-blue-400">&lt;a</span> <span class="text-yellow-400">href</span>=<span class="text-emerald-400">"#"</span><span class="text-blue-400">&gt;</span>enlace de hipertexto<span class="text-blue-400">&lt;/a&gt;</span>.<span class="text-blue-400">&lt;/p&gt;</span>
     <span class="text-blue-400">&lt;/main&gt;</span>
 <span class="text-blue-400">&lt;/body&gt;</span>
 <span class="text-blue-400">&lt;/html&gt;</span></code></pre>
             </div>
         </section>
 
-        <!-- SECCIÓN 3: ETIQUETAS AVANZADAS: TABLAS, FORMULARIOS Y MULTIMEDIA -->
+        <!-- SECCIÓN 3: EXPLICACIÓN DETALLADA DE FORMULARIOS Y SUS ELEMENTOS -->
         <section>
             <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
-                3. Elementos Avanzados: Tablas, Formularios y Multimedia
+                3. Formularios Web: La Etiqueta &lt;form&gt; y sus Atributos
             </h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                HTML5 expande la interactividad permitiendo capturar datos mediante formularios con validaciones nativas, representar datos tabulares y reproducir elementos de audio y video sin necesidad de complementos externos.
+                El elemento <code>&lt;form&gt;</code> es el contenedor maestro encargado de recolectar la información ingresada por un usuario para enviarla a un servidor o procesarla mediante JavaScript.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
-                    <h4 class="font-black text-[#003366] text-lg mb-3 flex items-center gap-2">
-                        <i class="fas fa-[#00aaff] fa-list-check"></i> Formulario Interactivo (HTML5)
-                    </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                        Uso de campos de entrada con tipos específicos como <code>email</code>, <code>password</code>, y botones de envío:
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
+                    <h5 class="font-black text-[#003366] text-base mb-2"><code>action</code></h5>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Define la ruta o URL de destino a la que se enviarán los datos del formulario (ejemplo: <code>action="/guardar.php"</code> o un endpoint de API).
                     </p>
-                    <div class="bg-slate-900 p-4 rounded-xl font-mono text-xs text-slate-200">
-                        <code>
-                            &lt;form action="/procesar" method="POST"&gt;<br>
-                            &nbsp;&nbsp;&lt;label&gt;Correo:&lt;/label&gt;<br>
-                            &nbsp;&nbsp;&lt;input type="email" required&gt;<br>
-                            &nbsp;&nbsp;&lt;button type="submit"&gt;Enviar&lt;/button&gt;<br>
-                            &lt;/form&gt;
-                        </code>
-                    </div>
                 </div>
 
-                <div class="bg-white p-6 rounded-2xl shadow-md border border-slate-100">
-                    <h4 class="font-black text-[#003366] text-lg mb-3 flex items-center gap-2">
-                        <i class="fas fa-photo-film text-purple-600"></i> Multimedia Nativa
-                    </h4>
-                    <p class="text-xs text-slate-500 leading-relaxed mb-4">
-                        Etiquetas avanzadas <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> con controles integrados de reproducción:
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
+                    <h5 class="font-black text-[#003366] text-base mb-2"><code>method</code></h5>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Especifica el método HTTP de envío: <code>GET</code> (envía datos expuestos en la URL, ideal para búsquedas) o <code>POST</code> (envía datos ocultos en el cuerpo de la petición, ideal para contraseñas o registros).
                     </p>
-                    <div class="bg-slate-900 p-4 rounded-xl font-mono text-xs text-slate-200">
-                        <code>
-                            &lt;video controls width="100%"&gt;<br>
-                            &nbsp;&nbsp;&lt;source src="video.mp4" type="video/mp4"&gt;<br>
-                            &nbsp;&nbsp;Tu navegador no soporta video HTML5.<br>
-                            &lt;/video&gt;
-                        </code>
-                    </div>
+                </div>
+
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
+                    <h5 class="font-black text-[#003366] text-base mb-2"><code>enctype</code></h5>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Indica cómo se codifican los datos. Para subir archivos o imágenes es estrictamente necesario utilizar <code>enctype="multipart/form-data"</code>.
+                    </p>
+                </div>
+
+                <div class="p-6 bg-slate-50 border border-slate-200 rounded-2xl">
+                    <h5 class="font-black text-[#003366] text-base mb-2"><code>novalidate</code></h5>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Atributo booleano opcional que deshabilita la validación automática por defecto del navegador en HTML5.
+                    </p>
+                </div>
+            </div>
+
+            <!-- OTROS ELEMENTOS DE FORMULARIO QUE PUEDES USAR -->
+            <h4 class="text-2xl font-black text-[#003366] uppercase mb-4">Otros Elementos Fundamentales de Formulario</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-slate-800 text-sm mb-1"><code>&lt;label&gt;</code></h5>
+                    <p class="text-slate-500 text-xs">
+                        Asocia un texto descriptivo a un campo mediante el atributo <code>for="id_del_campo"</code>, mejorando la accesibilidad y el área de clic.
+                    </p>
+                </div>
+
+                <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-slate-800 text-sm mb-1"><code>&lt;fieldset&gt; y &lt;legend&gt;</code></h5>
+                    <p class="text-slate-500 text-xs">
+                        <code>&lt;fieldset&gt;</code> agrupa secciones complejas dentro de un recuadro, mientras que <code>&lt;legend&gt;</code> define el título de dicho grupo.
+                    </p>
+                </div>
+
+                <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-slate-800 text-sm mb-1"><code>&lt;select&gt; y &lt;option&gt;</code></h5>
+                    <p class="text-slate-500 text-xs">
+                        Crea menús desplegables de selección única o múltiple mediante opciones individuales definidos con <code>&lt;option&gt;</code>.
+                    </p>
+                </div>
+
+                <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-slate-800 text-sm mb-1"><code>&lt;textarea&gt;</code></h5>
+                    <p class="text-slate-500 text-xs">
+                        Campo multilínea ideal para comentarios, mensajes o descripciones extensas.
+                    </p>
+                </div>
+
+                <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-slate-800 text-sm mb-1"><code>&lt;datalist&gt;</code></h5>
+                    <p class="text-slate-500 text-xs">
+                        Proporciona una lista de sugerencias autocompletables para un campo <code>&lt;input&gt;</code>.
+                    </p>
+                </div>
+
+                <div class="p-5 bg-white border border-slate-200 rounded-xl shadow-sm">
+                    <h5 class="font-bold text-slate-800 text-sm mb-1"><code>&lt;button&gt;</code></h5>
+                    <p class="text-slate-500 text-xs">
+                        Botonera para activar acciones. Puede ser de tipo <code>submit</code>, <code>reset</code> o <code>button</code>.
+                    </p>
                 </div>
             </div>
         </section>
 
-        <!-- SECCIÓN 4: PROYECTO 100% HTML PURAS ETIQUETAS -->
+        <!-- SECCIÓN 4: EJEMPLOS DE CÓDIGO NECESARIOS EN FORMULARIOS -->
         <section>
             <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
-                4. Proyecto Práctico: Portafolio Web (HTML Puro)
+                4. Ejemplos Prácticos de Entradas en Formularios (Inputs)
             </h3>
             <p class="text-lg text-slate-600 leading-relaxed mb-6">
-                A continuación, se presenta un proyecto completo utilizando **únicamente HTML5 estándar** (sin CSS ni JavaScript). Este prototipo integra estructura semántica, tablas, listas, enlaces, imágenes, formularios y elementos multimedia.
+                A continuación tienes los bloques de código más comunes para utilizarlos en tus desarrollos:
+            </p>
+
+            <!-- EJEMPLOS EN CÓDIGO HTML -->
+            <div class="space-y-8">
+
+                <!-- 1. CHECKBOXES -->
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <i class="fas fa-square-check text-blue-600"></i> Checkboxes (Casillas de Selección Múltiple)
+                    </h4>
+                    <p class="text-xs text-slate-500 mb-3">Permiten al usuario seleccionar 0, 1 o varias opciones independientes.</p>
+                    <div class="bg-slate-900 rounded-xl p-4 font-mono text-xs text-slate-200 overflow-x-auto">
+<pre><code><span class="text-slate-500">&lt;!-- Checkboxes independientes (Misma categoría usa 'name[]' o 'name' único) --&gt;</span>
+<span class="text-blue-400">&lt;p&gt;</span>Selecciona tus áreas de interés:<span class="text-blue-400">&lt;/p&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"checkbox"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"frontend"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"intereses"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"frontend"</span> <span class="text-yellow-400">checked</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"frontend"</span><span class="text-blue-400">&gt;</span>Desarrollo Frontend<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"checkbox"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"backend"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"intereses"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"backend"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"backend"</span><span class="text-blue-400">&gt;</span>Desarrollo Backend<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"checkbox"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"base_datos"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"intereses"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"bd"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"base_datos"</span><span class="text-blue-400">&gt;</span>Bases de Datos<span class="text-blue-400">&lt;/label&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- 2. RADIO BUTTONS -->
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <i class="fas fa-circle-dot text-blue-600"></i> Radio Buttons (Botones de Opción Excluyente)
+                    </h4>
+                    <p class="text-xs text-slate-500 mb-3">Permiten elegir únicamente **una** opción dentro de un grupo. Para agruparlos, deben compartir exactamente el mismo valor en el atributo <code>name</code>.</p>
+                    <div class="bg-slate-900 rounded-xl p-4 font-mono text-xs text-slate-200 overflow-x-auto">
+<pre><code><span class="text-slate-500">&lt;!-- Para agrupar los botones de radio, usaremos exactamente el mismo 'name' --&gt;</span>
+<span class="text-blue-400">&lt;p&gt;</span>Selecciona tu modalidad de estudio:<span class="text-blue-400">&lt;/p&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"radio"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"presencial"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"modalidad"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"presencial"</span> <span class="text-yellow-400">required</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"presencial"</span><span class="text-blue-400">&gt;</span>Presencial<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
+
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"radio"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"virtual"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"modalidad"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"virtual"</span><span class="text-blue-400">&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"virtual"</span><span class="text-blue-400">&gt;</span>Semipresencial / Virtual<span class="text-blue-400">&lt;/label&gt;</span></code></pre>
+                    </div>
+                </div>
+
+                <!-- 3. OTROS INPUTS ESENCIALES (TEXTO, SELECT, FILE, DATE, ETC.) -->
+                <div>
+                    <h4 class="text-lg font-bold text-slate-800 mb-2 flex items-center gap-2">
+                        <i class="fas fa-list-check text-blue-600"></i> Selección, Carga de Archivos y Fechas en HTML5
+                    </h4>
+                    <p class="text-xs text-slate-500 mb-3">Entradas especializadas para fechas, archivos, listas desplegables y rangos.</p>
+                    <div class="bg-slate-900 rounded-xl p-4 font-mono text-xs text-slate-200 overflow-x-auto">
+<pre><code><span class="text-slate-500">&lt;!-- Menú Desplegable --&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"carrera"</span><span class="text-blue-400">&gt;</span>Carrera Universitario:<span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;select</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"carrera"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"carrera"</span><span class="text-blue-400">&gt;</span>
+    <span class="text-blue-400">&lt;option</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">""</span><span class="text-blue-400">&gt;</span>-- Seleccione una opción --<span class="text-blue-400">&lt;/option&gt;</span>
+    <span class="text-blue-400">&lt;option</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"sistemas"</span><span class="text-blue-400">&gt;</span>Ingeniería de Sistemas<span class="text-blue-400">&lt;/option&gt;</span>
+    <span class="text-blue-400">&lt;option</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"redes"</span><span class="text-blue-400">&gt;</span>Ingeniería en Redes<span class="text-blue-400">&lt;/option&gt;</span>
+<span class="text-blue-400">&lt;/select&gt;</span>
+
+<span class="text-slate-500">&lt;!-- Selector de Fecha --&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"fecha_nacimiento"</span><span class="text-blue-400">&gt;</span>Fecha de Nacimiento:<span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"date"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"fecha_nacimiento"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"fecha_nacimiento"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-slate-500">&lt;!-- Carga de Archivos (Ej. PDF o imagen) --&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"cv"</span><span class="text-blue-400">&gt;</span>Subir Documento (PDF):<span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"file"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"cv"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"cv"</span> <span class="text-yellow-400">accept</span>=<span class="text-emerald-400">".pdf"</span><span class="text-blue-400">&gt;</span>
+
+<span class="text-slate-500">&lt;!-- Selector de Color --&gt;</span>
+<span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"color_favorito"</span><span class="text-blue-400">&gt;</span>Color corporativo:<span class="text-blue-400">&lt;/label&gt;</span>
+<span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"color"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"color_favorito"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"color_favorito"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"#00aaff"</span><span class="text-blue-400">&gt;</span></code></pre>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5: PROYECTO 100% HTML CON FORMULARIO COMPLETO -->
+        <section>
+            <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+                5. Proyecto Práctico: Portafolio y Formulario Completo
+            </h3>
+            <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                A continuación se presenta el código integrado que incluye la estructura completa con **múltiples tipos de entradas en un formulario real**.
             </p>
 
             <div class="bg-slate-900 rounded-2xl shadow-2xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
@@ -201,108 +376,108 @@ const pag_texto_base_u01 = `
 <span class="text-blue-400">&lt;html</span> <span class="text-yellow-400">lang</span>=<span class="text-emerald-400">"es"</span><span class="text-blue-400">&gt;</span>
 <span class="text-blue-400">&lt;head&gt;</span>
     <span class="text-blue-400">&lt;meta</span> <span class="text-yellow-400">charset</span>=<span class="text-emerald-400">"UTF-8"</span><span class="text-blue-400">&gt;</span>
-    <span class="text-blue-400">&lt;title&gt;</span>Portafolio Profesional - Estudiante UPDS<span class="text-blue-400">&lt;/title&gt;</span>
+    <span class="text-blue-400">&lt;title&gt;</span>Portafolio e Inscripción - UPDS<span class="text-blue-400">&lt;/title&gt;</span>
 <span class="text-blue-400">&lt;/head&gt;</span>
 <span class="text-blue-400">&lt;body&gt;</span>
 
-    <span class="text-slate-500">&lt;!-- ENCABEZADO Y NAVEGACIÓN --&gt;</span>
     <span class="text-blue-400">&lt;header&gt;</span>
-        <span class="text-blue-400">&lt;h1&gt;</span>Juan Pérez - Desarrollador Web Junior<span class="text-blue-400">&lt;/h1&gt;</span>
-        <span class="text-blue-400">&lt;p&gt;</span>Estudiante de Ingeniería de Sistemas | Universidad Privada Domingo Savio<span class="text-blue-400">&lt;/p&gt;</span>
-        <span class="text-blue-400">&lt;nav&gt;</span>
-            <span class="text-blue-400">&lt;ul&gt;</span>
-                <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-yellow-400">href</span>=<span class="text-emerald-400">"#sobre-mi"</span><span class="text-blue-400">&gt;</span>Sobre Mí<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
-                <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-yellow-400">href</span>=<span class="text-emerald-400">"#proyectos"</span><span class="text-blue-400">&gt;</span>Proyectos Académicos<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
-                <span class="text-blue-400">&lt;li&gt;&lt;a</span> <span class="text-yellow-400">href</span>=<span class="text-emerald-400">"#contacto"</span><span class="text-blue-400">&gt;</span>Contacto<span class="text-blue-400">&lt;/a&gt;&lt;/li&gt;</span>
-            <span class="text-blue-400">&lt;/ul&gt;</span>
-        <span class="text-blue-400">&lt;/nav&gt;</span>
+        <span class="text-blue-400">&lt;h1&gt;</span>Registro de Estudiante y Portafolio<span class="text-blue-400">&lt;/h1&gt;</span>
+        <span class="text-blue-400">&lt;p&gt;</span>Asignatura: Diseño Web I (SIS-0140)<span class="text-blue-400">&lt;/p&gt;</span>
     <span class="text-blue-400">&lt;/header&gt;</span>
 
     <span class="text-blue-400">&lt;hr&gt;</span>
 
-    <span class="text-slate-500">&lt;!-- CONTENIDO PRINCIPAL --&gt;</span>
     <span class="text-blue-400">&lt;main&gt;</span>
-
-        <span class="text-slate-500">&lt;!-- SECCIÓN SOBRE MÍ --&gt;</span>
-        <span class="text-blue-400">&lt;section</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"sobre-mi"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-blue-400">&lt;h2&gt;</span>Sobre Mí<span class="text-blue-400">&lt;/h2&gt;</span>
-            <span class="text-blue-400">&lt;img</span> <span class="text-yellow-400">src</span>=<span class="text-emerald-400">"https://via.placeholder.com/150"</span> <span class="text-yellow-400">alt</span>=<span class="text-emerald-400">"Foto de perfil de Juan Pérez"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-blue-400">&lt;p&gt;</span>
-                Soy un apasionado por la tecnología y la creación de soluciones digitales accesibles bajo los estándares del 
-                <span class="text-blue-400">&lt;strong&gt;</span>W3C<span class="text-blue-400">&lt;/strong&gt;</span>. Actualmente curso el cuarto semestre en la UPDS.
-            <span class="text-blue-400">&lt;/p&gt;</span>
-            
-            <span class="text-blue-400">&lt;h3&gt;</span>Habilidades Técnicas<span class="text-blue-400">&lt;/h3&gt;</span>
-            <span class="text-blue-400">&lt;ul&gt;</span>
-                <span class="text-blue-400">&lt;li&gt;</span>Estructuración de documentos HTML5<span class="text-blue-400">&lt;/li&gt;</span>
-                <span class="text-blue-400">&lt;li&gt;</span>Formularios interactivos y semántica web<span class="text-blue-400">&lt;/li&gt;</span>
-                <span class="text-blue-400">&lt;li&gt;</span>Manejo básico de tablas y maquetación web<span class="text-blue-400">&lt;/li&gt;</span>
-            <span class="text-blue-400">&lt;/ul&gt;</span>
-        <span class="text-blue-400">&lt;/section&gt;</span>
-
-        <span class="text-blue-400">&lt;hr&gt;</span>
-
-        <span class="text-slate-500">&lt;!-- SECCIÓN TABLA DE PROYECTOS --&gt;</span>
-        <span class="text-blue-400">&lt;section</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"proyectos"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-blue-400">&lt;h2&gt;</span>Proyectos Realizados en Diseño Web I<span class="text-blue-400">&lt;/h2&gt;</span>
-            <span class="text-blue-400">&lt;table</span> <span class="text-yellow-400">border</span>=<span class="text-emerald-400">"1"</span> <span class="text-yellow-400">cellpadding</span>=<span class="text-emerald-400">"8"</span><span class="text-blue-400">&gt;</span>
-                <span class="text-blue-400">&lt;thead&gt;</span>
-                    <span class="text-blue-400">&lt;tr&gt;</span>
-                        <span class="text-blue-400">&lt;th&gt;</span>Proyecto<span class="text-blue-400">&lt;/th&gt;</span>
-                        <span class="text-blue-400">&lt;th&gt;</span>Tecnologías Usadas<span class="text-blue-400">&lt;/th&gt;</span>
-                        <span class="text-blue-400">&lt;th&gt;</span>Estado<span class="text-blue-400">&lt;/th&gt;</span>
-                    <span class="text-blue-400">&lt;/tr&gt;</span>
-                <span class="text-blue-400">&lt;/thead&gt;</span>
-                <span class="text-blue-400">&lt;tbody&gt;</span>
-                    <span class="text-blue-400">&lt;tr&gt;</span>
-                        <span class="text-blue-400">&lt;td&gt;</span>Sitio Institucional<span class="text-blue-400">&lt;/td&gt;</span>
-                        <span class="text-blue-400">&lt;td&gt;</span>HTML5 Semántico<span class="text-blue-400">&lt;/td&gt;</span>
-                        <span class="text-blue-400">&lt;td&gt;</span>Completado<span class="text-blue-400">&lt;/td&gt;</span>
-                    <span class="text-blue-400">&lt;/tr&gt;</span>
-                    <span class="text-blue-400">&lt;tr&gt;</span>
-                        <span class="text-blue-400">&lt;td&gt;</span>Formulario de Registro<span class="text-blue-400">&lt;/td&gt;</span>
-                        <span class="text-blue-400">&lt;td&gt;</span>HTML5 Forms<span class="text-blue-400">&lt;/td&gt;</span>
-                        <span class="text-blue-400">&lt;td&gt;</span>En Revisión<span class="text-blue-400">&lt;/td&gt;</span>
-                    <span class="text-blue-400">&lt;/tr&gt;</span>
-                <span class="text-blue-400">&lt;/tbody&gt;</span>
-            <span class="text-blue-400">&lt;/table&gt;</span>
-        <span class="text-blue-400">&lt;/section&gt;</span>
-
-        <span class="text-blue-400">&lt;hr&gt;</span>
-
-        <span class="text-slate-500">&lt;!-- SECCIÓN FORMULARIO DE CONTACTO --&gt;</span>
-        <span class="text-blue-400">&lt;section</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"contacto"</span><span class="text-blue-400">&gt;</span>
-            <span class="text-blue-400">&lt;h2&gt;</span>Contacto Directo<span class="text-blue-400">&lt;/h2&gt;</span>
+        <span class="text-blue-400">&lt;section&gt;</span>
+            <span class="text-blue-400">&lt;h2&gt;</span>Formulario de Registro Académico<span class="text-blue-400">&lt;/h2&gt;</span>
             <span class="text-blue-400">&lt;form</span> <span class="text-yellow-400">action</span>=<span class="text-emerald-400">"#"</span> <span class="text-yellow-400">method</span>=<span class="text-emerald-400">"POST"</span><span class="text-blue-400">&gt;</span>
-                <span class="text-blue-400">&lt;p&gt;</span>
-                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"nombre"</span><span class="text-blue-400">&gt;</span>Nombre Completo:<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
-                    <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"text"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"nombre"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"nombre"</span> <span class="text-yellow-400">required</span><span class="text-blue-400">&gt;</span>
-                <span class="text-blue-400">&lt;/p&gt;</span>
-                <span class="text-blue-400">&lt;p&gt;</span>
-                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"email"</span><span class="text-blue-400">&gt;</span>Correo Electrónico:<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
-                    <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"email"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"email"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"email"</span> <span class="text-yellow-400">required</span><span class="text-blue-400">&gt;</span>
-                <span class="text-blue-400">&lt;/p&gt;</span>
-                <span class="text-blue-400">&lt;p&gt;</span>
-                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"mensaje"</span><span class="text-blue-400">&gt;</span>Mensaje:<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
-                    <span class="text-blue-400">&lt;textarea</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"mensaje"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"mensaje"</span> <span class="text-yellow-400">rows</span>=<span class="text-emerald-400">"4"</span><span class="text-blue-400">&gt;&lt;/textarea&gt;</span>
-                <span class="text-blue-400">&lt;/p&gt;</span>
-                <span class="text-blue-400">&lt;p&gt;</span>
-                    <span class="text-blue-400">&lt;button</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"submit"</span><span class="text-blue-400">&gt;</span>Enviar Mensaje<span class="text-blue-400">&lt;/button&gt;</span>
-                <span class="text-blue-400">&lt;/p&gt;</span>
+                
+                <span class="text-blue-400">&lt;fieldset&gt;</span>
+                    <span class="text-blue-400">&lt;legend&gt;</span>Datos Personales<span class="text-blue-400">&lt;/legend&gt;</span>
+                    <span class="text-blue-400">&lt;p&gt;</span>
+                        <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"nombre"</span><span class="text-blue-400">&gt;</span>Nombre Completo:<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
+                        <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"text"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"nombre"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"nombre"</span> <span class="text-yellow-400">placeholder</span>=<span class="text-emerald-400">"Ej. Juan Pérez"</span> <span class="text-yellow-400">required</span><span class="text-blue-400">&gt;</span>
+                    <span class="text-blue-400">&lt;/p&gt;</span>
+
+                    <span class="text-blue-400">&lt;p&gt;</span>
+                        <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"correo"</span><span class="text-blue-400">&gt;</span>Correo Institucional:<span class="text-blue-400">&lt;/label&gt;&lt;br&gt;</span>
+                        <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"email"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"correo"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"correo"</span> <span class="text-yellow-400">required</span><span class="text-blue-400">&gt;</span>
+                    <span class="text-blue-400">&lt;/p&gt;</span>
+                <span class="text-blue-400">&lt;/fieldset&gt;</span>
+
+                <span class="text-blue-400">&lt;br&gt;</span>
+
+                <span class="text-blue-400">&lt;fieldset&gt;</span>
+                    <span class="text-blue-400">&lt;legend&gt;</span>Preferencias y Modalidad<span class="text-blue-400">&lt;/legend&gt;</span>
+                    
+                    <span class="text-slate-500">&lt;!-- Radio Buttons --&gt;</span>
+                    <span class="text-blue-400">&lt;p&gt;</span>Turno:<span class="text-blue-400">&lt;/p&gt;</span>
+                    <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"radio"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"manana"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"turno"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"manana"</span><span class="text-blue-400">&gt;</span>
+                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"manana"</span><span class="text-blue-400">&gt;</span>Mañana<span class="text-blue-400">&lt;/label&gt;</span>
+                    <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"radio"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"noche"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"turno"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"noche"</span><span class="text-blue-400">&gt;</span>
+                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"noche"</span><span class="text-blue-400">&gt;</span>Noche<span class="text-blue-400">&lt;/label&gt;</span>
+
+                    <span class="text-blue-400">&lt;br&gt;&lt;br&gt;</span>
+
+                    <span class="text-slate-500">&lt;!-- Checkboxes --&gt;</span>
+                    <span class="text-blue-400">&lt;p&gt;</span>Tecnologías que dominas:<span class="text-blue-400">&lt;/p&gt;</span>
+                    <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"checkbox"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"html"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"skills"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"html"</span><span class="text-blue-400">&gt;</span>
+                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"html"</span><span class="text-blue-400">&gt;</span>HTML5<span class="text-blue-400">&lt;/label&gt;</span>
+                    <span class="text-blue-400">&lt;input</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"checkbox"</span> <span class="text-yellow-400">id</span>=<span class="text-emerald-400">"css"</span> <span class="text-yellow-400">name</span>=<span class="text-emerald-400">"skills"</span> <span class="text-yellow-400">value</span>=<span class="text-emerald-400">"css"</span><span class="text-blue-400">&gt;</span>
+                    <span class="text-blue-400">&lt;label</span> <span class="text-yellow-400">for</span>=<span class="text-emerald-400">"css"</span><span class="text-blue-400">&gt;</span>CSS3<span class="text-blue-400">&lt;/label&gt;</span>
+                <span class="text-blue-400">&lt;/fieldset&gt;</span>
+
+                <span class="text-blue-400">&lt;br&gt;</span>
+
+                <span class="text-blue-400">&lt;button</span> <span class="text-yellow-400">type</span>=<span class="text-emerald-400">"submit"</span><span class="text-blue-400">&gt;</span>Completar Registro<span class="text-blue-400">&lt;/button&gt;</span>
             <span class="text-blue-400">&lt;/form&gt;</span>
         <span class="text-blue-400">&lt;/section&gt;</span>
-
     <span class="text-blue-400">&lt;/main&gt;</span>
 
-    <span class="text-blue-400">&lt;hr&gt;</span>
-
-    <span class="text-slate-500">&lt;!-- PIE DE PÁGINA --&gt;</span>
     <span class="text-blue-400">&lt;footer&gt;</span>
-        <span class="text-blue-400">&lt;p&gt;</span>&copy; 2026 Universidad Privada Domingo Savio - Asignatura Diseño Web I (SIS-0140)<span class="text-blue-400">&lt;/p&gt;</span>
+        <span class="text-blue-400">&lt;p&gt;</span>&copy; 2026 Universidad Privada Domingo Savio<span class="text-blue-400">&lt;/p&gt;</span>
     <span class="text-blue-400">&lt;/footer&gt;</span>
 
 <span class="text-blue-400">&lt;/body&gt;</span>
 <span class="text-blue-400">&lt;/html&gt;</span></code></pre>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6: TIPS FINALES Y BUENAS PRÁCTICAS HTML -->
+        <section class="bg-gradient-to-br from-[#001f3f] to-[#003366] p-8 md:p-12 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
+            <i class="fas fa-lightbulb absolute -right-10 -bottom-10 text-white/5 text-[18rem] rotate-12"></i>
+            <div class="relative z-10">
+                <h3 class="text-3xl font-black uppercase text-blue-400 mb-6">Tips Finak y Buenas Prácticas en HTML5</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 text-xs leading-relaxed">
+                    <div class="bg-white/10 p-5 rounded-xl border border-white/20">
+                        <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-check-circle mr-2"></i> Usar Siempre Semántica</h4>
+                        <p class="text-slate-200">
+                            Evita el "Divitis" (abuso indiscriminado de etiquetas <code>&lt;div&gt;</code>). Utiliza elementos como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code> y <code>&lt;footer&gt;</code> para dar contexto estructural a motores de búsqueda (SEO).
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 p-5 rounded-xl border border-white/20">
+                        <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-universal-access mr-2"></i> Accesibilidad (Atributos alt y for)</h4>
+                        <p class="text-slate-200">
+                            Siempre asigna el atributo <code>alt</code> en las imágenes para lectores de pantalla. En formularios, vincula siempre cada <code>&lt;label for="..."&gt;</code> con el <code>id</code> correspondiente del <code>&lt;input&gt;</code>.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 p-5 rounded-xl border border-white/20">
+                        <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-code mr-2"></i> Mantener Identación y Minúsculas</h4>
+                        <p class="text-slate-200">
+                            Aunque HTML5 no es sensible a mayúsculas/minúsculas, los estándares vigentes exigen escribir las etiquetas y atributos en minúsculas e indentar jerárquicamente para garantizar legibilidad.
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 p-5 rounded-xl border border-white/20">
+                        <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-[#00aaff] fa-shield-halved mr-2"></i> Validar Estándares con la W3C</h4>
+                        <p class="text-slate-200">
+                            Acostumbra pasar tus documentos HTML por el servicio oficial de validación de la W3C (<code>validator.w3.org</code>) para garantizar código limpio y sin errores de sintaxis.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
