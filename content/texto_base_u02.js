@@ -293,6 +293,263 @@ const pag_texto_base_u02 = `
             </div>
         </section>
 
+
+        <!-- SECCIÓN 5: SELECTORES AVANZADOS Y PSEUDO-CLASES -->
+<section>
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+        5. Selectores Avanzados, Pseudo-clases y Pseudo-elementos
+    </h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+        Práctica de selección precisa en el DOM utilizando selectores de atributos, combinadores (hijo directo, hermano adyacente), estados interactivos (<code>:hover</code>, <code>:focus</code>, <code>:nth-child()</code>) y decoradores con <code>::before</code> y <code>::after</code>.
+    </p>
+    <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
+        <div class="bg-slate-800 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <span class="text-xs text-slate-400 font-bold"><i class="fab fa-css3-alt text-blue-400 mr-2"></i> ej05_selectores_avanzados.css</span>
+            <span class="text-[10px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded">Práctica 05</span>
+        </div>
+        <pre class="p-6 overflow-x-auto leading-relaxed bg-slate-950 text-slate-300"><code><span class="text-slate-500">/* 1. Selector de atributo y pseudo-clase de estado */</span>
+<span class="text-yellow-400">input[type="text"]:focus</span> {
+    <span class="text-blue-400">border-color</span>: <span class="text-emerald-400">#00aaff</span>;
+    <span class="text-blue-400">background-color</span>: <span class="text-emerald-400">#f0f9ff</span>;
+    <span class="text-blue-400">outline</span>: <span class="text-emerald-400">none</span>;
+}
+
+<span class="text-slate-500">/* 2. Pseudo-clase estructural para alternar filas en tablas o listas */</span>
+<span class="text-yellow-400">ul.lista-items li:nth-child(odd)</span> {
+    <span class="text-blue-400">background-color</span>: <span class="text-emerald-400">#f8fafc</span>;
+}
+<span class="text-yellow-400">ul.lista-items li:nth-child(even)</span> {
+    <span class="text-blue-400">background-color</span>: <span class="text-emerald-400">#ffffff</span>;
+}
+
+<span class="text-slate-500">/* 3. Pseudo-elemento para añadir un badge automático */</span>
+<span class="text-yellow-400">.item-destacado::after</span> {
+    <span class="text-blue-400">content</span>: <span class="text-emerald-400">"★ Nuevo"</span>;
+    <span class="text-blue-400">font-size</span>: <span class="text-emerald-400">10px</span>;
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">#ffffff</span>;
+    <span class="text-blue-400">background-color</span>: <span class="text-emerald-400">#00aaff</span>;
+    <span class="text-blue-400">padding</span>: <span class="text-emerald-400">2px 6px</span>;
+    <span class="text-blue-400">border-radius</span>: <span class="text-emerald-400">4px</span>;
+    <span class="text-blue-400">margin-left</span>: <span class="text-emerald-400">8px</span>;
+}</code></pre>
+    </div>
+</section>
+
+<!-- SECCIÓN 6: ESPECIFICIDAD Y CASCADA -->
+<section>
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+        6. Reglas de Cascada, Herencia y Especificidad
+    </h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+        Cálculo del peso de selectores (inline, ID, clases y etiquetas), colisión de reglas, comportamiento del valor <code>inherit</code> y buenas prácticas para evitar el uso excesivo de <code>!important</code>.
+    </p>
+    <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
+        <div class="bg-slate-800 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <span class="text-xs text-slate-400 font-bold"><i class="fab fa-css3-alt text-blue-400 mr-2"></i> ej06_especificidad.css</span>
+            <span class="text-[10px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded">Práctica 06</span>
+        </div>
+        <pre class="p-6 overflow-x-auto leading-relaxed bg-slate-950 text-slate-300"><code><span class="text-slate-500">/* Nivel 1: Selector de Etiqueta (Peso: 0, 0, 1) -> Menor prioridad */</span>
+<span class="text-yellow-400">p</span> {
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">#64748b</span>;
+}
+
+<span class="text-slate-500">/* Nivel 2: Selector de Clase (Peso: 0, 1, 0) -> Sobrescribe a la etiqueta */</span>
+<span class="text-yellow-400">.texto-alerta</span> {
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">#d97706</span>;
+}
+
+<span class="text-slate-500">/* Nivel 3: Selector de ID (Peso: 1, 0, 0) -> Sobrescribe a la clase */</span>
+<span class="text-yellow-400">#mensaje-principal</span> {
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">#003366</span>;
+    <span class="text-blue-400">font-weight</span>: <span class="text-emerald-400">bold</span>;
+}
+
+<span class="text-slate-500">/* Uso de herencia explícita */</span>
+<span class="text-yellow-400">.enlace-heredado</span> {
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">inherit</span>; <span class="text-slate-500">/* Toma el color exacto del contenedor padre */</span>
+    <span class="text-blue-400">text-decoration</span>: <span class="text-emerald-400">none</span>;
+}</code></pre>
+    </div>
+</section>
+
+<!-- SECCIÓN 7: TIPOGRAFÍA Y GOOGLE FONTS -->
+<section>
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+        7. Tipografía Web, Fuentes Externas y Efectos de Texto
+    </h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+        Integración de Google Fonts con <code>@import</code> y <code>&lt;link&gt;</code>, control de interlineado (<code>line-height</code>), espaciado entre letras (<code>letter-spacing</code>), alineaciones y sombras de texto (<code>text-shadow</code>).
+    </p>
+    <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
+        <div class="bg-slate-800 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <span class="text-xs text-slate-400 font-bold"><i class="fab fa-css3-alt text-blue-400 mr-2"></i> ej07_tipografia.css</span>
+            <span class="text-[10px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded">Práctica 07</span>
+        </div>
+        <pre class="p-6 overflow-x-auto leading-relaxed bg-slate-950 text-slate-300"><code><span class="text-slate-500">/* 1. Importación de Google Fonts */</span>
+<span class="text-yellow-400">@import</span> <span class="text-emerald-400">url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap')</span>;
+
+<span class="text-yellow-400">body</span> {
+    <span class="text-blue-400">font-family</span>: <span class="text-emerald-400">'Poppins', sans-serif</span>;
+    <span class="text-blue-400">line-height</span>: <span class="text-emerald-400">1.6</span>;
+}
+
+<span class="text-slate-500">/* 2. Título estilizado con tracking y sombra suave */</span>
+<span class="text-yellow-400">.titulo-hero</span> {
+    <span class="text-blue-400">font-size</span>: <span class="text-emerald-400">2.5rem</span>;
+    <span class="text-blue-400">font-weight</span>: <span class="text-emerald-400">900</span>;
+    <span class="text-blue-400">letter-spacing</span>: <span class="text-emerald-400">-0.05em</span>;
+    <span class="text-blue-400">text-transform</span>: <span class="text-emerald-400">uppercase</span>;
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">#001f3f</span>;
+    <span class="text-blue-400">text-shadow</span>: <span class="text-emerald-400">2px 4px 10px rgba(0, 31, 63, 0.15)</span>;
+}</code></pre>
+    </div>
+</section>
+
+<!-- SECCIÓN 8: FONDOS, GRADIENTES Y SOMBRAS -->
+<section>
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+        8. Fondos, Gradientes Lineales/Radiales y Box-Shadow
+    </h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+        Construcción de fondos modernos mediante gradientes multicolores (<code>linear-gradient</code>, <code>radial-gradient</code>), superposición de capas y sombras realistas con <code>box-shadow</code> y filtros de desenfoque.
+    </p>
+    <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
+        <div class="bg-slate-800 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <span class="text-xs text-slate-400 font-bold"><i class="fab fa-css3-alt text-blue-400 mr-2"></i> ej08_fondos_sombras.css</span>
+            <span class="text-[10px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded">Práctica 08</span>
+        </div>
+        <pre class="p-6 overflow-x-auto leading-relaxed bg-slate-950 text-slate-300"><code><span class="text-slate-500">/* Tarjeta moderna con efecto de elevación flotante */</span>
+<span class="text-yellow-400">.tarjeta-elevada</span> {
+    <span class="text-blue-400">background</span>: <span class="text-emerald-400">linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)</span>;
+    <span class="text-blue-400">border</span>: <span class="text-emerald-400">1px solid rgba(226, 232, 240, 0.8)</span>;
+    <span class="text-blue-400">border-radius</span>: <span class="text-emerald-400">16px</span>;
+    <span class="text-blue-400">padding</span>: <span class="text-emerald-400">2rem</span>;
+    <span class="text-slate-500">/* Sombra compuesta en capas */</span>
+    <span class="text-blue-400">box-shadow</span>: <span class="text-emerald-400">0 10px 15px -3px rgba(0, 31, 63, 0.08), 0 4px 6px -4px rgba(0, 31, 63, 0.04)</span>;
+    <span class="text-blue-400">transition</span>: <span class="text-emerald-400">transform 0.3s ease, box-shadow 0.3s ease</span>;
+}
+
+<span class="text-yellow-400">.tarjeta-elevada:hover</span> {
+    <span class="text-blue-400">transform</span>: <span class="text-emerald-400">translateY(-6px)</span>;
+    <span class="text-blue-400">box-shadow</span>: <span class="text-emerald-400">0 20px 25px -5px rgba(0, 31, 63, 0.12), 0 8px 10px -6px rgba(0, 31, 63, 0.08)</span>;
+}</code></pre>
+    </div>
+</section>
+
+<!-- SECCIÓN 9: TRANSFORMACIONES, TRANSICIONES Y ANIMACIONES -->
+<section>
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+        9. Transformaciones 2D/3D y Animaciones con @keyframes
+    </h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+        Creación de dinamismo e interactividad visual mediante transiciones suaves (<code>transition</code>), transformaciones geométricas (<code>scale</code>, <code>rotate</code>, <code>translate</code>) y secuencias temporizadas con <code>@keyframes</code>.
+    </p>
+    <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
+        <div class="bg-slate-800 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <span class="text-xs text-slate-400 font-bold"><i class="fab fa-css3-alt text-blue-400 mr-2"></i> ej09_animaciones.css</span>
+            <span class="text-[10px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded">Práctica 09</span>
+        </div>
+        <pre class="p-6 overflow-x-auto leading-relaxed bg-slate-950 text-slate-300"><code><span class="text-slate-500">/* 1. Definición de la animación de pulso */</span>
+<span class="text-yellow-400">@keyframes</span> <span class="text-emerald-400">latido</span> {
+    <span class="text-blue-400">0%</span> { <span class="text-blue-400">transform</span>: <span class="text-emerald-400">scale(1)</span>; }
+    <span class="text-blue-400">50%</span> { <span class="text-blue-400">transform</span>: <span class="text-emerald-400">scale(1.08)</span>; }
+    <span class="text-blue-400">100%</span> { <span class="text-blue-400">transform</span>: <span class="text-emerald-400">scale(1)</span>; }
+}
+
+<span class="text-slate-500">/* 2. Aplicación continua a un elemento badge */</span>
+<span class="text-yellow-400">.badge-live</span> {
+    <span class="text-blue-400">display</span>: <span class="text-emerald-400">inline-block</span>;
+    <span class="text-blue-400">background-color</span>: <span class="text-emerald-400">#e11d48</span>;
+    <span class="text-blue-400">color</span>: <span class="text-emerald-400">#ffffff</span>;
+    <span class="text-blue-400">padding</span>: <span class="text-emerald-400">4px 12px</span>;
+    <span class="text-blue-400">border-radius</span>: <span class="text-emerald-400">50px</span>;
+    <span class="text-blue-400">animation</span>: <span class="text-emerald-400">latido 1.8s infinite ease-in-out</span>;
+}</code></pre>
+    </div>
+</section>
+
+<!-- SECCIÓN 10: FORMULARIOS ESTILIZADOS -->
+<section>
+    <h3 class="text-3xl font-black text-[#003366] uppercase border-b-2 border-slate-100 pb-2 mb-6">
+        10. Estilización Avanzada de Formularios y Estados
+    </h3>
+    <p class="text-lg text-slate-600 leading-relaxed mb-6">
+        Personalización de controles de entrada (<code>input</code>, <code>select</code>, <code>textarea</code>), personalización de <code>checkbox</code> y <code>radio</code> con pseudo-elementos, y estilos reactivos a validaciones (<code>:valid</code>, <code>:invalid</code>, <code>:focus-visible</code>).
+    </p>
+    <div class="bg-slate-900 rounded-2xl shadow-xl overflow-hidden font-mono text-xs md:text-sm text-slate-200 mb-8">
+        <div class="bg-slate-800 px-6 py-3 flex items-center justify-between border-b border-slate-700/50">
+            <span class="text-xs text-slate-400 font-bold"><i class="fab fa-css3-alt text-blue-400 mr-2"></i> ej10_formularios_estilos.css</span>
+            <span class="text-[10px] bg-blue-600 text-white font-bold px-2 py-0.5 rounded">Práctica 10</span>
+        </div>
+        <pre class="p-6 overflow-x-auto leading-relaxed bg-slate-950 text-slate-300"><code><span class="text-slate-500">/* Input con borde redondeado y transición de foco */</span>
+<span class="text-yellow-400">.campo-custom</span> {
+    <span class="text-blue-400">width</span>: <span class="text-emerald-400">100%</span>;
+    <span class="text-blue-400">padding</span>: <span class="text-emerald-400">0.75rem 1rem</span>;
+    <span class="text-blue-400">border</span>: <span class="text-emerald-400">1.5px solid #cbd5e1</span>;
+    <span class="text-blue-400">border-radius</span>: <span class="text-emerald-400">10px</span>;
+    <span class="text-blue-400">transition</span>: <span class="text-emerald-400">all 0.25s ease</span>;
+}
+
+<span class="text-slate-500">/* Estados de Validación Automática */</span>
+<span class="text-yellow-400">.campo-custom:focus</span> {
+    <span class="text-blue-400">border-color</span>: <span class="text-emerald-400">#00aaff</span>;
+    <span class="text-blue-400">box-shadow</span>: <span class="text-emerald-400">0 0 0 4px rgba(0, 170, 255, 0.15)</span>;
+}
+
+<span class="text-yellow-400">.campo-custom:user-invalid</span> {
+    <span class="text-blue-400">border-color</span>: <span class="text-emerald-400">#ef4444</span>;
+    <span class="text-blue-400">background-color</span>: <span class="text-emerald-400">#fef2f2</span>;
+}</code></pre>
+    </div>
+</section>
+
+<!-- EVALUACIÓN DE APRENDIZAJE: FLEXBOX FROGGY -->
+<section class="bg-gradient-to-br from-[#001f3f] to-[#003366] p-8 md:p-12 rounded-[2rem] text-white shadow-2xl relative overflow-hidden">
+    <i class="fas fa-frog absolute -right-6 -bottom-6 text-white/5 text-[18rem] rotate-12"></i>
+    <div class="relative z-10">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="bg-[#2ecc71]/20 text-[#2ecc71] text-[11px] font-black uppercase tracking-[0.25em] px-3.5 py-1.5 rounded-full border border-[#2ecc71]/30">
+                Evaluación Práctica Gamificada
+            </span>
+        </div>
+        <h3 class="text-3xl md:text-4xl font-black uppercase text-white mb-4">
+            Flexbox Froggy - A game for learning CSS flexbox
+        </h3>
+        <p class="text-base md:text-lg text-slate-200 leading-relaxed mb-8 max-w-3xl">
+            Demuestra tu dominio de la maquetación unidimensional guiando a Froggy y a sus amigos a sus respectivos lirios acuáticos mediante código CSS Flexbox real.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8 text-xs text-slate-300">
+            <div class="bg-white/10 p-5 rounded-xl border border-white/15">
+                <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-arrows-left-right mr-2"></i> Eje Principal</h4>
+                <p>Aplicación de <code>justify-content</code>, <code>flex-direction</code> y <code>flex-wrap</code>.</p>
+            </div>
+            <div class="bg-white/10 p-5 rounded-xl border border-white/15">
+                <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-arrows-up-down mr-2"></i> Eje Transversal</h4>
+                <p>Uso preciso de <code>align-items</code>, <code>align-content</code> y <code>align-self</code>.</p>
+            </div>
+            <div class="bg-white/10 p-5 rounded-xl border border-white/15">
+                <h4 class="font-bold text-[#00aaff] text-sm mb-2"><i class="fas fa-sort-numeric-down mr-2"></i> Orden y Alineación</h4>
+                <p>Reorganización visual de elementos hijos mediante la propiedad <code>order</code>.</p>
+            </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-4">
+            <a href="https://flexboxfroggy.com/#es" target="_blank" rel="noopener noreferrer" 
+               class="bg-[#2ecc71] hover:bg-[#27ae60] text-slate-900 font-black px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center gap-3 text-sm">
+                <i class="fas fa-play"></i> Iniciar Desafío Flexbox Froggy
+            </a>
+            <span class="text-xs text-slate-300 italic">
+                * Completa los 24 niveles y guarda la captura del nivel final como evidencia de aprendizaje.
+            </span>
+        </div>
+    </div>
+</section>
+
+
+
+
+
     </div>
 </div>
 `;
