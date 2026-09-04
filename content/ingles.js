@@ -2,6 +2,24 @@
 
 // 1. DATA CORE: Base de datos limpia de los estudiantes
 const duo_history = [
+    {
+        mes: "Agosto 2026",
+        principal: true, // El primer elemento siempre se dibujará en el podio superior
+        estudiantes: [
+            { posicion: 1, nombre: "Juan Daniel Mollo Sesgo", xp: "9230 y 6h", foto: "https://lh3.googleusercontent.com/contacts/AG6tpzHlAHrdogbGpfWbLzTgx7WjpPKXrvZgbYzpTJlsrg5sbjOItKEI=s340-p-k-rw-no" },
+            { posicion: 2, nombre: "Jhon Heynar Alvarez Pozo", xp: "8152 y 3h 49min", foto: "https://lh3.googleusercontent.com/contacts/AG6tpzGyUZWX3itOrwZc6p12lTTe9J2jkZupCyerY1f5YjSzcP4H0zWP=s340-p-k-rw-no" }, 
+            { posicion: 3, nombre: "Alejandro Dennis Ramos Noco", xp: "7374 y 10h", foto: "https://lh3.googleusercontent.com/contacts/AG6tpzFLnQ9drR_owh6jjhaj75F_ntbc1XvI5wUvuAtQElL5BeeK5pFe=s340-p-k-rw-no" }
+        ]
+    },
+    {
+        mes: "Julio 2026",
+        principal: true, // El primer elemento siempre se dibujará en el podio superior
+        estudiantes: [
+            { posicion: 1, nombre: "Alexandra Arze Gutierrez", xp: "19178 y 16h", foto: "https://lh3.googleusercontent.com/contacts/AG6tpzE1W-hxhQt_O9zgWQ5dJt_fV3-qq_ZsyGdzv5z7Od4m6Awy1xlg=s340-p-k-rw-no" },
+            { posicion: 2, nombre: "Carla daniela fernandez Zurita", xp: "10892 y 8h 24min", foto: "https://lh3.googleusercontent.com/contacts/AG6tpzF6C23eQP66NneVdrufKqBArJThoNLI99b9UZt23nIR8GjDVTIl=s340-p-k-rw-no" }, 
+            { posicion: 3, nombre: "Danny Bustillo Terceros", xp: "10370 EXP y 8h 11min", foto: "" }
+        ]
+    },
      {
         mes: "Junio 2026",
         principal: true, // El primer elemento siempre se dibujará en el podio superior
