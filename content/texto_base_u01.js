@@ -12,6 +12,8 @@ const pag_texto_base_u01 = `
             FUNDAMENTOS E INTRODUCCIÓN A<br>
             <span class="text-[#00aaff]">LAS BASES DE DATOS</span>
         </h1>
+
+        
         <p class="mt-6 text-xl text-slate-500 font-light max-w-3xl leading-relaxed">
             Evolución del almacenamiento, limitaciones de archivos planos, arquitectura ANSI/SPARC, principios de diseño relacional, transacciones ACID, sublenguajes SQL y administración del catálogo del sistema.
         </p>
