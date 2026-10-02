@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base de Datos I | UPDS 2026</title>
+    <title>Sistemas Operativos II | UPDS 2026</title>
     
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,11 +23,13 @@
     <script src="./content/videos.js"></script>
     <script src="./content/ingles.js"></script>
 
-    <!-- Scripts de unidades temáticas (Base de Datos I) -->
+    <!-- Scripts de unidades temáticas (Sistemas Operativos II) -->
     <script src="./content/texto_base_u01.js"></script>
     <script src="./content/texto_base_u02.js"></script>
     <script src="./content/texto_base_u03.js"></script>
     <script src="./content/texto_base_u04.js"></script>
+    <script src="./content/texto_base_u05.js"></script>
+    <script src="./content/texto_base_u06.js"></script>
 
     <style>
         [v-cloak] { display: none; }
@@ -58,11 +60,11 @@
         <div class="p-8 border-b border-white/5 bg-gradient-to-br from-[#001f3f] to-[#003366]">
             <div class="flex items-center gap-3 mb-2">
                 <div class="w-10 h-10 bg-[#00aaff] rounded-lg flex items-center justify-center shadow-lg shadow-[#00aaff]/30">
-                    <i class="fas fa-database text-white text-xl"></i>
+                    <i class="fab fa-linux text-white text-xl"></i>
                 </div>
-                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Base de Datos <br><span class="text-[#00aaff]">I</span></h1>
+                <h1 class="text-xl font-black tracking-tight uppercase leading-none">Sistemas Operativos <br><span class="text-[#00aaff]">II</span></h1>
             </div>
-            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0125</p>
+            <p class="text-[10px] text-gray-400 font-medium tracking-widest uppercase mt-4">Gestión 2026 • SIS-0211</p>
         </div>
 
         <nav class="flex-1 overflow-y-auto p-6 space-y-8 custom-scrollbar">
@@ -101,7 +103,7 @@
 
         <div class="flex-1 overflow-y-auto p-6 lg:p-12 custom-scrollbar relative">
             <div class="absolute top-0 right-0 p-20 opacity-5 pointer-events-none">
-                <i class="fas fa-database text-[20rem]"></i>
+                <i class="fab fa-linux text-[20rem]"></i>
             </div>
 
             <article class="max-w-5xl mx-auto page-enter-active">
@@ -120,7 +122,7 @@
             const currentSlug = ref('inicio');
             const currentBody = ref('');
 
-            // ESTRUCTURA DEL MENÚ FORMAL ADAPTADA A BASE DE DATOS I (SIS-0125)
+            // ESTRUCTURA DEL MENÚ FORMAL ADAPTADA A SISTEMAS OPERATIVOS II (SIS-0211)
             const menuStructure = [
                 { 
                     name: 'Introducción', 
@@ -131,7 +133,7 @@
                         { slug: 'proyecto', label: 'Proyecto Formativo Integrador', icon: 'fas fa-project-diagram', content: typeof pag_proyecto !== 'undefined' ? pag_proyecto : 'No cargó proyecto.js' },
                         { slug: 'presentaciones', label: 'Presentaciones Clave', icon: 'fas fa-chalkboard-user', content: typeof pag_presentaciones !== 'undefined' ? pag_presentaciones : 'No cargó presentaciones.js' },
                         { slug: 'bibliografia', label: 'Bibliografía y Recursos', icon: 'fas fa-book-open', content: typeof pag_bibliografia !== 'undefined' ? pag_bibliografia : 'No cargó bibliografia.js' },
-                        { slug: 'videos', label: 'Sesiones Grabadas', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargó videos.js' },
+                        { slug: 'videos', label: 'Videos', icon: 'fas fa-video', content: typeof pag_videos !== 'undefined' ? pag_videos : 'No cargó videos.js' },
                         { slug: 'ingles', label: 'Inglés Técnico', icon: 'fas fa-globe', content: typeof pag_ingles !== 'undefined' ? pag_ingles : 'No cargó ingles.js' }
                     ]
                 },
@@ -139,10 +141,12 @@
                     name: 'Unidades de Contenido', 
                     links: [
                         { slug: 'texto_guia', label: 'Texto Guía Completo', icon: 'fas fa-book', content: typeof pag_texto_guia !== 'undefined' ? pag_texto_guia : 'No cargó texto_guia.js' },
-                        { slug: 'pag_texto_base_u01', label: 'U1: Introducción a las Bases de Datos', icon: 'fas fa-server', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u02', label: 'U2: Diseño y Modelado Conceptual (E-R)', icon: 'fas fa-sitemap', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u03', label: 'U3: Teoría de la Normalización', icon: 'fas fa-filter', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' },
-                        { slug: 'pag_texto_base_u04', label: 'U4: Gestión de BD y Lenguaje SQL', icon: 'fas fa-terminal', content: typeof pag_texto_base_u04 !== 'undefined' ? pag_texto_base_u04 : 'Contenido no disponible' }
+                        { slug: 'pag_texto_base_u01', label: 'U1: Fundamentos e instalación de Linux', icon: 'fab fa-linux', content: typeof pag_texto_base_u01 !== 'undefined' ? pag_texto_base_u01 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u02', label: 'U2: Escritorios de Linux', icon: 'fas fa-desktop', content: typeof pag_texto_base_u02 !== 'undefined' ? pag_texto_base_u02 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u03', label: 'U3: Manejo de Comandos', icon: 'fas fa-terminal', content: typeof pag_texto_base_u03 !== 'undefined' ? pag_texto_base_u03 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u04', label: 'U4: Instalación de Aplicaciones', icon: 'fas fa-box-open', content: typeof pag_texto_base_u04 !== 'undefined' ? pag_texto_base_u04 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u05', label: 'U5: Programación Shell básica', icon: 'fas fa-code', content: typeof pag_texto_base_u05 !== 'undefined' ? pag_texto_base_u05 : 'Contenido no disponible' },
+                        { slug: 'pag_texto_base_u06', label: 'U6: Redes en Linux', icon: 'fas fa-network-wired', content: typeof pag_texto_base_u06 !== 'undefined' ? pag_texto_base_u06 : 'Contenido no disponible' }
                     ]
                 }
             ];
@@ -173,3 +177,8 @@
 </script>
 </body>
 </html>
+```<ElicitationsGroup>
+</ElicitationsGroup>
+<FollowUp>
+¿Necesitas ayuda generando también el código o estructura para alguna de las unidades específicas de contenido (por ejemplo, `texto_base_u01.js` o `texto_base_u02.js`) usando la información del programa analítico?
+</FollowUp>
